@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gina Suci - Narrative Architect & Concept Designer</title>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -34,20 +34,22 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700&display=swap');
 
-        body { background-color: #F9F8F6; color: #2C3539; scroll-behavior: smooth; transition: opacity 0.3s ease; }
+        body { background-color: #F9F8F6; color: #2C3539; scroll-behavior: smooth; }
         .chart-container { position: relative; width: 100%; height: 300px; }
         @media (min-width: 768px) { .chart-container { height: 400px; } }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #F9F8F6; }
         ::-webkit-scrollbar-thumb { background: #C35831; border-radius: 10px; }
         .tab-btn.active { background-color: #C35831 !important; color: white !important; border-color: #C35831 !important; }
-        .portfolio-card { transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); cursor: pointer; }
+        .portfolio-card { transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
         .portfolio-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(44, 53, 57, 0.08); border-color: #C35831; }
         .fade-in { animation: fadeIn 0.8s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .glass-nav { background: rgba(249, 248, 246, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
         .ai-tag { background: rgba(44, 53, 57, 0.05); border: 1px solid rgba(44, 53, 57, 0.1); padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; }
-        
+        .loading-shimmer { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
         /* Modal Style for Alerts */
         #custom-alert { display: none; position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 15px 25px; border-radius: 12px; background: #2C3539; color: white; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: slideIn 0.3s ease-out; }
         @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
@@ -63,43 +65,40 @@
             <div class="text-2xl font-bold font-serif tracking-tight text-ink group cursor-pointer" onclick="window.scrollTo(0,0)">
                 Gina <span class="text-terracotta group-hover:italic transition-all">Suci.</span>
             </div>
-            <div class="hidden md:flex space-x-10 text-[11px] uppercase tracking-widest font-semibold text-ink/60">
-                <a href="#filosofi" data-i18n="nav-philosophy" class="hover:text-terracotta transition">Filosofi</a>
-                <a href="#keahlian" data-i18n="nav-skills" class="hover:text-terracotta transition">Keahlian</a>
-                <a href="#karya" data-i18n="nav-portfolio" class="hover:text-terracotta transition">Portofolio</a>
-                <a href="#simbiosis" data-i18n="nav-ai" class="hover:text-terracotta transition">Ekosistem AI</a>
+            <div class="hidden md:flex space-x-10 text-[13px] uppercase tracking-widest font-semibold text-ink/60">
+                <a href="#filosofi" class="hover:text-terracotta transition">Filosofi</a>
+                <a href="#keahlian" class="hover:text-terracotta transition">Keahlian</a>
+                <a href="#karya" class="hover:text-terracotta transition">Portofolio</a>
+                <a href="#simbiosis" class="hover:text-terracotta transition">Ekosistem AI</a>
             </div>
-            <div class="flex items-center gap-4">
-                <button onclick="toggleLanguage()" id="lang-btn" class="px-3 py-1 border border-sand rounded-full text-[10px] font-bold hover:bg-sand transition">EN</button>
-                <a href="mailto:ginasucif@gmail.com" class="px-5 py-2 bg-ink text-white rounded-full text-xs font-bold hover:bg-terracotta transition" data-i18n="nav-contact">Kontak</a>
-            </div>
+            <a href="mailto:ginasucif@gmail.com" class="px-5 py-2 border border-ink rounded-full text-xs font-bold hover:bg-ink hover:text-white transition">Kontak</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="filosofi" class="min-h-screen flex flex-col items-center justify-center px-6 text-center pt-20">
         <div class="fade-in">
-            <div class="inline-block px-4 py-1.5 mb-8 border border-sand rounded-full text-[10px] uppercase tracking-[0.2em] font-bold text-sage" data-i18n="hero-tag">
+            <div class="inline-block px-4 py-1.5 mb-8 border border-sand rounded-full text-[10px] uppercase tracking-[0.2em] font-bold text-sage">
                 Design Researcher & Narrative Strategist
             </div>
             <h1 class="text-5xl md:text-8xl font-serif font-bold text-ink mb-8 leading-[1.1]">
-                <span data-i18n="hero-title-1">Menghidupkan Data</span> <br> 
+                Menghidupkan Data <br> 
                 <span class="text-terracotta italic relative">
-                    <span data-i18n="hero-title-2">Melalui Narasi.</span>
+                    Melalui Narasi.
                     <svg class="absolute -bottom-2 left-0 w-full" height="8" viewBox="0 0 100 8" preserveAspectRatio="none">
                         <path d="M0 7C30 7 70 1 100 1" stroke="#C35831" stroke-width="2" fill="none" opacity="0.3"/>
                     </svg>
                 </span>
             </h1>
-            <p class="text-lg md:text-xl text-ink/60 max-w-2xl mx-auto leading-relaxed mb-12 font-light" data-i18n="hero-desc">
+            <p class="text-lg md:text-xl text-ink/60 max-w-2xl mx-auto leading-relaxed mb-12 font-light">
                 Saya membangun jembatan antara sintesis data lapangan dan psikologi analitis untuk merumuskan konsep brand dan naskah cerita yang beresonansi.
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a href="#karya" class="group flex items-center gap-3 px-10 py-4 bg-ink text-white rounded-full font-bold hover:bg-terracotta transition-all shadow-xl">
-                    <span data-i18n="hero-cta">Eksplorasi Karya</span>
+                    Eksplorasi Karya
                     <span class="group-hover:translate-x-1 transition-transform">→</span>
                 </a>
-                <a href="#ourchetype" class="text-ink font-bold border-b-2 border-sand hover:border-terracotta transition-colors py-1" data-i18n="hero-study">
+                <a href="#ourchetype" class="text-ink font-bold border-b-2 border-sand hover:border-terracotta transition-colors py-1">
                     Studi Kasus: Ourchetype
                 </a>
             </div>
@@ -117,15 +116,41 @@
                 </div>
                 <div class="order-1 lg:order-2 space-y-10">
                     <div>
-                        <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta mb-4" data-i18n="skills-tag">Metodologi</h2>
+                        <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta mb-4">Metodologi</h2>
                         <h3 class="text-4xl font-serif font-bold text-ink mb-6">The Generalist Profile</h3>
-                        <p class="text-ink/60 leading-relaxed" data-i18n="skills-desc">
+                        <p class="text-ink/60 leading-relaxed">
                             Kekuatan saya terletak pada titik temu antara rigiditas analitis dan fluiditas proses kreatif. Saya tidak hanya mengumpulkan data, saya menerjemahkannya menjadi instruksi desain yang dapat dieksekusi.
                         </p>
                     </div>
-                    
-                    <div class="space-y-6" id="expertise-list">
-                        <!-- Content via JS based on language -->
+
+                    <div class="space-y-6">
+                        <div class="flex gap-6 group">
+                            <div class="flex-shrink-0 w-12 h-12 bg-sand rounded-2xl flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-colors">
+                                <span class="font-bold">01</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Data Mining & Riset</h4>
+                                <p class="text-sm text-ink/60">Ekstraksi wawasan dari dokumen sosiologis dan data bisnis organisasi.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="flex-shrink-0 w-12 h-12 bg-sand rounded-2xl flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-colors">
+                                <span class="font-bold">02</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Concept Architecture</h4>
+                                <p class="text-sm text-ink/60">Perancangan struktur informasi dan narasi besar untuk kampanye brand.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6 group">
+                            <div class="flex-shrink-0 w-12 h-12 bg-sand rounded-2xl flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-colors">
+                                <span class="font-bold">03</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Strategic Copywriting</h4>
+                                <p class="text-sm text-ink/60">Penyusunan naskah audio-visual dengan kedalaman emosi dan akurasi data.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -136,23 +161,23 @@
     <section id="karya" class="py-24 px-6 max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
             <div class="max-w-xl">
-                <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta mb-4" data-i18n="port-tag">Katalog Terpilih</h2>
-                <h3 class="text-4xl font-serif font-bold text-ink" data-i18n="port-title">Manifestasi Ide & Strategi</h3>
+                <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta mb-4">Katalog Terpilih</h2>
+                <h3 class="text-4xl font-serif font-bold text-ink">Manifestasi Ide & Strategi</h3>
             </div>
-            
+
             <div class="flex flex-wrap gap-2" id="portfolio-filters">
-                <button class="filter-btn active px-6 py-2 rounded-full border border-sand text-[10px] font-bold uppercase tracking-widest hover:border-terracotta transition active" data-filter="all">All</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-sand text-[10px] font-bold uppercase tracking-widest hover:border-terracotta transition" data-filter="strategy">Strategy</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-sand text-[10px] font-bold uppercase tracking-widest hover:border-terracotta transition" data-filter="history">History</button>
-                <button class="filter-btn px-6 py-2 rounded-full border border-sand text-[10px] font-bold uppercase tracking-widest hover:border-terracotta transition" data-filter="social">Social</button>
+                <button class="filter-btn active px-6 py-2 rounded-full border border-sand text-xs font-bold uppercase tracking-widest hover:border-terracotta transition active" data-filter="all">All</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-sand text-xs font-bold uppercase tracking-widest hover:border-terracotta transition" data-filter="strategy">Strategy</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-sand text-xs font-bold uppercase tracking-widest hover:border-terracotta transition" data-filter="history">History</button>
+                <button class="filter-btn px-6 py-2 rounded-full border border-sand text-xs font-bold uppercase tracking-widest hover:border-terracotta transition" data-filter="social">Social</button>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
             <!-- Loading States -->
-            <div class="h-64 bg-sand/20 animate-pulse rounded-[32px]"></div>
-            <div class="h-64 bg-sand/20 animate-pulse rounded-[32px]"></div>
-            <div class="h-64 bg-sand/20 animate-pulse rounded-[32px]"></div>
+            <div class="portfolio-card bg-white p-10 rounded-[32px] border border-sand flex flex-col h-64 loading-shimmer"></div>
+            <div class="portfolio-card bg-white p-10 rounded-[32px] border border-sand flex flex-col h-64 loading-shimmer"></div>
+            <div class="portfolio-card bg-white p-10 rounded-[32px] border border-sand flex flex-col h-64 loading-shimmer"></div>
         </div>
     </section>
 
@@ -163,15 +188,19 @@
             <div class="text-center mb-16">
                 <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta mb-4">Deep Dive</h2>
                 <h3 class="text-4xl font-serif font-bold text-sand mb-6">The Ourchetype Project</h3>
-                <p class="text-sand/50 max-w-2xl mx-auto" data-i18n="our-desc">
+                <p class="text-sand/50 max-w-2xl mx-auto">
                     Kolaborasi lintas disiplin mengeksplorasi psikologi Jungian. Pengalaman imersif yang membedah identitas melalui tiga ruang utama.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <div class="lg:col-span-4 flex flex-col gap-4" id="tab-buttons-container"></div>
+                <div class="lg:col-span-4 flex flex-col gap-4" id="tab-buttons-container">
+                    <!-- Tabs generated via JS -->
+                </div>
                 <div class="lg:col-span-8">
-                    <div id="tab-content" class="bg-paper p-10 md:p-16 rounded-[40px] text-ink min-h-[400px] flex flex-col justify-center relative transition-all duration-500 shadow-2xl"></div>
+                    <div id="tab-content" class="bg-paper p-10 md:p-16 rounded-[40px] text-ink min-h-[400px] flex flex-col justify-center relative transition-all duration-500 shadow-2xl">
+                        <!-- Content via JS -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,15 +210,38 @@
     <section id="simbiosis" class="py-24 px-6 max-w-6xl mx-auto">
         <div class="bg-sand/30 rounded-[50px] p-12 md:p-20 border border-sand">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta mb-4" data-i18n="ai-tag">Simbiosis Teknologi</h2>
-                <h3 class="text-4xl font-serif font-bold text-ink mb-6" data-i18n="ai-title">Metode Manusia + Ekosistem AI</h3>
-                <p class="text-ink/60 leading-relaxed" data-i18n="ai-desc">
+                <h2 class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta mb-4">Simbiosis Teknologi</h2>
+                <h3 class="text-4xl font-serif font-bold text-ink mb-6">Metode Manusia + Ekosistem AI</h3>
+                <p class="text-ink/60 leading-relaxed">
                     Saya mengintegrasikan berbagai model kecerdasan buatan sebagai "mitra berpikir" untuk mengakselerasi proses teknis tanpa mengorbankan kedalaman makna.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="ai-tools-grid">
-                <!-- Content via JS -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-3xl border border-sand shadow-sm hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-ink text-white rounded-xl flex items-center justify-center mb-6">🔍</div>
+                    <h4 class="font-bold text-lg mb-4">Riset & Sintesis</h4>
+                    <p class="text-sm text-ink/60 mb-6">Ekstraksi poin penting dari dokumen sosiologis masif dan pencarian data berbasis web.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="ai-tag">NotebookLM</span><span class="ai-tag">Perplexity</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-sand shadow-sm hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-terracotta text-white rounded-xl flex items-center justify-center mb-6">✍️</div>
+                    <h4 class="font-bold text-lg mb-4">Narasi & Struktur</h4>
+                    <p class="text-sm text-ink/60 mb-6">Penyusunan naskah, eksplorasi diksi, dan penyempurnaan tata bahasa standar internasional.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="ai-tag">Claude</span><span class="ai-tag">ChatGPT</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-sand shadow-sm hover:shadow-md transition">
+                    <div class="w-10 h-10 bg-sage text-white rounded-xl flex items-center justify-center mb-6">🎬</div>
+                    <h4 class="font-bold text-lg mb-4">Visual & Motion</h4>
+                    <p class="text-sm text-ink/60 mb-6">Visualisasi konsep artistik dan akselerasi produksi aset video melalui model generatif.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="ai-tag">Leonardo AI</span><span class="ai-tag">Luma</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -197,11 +249,12 @@
     <!-- Footer -->
     <footer class="bg-ink py-16 text-center border-t border-white/5">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-serif font-bold text-sand mb-8" data-i18n="footer-title">Mari Memulai Narasi Baru.</h2>
+            <h2 class="text-3xl font-serif font-bold text-sand mb-8">Mari Memulai Narasi Baru.</h2>
             <div class="flex justify-center gap-8 mb-12">
-                <a href="mailto:ginasucif@gmail.com" class="text-sand/50 hover:text-terracotta transition font-bold text-[10px] tracking-widest uppercase">Email</a>
-                <a href="https://linkedin.com/in/ginasucif" target="_blank" class="text-sand/50 hover:text-terracotta transition font-bold text-[10px] tracking-widest uppercase">LinkedIn</a>
+                <a href="mailto:ginasucif@gmail.com" class="text-sand/50 hover:text-terracotta transition font-bold text-sm">Email</a>
+                <a href="https://linkedin.com/in/ginasucif" target="_blank" class="text-sand/50 hover:text-terracotta transition font-bold text-sm">LinkedIn</a>
             </div>
+            <!-- Klik teks di bawah untuk inisialisasi data Firestore -->
             <div id="init-trigger" class="text-[10px] uppercase tracking-[0.4em] text-sand/20 cursor-pointer hover:text-terracotta transition-colors">
                 © 2026 Interactive Portfolio — Built with Intention.
             </div>
@@ -211,167 +264,75 @@
     <!-- FIREBASE & LOGIC -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getFirestore, collection, onSnapshot, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, onSnapshot, doc, setDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
         import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 
         const firebaseConfig = JSON.parse(__firebase_config);
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'gina-portfolio';
-        
+
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         const auth = getAuth(app);
 
-        // --- Multi-language Dictionary ---
-        const dictionary = {
-            id: {
-                "nav-philosophy": "Filosofi", "nav-skills": "Keahlian", "nav-portfolio": "Portofolio", "nav-ai": "Ekosistem AI", "nav-contact": "Kontak",
-                "hero-tag": "Design Researcher & Narrative Strategist", "hero-title-1": "Menghidupkan Data", "hero-title-2": "Melalui Narasi.",
-                "hero-desc": "Saya membangun jembatan antara sintesis data lapangan dan psikologi analitis untuk merumuskan konsep brand dan naskah cerita.",
-                "hero-cta": "Eksplorasi Karya", "hero-study": "Studi Kasus: Ourchetype",
-                "skills-tag": "Metodologi", "skills-desc": "Kekuatan saya terletak pada titik temu antara analitis dan kreatif.",
-                "port-tag": "Katalog Terpilih", "port-title": "Manifestasi Ide & Strategi",
-                "our-desc": "Kolaborasi lintas disiplin mengeksplorasi psikologi Jungian.",
-                "ai-tag": "Simbiosis Teknologi", "ai-title": "Metode Manusia + Ekosistem AI", "ai-desc": "Mengintegrasikan AI sebagai mitra berpikir untuk akselerasi makna.",
-                "footer-title": "Mari Memulai Narasi Baru.",
-                "btn-detail": "Pelajari Proyek",
-                "expertise": [
-                    { h: "Riset & Sintesis", p: "Ekstraksi wawasan dari dokumen sosiologis dan data bisnis." },
-                    { h: "Konsep Arsitektur", p: "Perancangan narasi besar untuk kampanye brand." },
-                    { h: "Copywriting Strategis", p: "Penyusunan naskah dengan kedalaman emosi dan akurasi." }
-                ],
-                "ai-cards": [
-                    { icon: "🔍", h: "Riset & Sintesis", p: "Ekstraksi poin penting data sosiologis.", tags: ["NotebookLM", "Perplexity"] },
-                    { icon: "✍️", h: "Narasi & Struktur", p: "Penyusunan naskah dan diksi.", tags: ["Claude", "ChatGPT"] },
-                    { icon: "🎬", h: "Visual & Motion", p: "Visualisasi konsep artistik.", tags: ["Leonardo", "Luma"] }
-                ]
-            },
-            en: {
-                "nav-philosophy": "Philosophy", "nav-skills": "Expertise", "nav-portfolio": "Portfolio", "nav-ai": "AI Ecosystem", "nav-contact": "Contact",
-                "hero-tag": "Design Researcher & Narrative Strategist", "hero-title-1": "Bringing Data", "hero-title-2": "To Life Through Narrative.",
-                "hero-desc": "I build bridges between field data synthesis and analytical psychology to formulate resonant brand concepts.",
-                "hero-cta": "Explore Works", "hero-study": "Case Study: Ourchetype",
-                "skills-tag": "Methodology", "skills-desc": "My strength lies at the intersection of analytical rigidity and creative fluidity.",
-                "port-tag": "Selected Catalog", "port-title": "Manifestation of Ideas",
-                "our-desc": "Cross-disciplinary collaboration exploring Jungian psychology.",
-                "ai-tag": "Tech Symbiosis", "ai-title": "Human + AI Ecosystem", "ai-desc": "Integrating AI as a thinking partner to accelerate depth.",
-                "footer-title": "Let's Start a New Narrative.",
-                "btn-detail": "Explore Project",
-                "expertise": [
-                    { h: "Research & Synthesis", p: "Extracting insights from sociological and business data." },
-                    { h: "Concept Architecture", p: "Designing grand narratives for brand campaigns." },
-                    { h: "Strategic Copywriting", p: "Crafting scripts with emotional depth and accuracy." }
-                ],
-                "ai-cards": [
-                    { icon: "🔍", h: "Research", p: "Extracting key sociological insights.", tags: ["NotebookLM", "Perplexity"] },
-                    { icon: "✍️", h: "Narrative", p: "Scriptwriting and diction refinement.", tags: ["Claude", "ChatGPT"] },
-                    { icon: "🎬", h: "Visuals", p: "Visualizing artistic concepts.", tags: ["Leonardo", "Luma"] }
-                ]
-            }
-        };
-
-        let currentLang = 'id';
         let portfolioItems = [];
 
-        window.toggleLanguage = () => {
-            currentLang = currentLang === 'id' ? 'en' : 'id';
-            document.getElementById('lang-btn').innerText = currentLang === 'id' ? 'EN' : 'ID';
-            applyTranslations();
-        };
-
-        function applyTranslations() {
-            const data = dictionary[currentLang];
-            // Basic text
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (data[key]) el.innerText = data[key];
-            });
-
-            // Expertise List
-            const expList = document.getElementById('expertise-list');
-            expList.innerHTML = data.expertise.map((item, i) => `
-                <div class="flex gap-6 group">
-                    <div class="flex-shrink-0 w-12 h-12 bg-sand rounded-2xl flex items-center justify-center group-hover:bg-terracotta group-hover:text-white transition-colors">
-                        <span class="font-bold">0${i+1}</span>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-lg mb-1">${item.h}</h4>
-                        <p class="text-sm text-ink/60">${item.p}</p>
-                    </div>
-                </div>
-            `).join('');
-
-            // AI Cards
-            const aiGrid = document.getElementById('ai-tools-grid');
-            aiGrid.innerHTML = data.ai-cards.map(card => `
-                <div class="bg-white p-8 rounded-3xl border border-sand shadow-sm hover:shadow-md transition">
-                    <div class="w-10 h-10 bg-ink text-white rounded-xl flex items-center justify-center mb-6">${card.icon}</div>
-                    <h4 class="font-bold text-lg mb-4">${card.h}</h4>
-                    <p class="text-sm text-ink/60 mb-6">${card.p}</p>
-                    <div class="flex flex-wrap gap-2">
-                        ${card.tags.map(t => `<span class="ai-tag">${t}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
-
-            renderPortfolio('all');
-            initTabsUI();
-        }
-
-        // --- Portfolio & Ourchetype Data ---
         const tabData = {
-            id: {
-                persona: { title: "Eksplorasi Persona", desc: "Refleksi topeng sosial.", emoji: "🎭" },
-                shadow: { title: "Menyelami Shadow", desc: "Sisi yang kita sembunyikan.", emoji: "🌑" },
-                self: { title: "Menuju Diri (Self)", desc: "Titik integrasi dualitas.", emoji: "✨" }
-            },
-            en: {
-                persona: { title: "Persona Exploration", desc: "Reflecting social masks.", emoji: "🎭" },
-                shadow: { title: "Shadow Deep Dive", desc: "The sides we hide.", emoji: "🌑" },
-                self: { title: "The Self", desc: "Point of integration.", emoji: "✨" }
-            }
+            persona: { title: "Eksplorasi Persona", desc: "Ruang awal merefleksikan 'topeng' sosial.", emoji: "🎭", color: "text-terracotta" },
+            shadow: { title: "Menyelami Shadow", desc: "Eksplorasi sisi-sisi yang kita sembunyikan.", emoji: "🌑", color: "text-sage" },
+            self: { title: "Menuju Diri (Self)", desc: "Titik integrasi dualitas diri.", emoji: "✨", color: "text-ink" }
         };
 
-        function renderPortfolio(filter) {
-            const grid = document.getElementById('portfolio-grid');
-            if (!grid) return;
-            grid.innerHTML = '';
-            
-            const filtered = portfolioItems.filter(item => filter === 'all' || item.category === filter);
-            
-            filtered.forEach((item, index) => {
-                const card = document.createElement('div');
-                card.className = 'portfolio-card bg-white p-10 rounded-[32px] border border-sand flex flex-col h-full fade-in shadow-sm';
-                card.style.animationDelay = `${index * 0.1}s`;
-                // Menambahkan Click Action
-                card.onclick = () => window.open(item.url || '#', '_blank');
-                
-                card.innerHTML = `
-                    <div class="text-[10px] font-bold text-terracotta uppercase tracking-widest mb-6 pb-4 border-b border-sand/50">
-                        ${(item.tags || []).join(' • ')}
-                    </div>
-                    <h3 class="text-2xl font-serif font-bold text-ink mb-4">${item.title}</h3>
-                    <p class="text-sm text-ink/60 flex-grow leading-relaxed">${item.desc}</p>
-                    <div class="mt-8 flex items-center gap-2 text-[10px] font-bold uppercase text-terracotta">
-                        ${dictionary[currentLang]["btn-detail"]} <span>→</span>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
+        // Custom Toast Notification
+        function showNotification(msg) {
+            const el = document.getElementById('custom-alert');
+            el.innerText = msg;
+            el.style.display = 'block';
+            setTimeout(() => { el.style.display = 'none'; }, 3000);
         }
 
+        // Seeding Function (Public Admin Action)
+        async function seedFirestore() {
+            if (!auth.currentUser) {
+                showNotification("Harap tunggu sebentar, sedang menyambungkan...");
+                return;
+            }
+
+            showNotification("Menginisialisasi database...");
+            const initialData = [
+                { id: "p1", title: "Disperkim: Cerita Perkim", category: "strategy", desc: "Sintesis data sanitasi menjadi narasi humanis yang menggugah kesadaran masyarakat.", tags: ["Content Guide", "Social"] },
+                { id: "p2", title: "Bank Mandiri: Awareness L3+", category: "strategy", desc: "Strategi aktivasi program internal melalui pengembangan konten edukatif dan informatif.", tags: ["Corporate", "Strategy"] },
+                { id: "p3", title: "Raden Saleh: Sejarah Seni", category: "history", desc: "Penulisan naskah dokumenter puitis-historis tentang perjalanan maestro Raden Saleh.", tags: ["Scripting", "Arts"] }
+            ];
+
+            try {
+                for (const item of initialData) {
+                    // Path: /artifacts/{appId}/public/data/projects
+                    const docRef = doc(db, 'artifacts', appId, 'public', 'data', 'projects', item.id);
+                    await setDoc(docRef, item);
+                }
+                showNotification("Database berhasil diinisialisasi!");
+            } catch (err) {
+                console.error("Error seeding:", err);
+                showNotification("Gagal mengisi data. Periksa konsol.");
+            }
+        }
+
+        // Tab Navigation Logic
         window.showTab = function(name, btn) {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             if (btn) btn.classList.add('active');
 
-            const content = tabData[currentLang][name];
+            const content = tabData[name];
             const div = document.getElementById('tab-content');
+            if (!div || !content) return;
+
             div.style.opacity = '0';
             setTimeout(() => {
                 div.innerHTML = `
                     <div class="absolute top-10 right-10 text-[120px] text-sand/20 font-serif select-none pointer-events-none">${content.emoji}</div>
                     <div class="relative z-10">
-                        <h3 class="text-4xl md:text-5xl font-serif font-bold mb-6">${content.title}</h3>
-                        <p class="text-lg text-ink/70 leading-relaxed max-w-xl">${content.desc}</p>
+                        <h3 class="text-4xl md:text-5xl font-serif font-bold mb-6 ${content.color}">${content.title}</h3>
+                        <p class="text-lg text-ink/70 mb-10 leading-relaxed max-w-xl">${content.desc}</p>
                     </div>
                 `;
                 div.style.opacity = '1';
@@ -379,20 +340,26 @@
         };
 
         function initTabsUI() {
-            const container = document.getElementById('tab-buttons-container');
-            const keys = Object.keys(tabData[currentLang]);
-            container.innerHTML = keys.map((key, i) => `
-                <button onclick="window.showTab('${key}', this)" id="tab-btn-${key}" class="tab-btn text-left p-6 rounded-2xl border border-white/10 bg-white/5 transition-all group">
+            const tabContainer = document.getElementById('tab-buttons-container');
+            if (!tabContainer) return;
+            tabContainer.innerHTML = '';
+            Object.keys(tabData).forEach((key, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `tab-btn text-left p-6 rounded-2xl border border-white/10 bg-white/5 transition-all group`;
+                btn.id = `tab-btn-${key}`;
+                btn.innerHTML = `
                     <div class="flex justify-between items-center mb-2">
-                        <span class="text-[9px] uppercase font-bold text-terracotta">Phase 0${i+1}</span>
+                        <span class="text-[10px] uppercase font-bold text-terracotta">Tahap 0${idx+1}</span>
+                        <span>→</span>
                     </div>
-                    <h4 class="text-xl font-bold text-white">${tabData[currentLang][key].title.split(' ')[0]}</h4>
-                </button>
-            `).join('');
+                    <h4 class="text-xl font-bold text-white mb-1">${tabData[key].title.split(' ')[1] || tabData[key].title}</h4>
+                `;
+                btn.onclick = (e) => window.showTab(key, e.currentTarget);
+                tabContainer.appendChild(btn);
+            });
             window.showTab('persona', document.getElementById('tab-btn-persona'));
         }
 
-        // --- Core App Logic ---
         async function startApp() {
             try {
                 if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
@@ -400,44 +367,69 @@
                 } else {
                     await signInAnonymously(auth);
                 }
-            } catch (err) { console.error(err); }
-            
-            applyTranslations();
+                console.log("Authenticated successfully");
+            } catch (err) {
+                console.error("Auth error:", err);
+                portfolioItems = getInitialFallbackData();
+                renderPortfolio('all');
+            }
+            initTabsUI();
             initExpertiseChart();
-            document.getElementById('init-trigger').onclick = seedFirestore;
+
+            // Setup trigger for seeding
+            document.getElementById('init-trigger').addEventListener('click', seedFirestore);
         }
 
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 const projectsRef = collection(db, 'artifacts', appId, 'public', 'data', 'projects');
+
                 onSnapshot(projectsRef, (snapshot) => {
                     if (snapshot.empty) {
-                        portfolioItems = [
-                            { title: "Cerita Perkim", category: "strategy", desc: "Data synthesis project.", tags: ["Research"], url: "https://example.com/project1" },
-                            { title: "Bank Mandiri L3+", category: "strategy", desc: "Internal activation strategy.", tags: ["Corporate"], url: "https://example.com/project2" }
-                        ];
+                        console.warn("Firestore empty. Klik footer untuk isi data.");
+                        portfolioItems = getInitialFallbackData();
                     } else {
                         portfolioItems = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
                     }
+                    renderPortfolio('all');
+                }, (err) => {
+                    console.error("Permission error - using local data:", err);
+                    portfolioItems = getInitialFallbackData();
                     renderPortfolio('all');
                 });
             }
         });
 
-        async function seedFirestore() {
-            const initialData = [
-                { id: "p1", title: "Cerita Perkim", category: "strategy", desc: "Sintesis data sanitasi menjadi narasi humanis.", tags: ["Social", "Research"], url: "#" },
-                { id: "p2", title: "Mandiri Awareness", category: "strategy", desc: "Strategi aktivasi internal korporasi.", tags: ["Corporate", "Strategy"], url: "#" },
-                { id: "p3", title: "Raden Saleh", category: "history", desc: "Naskah dokumenter maestro sejarah.", tags: ["Script", "History"], url: "#" }
-            ];
-            for (const item of initialData) {
-                await setDoc(doc(db, 'artifacts', appId, 'public', 'data', 'projects', item.id), item);
-            }
-            alert("Database updated!");
+        function renderPortfolio(filter) {
+            const grid = document.getElementById('portfolio-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const filtered = portfolioItems.filter(item => filter === 'all' || item.category === filter);
+
+            filtered.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'portfolio-card bg-white p-10 rounded-[32px] border border-sand flex flex-col h-full fade-in';
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.innerHTML = `
+                    <div class="text-[10px] font-bold text-terracotta uppercase tracking-widest mb-6 pb-4 border-b border-sand/50">
+                        ${(item.tags || []).join(' • ')}
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-ink mb-4">${item.title}</h3>
+                    <p class="text-sm text-ink/60 flex-grow leading-relaxed">${item.desc}</p>
+                    <div class="mt-8 flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter text-ink/40">
+                        Pelajari Proyek <span class="text-terracotta">→</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
         }
 
         function initExpertiseChart() {
-            new Chart(document.getElementById('expertiseChart'), {
+            const canvas = document.getElementById('expertiseChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
                 type: 'radar',
                 data: {
                     labels: ['RESEARCH', 'STRATEGY', 'CREATIVE', 'WRITING', 'PROBLEM SOLVING', 'ANALYSIS'],
@@ -445,26 +437,44 @@
                         data: [92, 88, 95, 90, 85, 89],
                         backgroundColor: 'rgba(195, 88, 49, 0.15)',
                         borderColor: '#C35831',
+                        pointBackgroundColor: '#2C3539',
+                        pointBorderColor: '#fff',
                         borderWidth: 2
                     }]
                 },
                 options: {
-                    scales: { r: { ticks: { display: false }, pointLabels: { font: { size: 10, weight: 'bold' } } } },
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            suggestedMin: 50,
+                            suggestedMax: 100,
+                            ticks: { display: false },
+                            pointLabels: { color: '#2C3539', font: { size: 10, weight: 'bold' } }
+                        }
+                    },
                     plugins: { legend: { display: false } }
                 }
             });
         }
 
+        function getInitialFallbackData() {
+            return [
+                { title: "Menunggu Data Database", category: "strategy", desc: "Database sedang kosong. Silakan klik teks hak cipta di footer untuk mengunggah data awal secara otomatis.", tags: ["System", "Setup"] }
+            ];
+        }
+
         document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.onclick = (e) => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                e.currentTarget.classList.add('active');
-                renderPortfolio(e.currentTarget.dataset.filter);
-            };
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active', 'border-terracotta', 'text-terracotta'));
+                e.currentTarget.classList.add('active', 'border-terracotta', 'text-terracotta');
+                renderPortfolio(e.currentTarget.getAttribute('data-filter'));
+            });
         });
 
         window.onload = startApp;
     </script>
 </body>
 </html>
+
 
