@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gina Suci - Narrative Architect & Concept Designer</title> 
+    <title>Gina Suci - Narrative Architect</title> 
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script> 
-
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
 
@@ -34,7 +33,7 @@
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700&display=swap'); 
         body { background-color: #F9F8F6; color: #2C3539; scroll-behavior: smooth; }
         .glass-nav { background: rgba(249, 248, 246, 0.8); backdrop-filter: blur(10px); }
-        .journey-step { transition: all 0.5s ease; cursor: pointer; }
+        .journey-step { transition: all 0.5s ease; cursor: pointer; border: 1px solid rgba(0,0,0,0.05); }
         .journey-step.active { border-color: #C35831; background: rgba(195, 88, 49, 0.05); }
         .fade-in { animation: fadeIn 0.8s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -48,13 +47,21 @@
             <div class="text-xl font-bold font-serif text-ink cursor-pointer" onclick="window.scrollTo(0,0)">
                 Gina <span class="text-terracotta">Suci.</span>
             </div>
-            <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-widest font-bold text-ink/60">
-                <a href="#experience" class="hover:text-terracotta transition">Experience</a>
-                <a href="#skills" class="hover:text-terracotta transition">Skills</a>
-                <a href="#featured" class="hover:text-terracotta transition">Works</a>
-                <a href="#ourchetype" class="hover:text-terracotta transition">Ourchetype</a>
-                <a href="#method" class="hover:text-terracotta transition">Method</a>
-                <button onclick="toggleModal(true)" class="text-terracotta underline">Contact</button>
+            <div class="hidden md:flex items-center space-x-8 text-[10px] uppercase tracking-widest font-bold text-ink/60">
+                <a href="#experience" data-lang-en="Experience" data-lang-id="Pengalaman" class="hover:text-terracotta transition">Experience</a>
+                <a href="#skills" data-lang-en="Skills" data-lang-id="Keahlian" class="hover:text-terracotta transition">Skills</a>
+                <a href="#featured" data-lang-en="Works" data-lang-id="Karya" class="hover:text-terracotta transition">Works</a>
+                <a href="#catalogue" data-lang-en="Catalogue" data-lang-id="Katalog" class="hover:text-terracotta transition">Catalogue</a>
+                <a href="#method" data-lang-en="Method" data-lang-id="Metode" class="hover:text-terracotta transition">Method</a>
+                <a href="#discovery" data-lang-en="Discovery" data-lang-id="Discovery" class="hover:text-terracotta transition">Discovery</a>
+                
+                <!-- Language Switcher -->
+                <div class="flex items-center border border-sand rounded-full px-2 py-1 gap-2 bg-white/50">
+                    <button onclick="changeLanguage('en')" id="btn-en" class="px-2 py-0.5 rounded-full bg-ink text-white transition">EN</button>
+                    <button onclick="changeLanguage('id')" id="btn-id" class="px-2 py-0.5 rounded-full text-ink/40 transition">ID</button>
+                </div>
+
+                <button onclick="toggleModal(true)" class="text-terracotta font-black border-b-2 border-terracotta pb-1">CONTACT</button>
             </div>
         </div>
     </nav>
@@ -64,38 +71,40 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="fade-in">
                 <h1 class="text-6xl md:text-8xl font-serif font-bold leading-tight mb-8">
-                    Narrative <br><span class="text-terracotta italic">Architect.</span>
+                    Narrative <br><span class="text-terracotta italic" data-lang-en="Architect." data-lang-id="Arsitek.">Architect.</span>
                 </h1>
-                <p class="text-lg text-ink/70 max-w-lg mb-10">
-                    Membangun jembatan antara data sosiologis dan emosi manusia melalui strategi narasi yang presisi.
+                <p class="text-lg text-ink/70 max-w-lg mb-10" data-lang-en="Transforming abstract ideas into solid narrative structures with high impact." data-lang-id="Mentransformasi ide abstrak menjadi struktur narasi yang solid dan berdampak tinggi.">
+                    Transforming abstract ideas into solid narrative structures with high impact.
                 </p>
-                <a href="#experience" class="inline-block px-10 py-4 bg-ink text-white rounded-full font-bold hover:bg-terracotta transition shadow-xl">Mulai Eksplorasi</a>
+                <div class="flex gap-4">
+                    <a href="#experience" class="px-8 py-4 bg-ink text-white rounded-full font-bold hover:bg-terracotta transition" data-lang-en="Explore Works" data-lang-id="Jelajahi Karya">Explore Works</a>
+                </div>
             </div>
             <div class="relative">
-                <img src="1000015003.jpg" class="w-full aspect-[4/5] object-cover rounded-[40px] shadow-2xl grayscale hover:grayscale-0 transition duration-1000">
+                <img src="1000015003.jpg" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800'" class="w-full aspect-[4/5] object-cover rounded-[40px] shadow-2xl grayscale hover:grayscale-0 transition duration-1000">
             </div>
         </div>
     </section>
 
     <!-- Section 1: Working Experience -->
     <section id="experience" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-16 text-center">Rekam Jejak</h2>
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-16" data-lang-en="Working Experience" data-lang-id="Rekam Jejak">Working Experience</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="space-y-4">
-                    <span class="text-3xl">🖋️</span>
-                    <h3 class="text-2xl font-serif font-bold">The Studio</h3>
-                    <p class="text-sm text-ink/60 leading-relaxed">Menyusun copywriting strategis dan narasi brand yang mampu mengonversi audiens melalui kedalaman cerita.</p>
+                <div class="p-10 border border-sand rounded-[40px] hover:shadow-xl transition group">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition">🖋️</div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">The Studio</h3>
+                    <p class="text-sm text-ink/60 leading-relaxed" data-lang-en="Copywriting strategy and key message development for commercial and social campaigns." data-lang-id="Strategi copywriting dan pengembangan pesan kunci untuk kampanye komersial dan sosial.">Copywriting strategy and key message development for commercial and social campaigns.</p>
                 </div>
-                <div class="space-y-4">
-                    <span class="text-3xl">🏛️</span>
-                    <h3 class="text-2xl font-serif font-bold">The Gallery</h3>
-                    <p class="text-sm text-ink/60 leading-relaxed">Kurasi konsep kreatif berbasis budaya dan sejarah untuk proyek seni maupun aktivasi brand komersial.</p>
+                <div class="p-10 border border-sand rounded-[40px] hover:shadow-xl transition group">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition">🏛️</div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">The Gallery</h3>
+                    <p class="text-sm text-ink/60 leading-relaxed" data-lang-en="Aligning narrative concepts with cultural and historical elements for brand DNA." data-lang-id="Penyelarasan konsep naratif dengan elemen budaya dan sejarah untuk brand DNA.">Aligning narrative concepts with cultural and historical elements for brand DNA.</p>
                 </div>
-                <div class="space-y-4">
-                    <span class="text-3xl">🔬</span>
-                    <h3 class="text-2xl font-serif font-bold">The Lab</h3>
-                    <p class="text-sm text-ink/60 leading-relaxed">Analisis data kualitatif dan riset tren untuk memastikan narasi memiliki pijakan realitas yang kuat.</p>
+                <div class="p-10 border border-sand rounded-[40px] hover:shadow-xl transition group">
+                    <div class="text-4xl mb-6 group-hover:scale-110 transition">🔬</div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">The Lab</h3>
+                    <p class="text-sm text-ink/60 leading-relaxed" data-lang-en="Qualitative analysis and deep research to validate narratives based on data." data-lang-id="Analisis kualitatif dan riset mendalam untuk memvalidasi narasi agar tetap berpijak pada data.">Qualitative analysis and deep research to validate narratives based on data.</p>
                 </div>
             </div>
         </div>
@@ -105,27 +114,27 @@
     <section id="skills" class="py-32 bg-paper border-y border-sand">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="h-[400px]">
+                <div class="h-[400px] bg-white rounded-[40px] p-8 shadow-sm">
                     <canvas id="skillsChart"></canvas>
                 </div>
                 <div>
-                    <h2 class="text-4xl font-serif font-bold mb-8">Analytical & Creative Synthesis.</h2>
+                    <h2 class="text-4xl font-serif font-bold mb-8" data-lang-en="Expertise & Synthesis." data-lang-id="Keahlian & Sintesis.">Expertise & Synthesis.</h2>
                     <div class="space-y-6">
                         <div class="flex justify-between border-b border-sand pb-4">
                             <span class="font-bold">Narrative Strategy</span>
-                            <span class="text-terracotta italic">Expert</span>
+                            <span class="text-terracotta italic">Mastery</span>
                         </div>
                         <div class="flex justify-between border-b border-sand pb-4">
-                            <span class="font-bold">Qualitative Research</span>
+                            <span class="font-bold">Conceptual Design</span>
                             <span class="text-terracotta italic">Advanced</span>
                         </div>
                         <div class="flex justify-between border-b border-sand pb-4">
-                            <span class="font-bold">Concept Design</span>
-                            <span class="text-terracotta italic">Specialist</span>
+                            <span class="font-bold">Socio-Analytical Research</span>
+                            <span class="text-terracotta italic">Expert</span>
                         </div>
                         <div class="flex justify-between border-b border-sand pb-4">
-                            <span class="font-bold">Socio-Synthesis</span>
-                            <span class="text-terracotta italic">Core</span>
+                            <span class="font-bold">Creative Directing</span>
+                            <span class="text-terracotta italic">Specialist</span>
                         </div>
                     </div>
                 </div>
@@ -139,17 +148,17 @@
             <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-16">Featured Works</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="group relative overflow-hidden rounded-[40px] aspect-video cursor-pointer">
-                    <img src="1773222027354.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <img src="1773222027354.jpeg" onerror="this.src='https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80&w=800'" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-ink/60 opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-10">
-                        <h4 class="text-2xl font-serif text-white mb-2">Disperkim Advocacy</h4>
-                        <p class="text-white/70 text-sm">Strategi narasi sosial untuk sanitasi publik.</p>
+                        <h4 class="text-2xl font-serif text-white mb-2">Narrative Framework</h4>
+                        <p class="text-white/70 text-sm" data-lang-en="Cross-platform content strategy development." data-lang-id="Pengembangan strategi konten lintas platform.">Cross-platform content strategy development.</p>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden rounded-[40px] aspect-video cursor-pointer">
-                    <img src="1773222816259.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <img src="1773222816259.jpeg" onerror="this.src='https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?auto=format&fit=crop&q=80&w=800'" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-ink/60 opacity-0 group-hover:opacity-100 transition flex flex-col justify-end p-10">
-                        <h4 class="text-2xl font-serif text-white mb-2">Mandiri Awareness</h4>
-                        <p class="text-white/70 text-sm">Internal branding & employee engagement strategy.</p>
+                        <h4 class="text-2xl font-serif text-white mb-2">Social Awareness</h4>
+                        <p class="text-white/70 text-sm" data-lang-en="Public advocacy through the power of stories." data-lang-id="Advokasi publik melalui kekuatan cerita.">Public advocacy through the power of stories.</p>
                     </div>
                 </div>
             </div>
@@ -159,186 +168,306 @@
     <!-- Section 4: Catalogue -->
     <section id="catalogue" class="py-32 bg-paper">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-16">
-                <h2 class="text-4xl font-serif font-bold italic">Full Catalogue.</h2>
-                <div class="flex gap-4">
-                    <button class="px-6 py-2 bg-ink text-white rounded-full text-[10px] font-bold uppercase">All</button>
-                    <button class="px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase">Strategy</button>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <h2 class="text-4xl font-serif font-bold italic" data-lang-en="Full Catalogue." data-lang-id="Katalog Lengkap.">Full Catalogue.</h2>
+                <div class="flex gap-4 overflow-x-auto pb-2 w-full md:w-auto">
+                    <button onclick="filterKatalog('all')" class="cat-btn px-6 py-2 bg-ink text-white rounded-full text-[10px] font-bold uppercase whitespace-nowrap">All</button>
+                    <button onclick="filterKatalog('strategy')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap">Strategy</button>
+                    <button onclick="filterKatalog('culture')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap">Culture</button>
+                    <button onclick="filterKatalog('social')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap">Social</button>
                 </div>
             </div>
-            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Data from JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 5: Ourchetype (INTERACTIVE JOURNEY) -->
-    <section id="ourchetype" class="py-32 bg-deep text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-6">Discovery Journey</h2>
-                <h3 class="text-5xl font-serif font-bold">Ourchetype System.</h3>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Step 1: Persona -->
-                <div id="step-persona" class="journey-step p-10 border border-white/10 rounded-[40px]" onclick="updateJourney('persona')">
-                    <div class="text-terracotta font-bold mb-4">01. Persona</div>
-                    <h4 class="text-2xl font-serif mb-6">Topeng Sosial</h4>
-                    <p class="text-sm text-white/40 leading-relaxed mb-6">Citra yang kita tampilkan di dunia profesional. Teratur, strategis, dan komunikatif.</p>
-                    <div class="text-[10px] uppercase font-bold text-terracotta">Analisis Output →</div>
-                </div>
-
-                <!-- Step 2: Shadow -->
-                <div id="step-shadow" class="journey-step p-10 border border-white/10 rounded-[40px]" onclick="updateJourney('shadow')">
-                    <div class="text-terracotta font-bold mb-4">02. Shadow</div>
-                    <h4 class="text-2xl font-serif mb-6">Liar & Tak Terbatas</h4>
-                    <p class="text-sm text-white/40 leading-relaxed mb-6">Sisi intuitif yang menyerap kekacauan ide, merangkul kegagalan sebagai bahan bakar kreativitas.</p>
-                    <div class="text-[10px] uppercase font-bold text-terracotta">Eksplorasi Kedalaman →</div>
-                </div>
-
-                <!-- Step 3: Self -->
-                <div id="step-self" class="journey-step p-10 border border-white/10 rounded-[40px]" onclick="updateJourney('self')">
-                    <div class="text-terracotta font-bold mb-4">03. Self</div>
-                    <h4 class="text-2xl font-serif mb-6">Suara Sejati</h4>
-                    <p class="text-sm text-white/40 leading-relaxed mb-6">Titik temu harmoni. Di sinilah tulisan saya lahir dengan karakter yang jujur dan tajam.</p>
-                    <div class="text-[10px] uppercase font-bold text-terracotta">Integrasi Hasil →</div>
-                </div>
-            </div>
-
-            <div class="mt-20 p-12 bg-white/5 rounded-[40px] border border-white/10">
-                <div id="journey-display">
-                    <h5 class="text-xl font-serif mb-4 italic text-terracotta">Klik salah satu pola di atas untuk memulai simulasi.</h5>
-                    <p class="text-white/60">Simulasi ini menunjukkan bagaimana ketiga pola ini berinteraksi untuk menciptakan narasi yang memiliki nyawa.</p>
-                </div>
+            <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Diisi via JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Section 6: Method (Original + AI Stack) -->
+    <!-- Section 5: Method (Original + AI Enhancer) -->
     <section id="method" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-24">
                 <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-6">Workflow</h2>
-                <h3 class="text-5xl font-serif font-bold">The Co-Creation Method.</h3>
-                <p class="text-ink/60 mt-8 max-w-2xl mx-auto">AI tidak membatasi saya; ia adalah jendela inspirasi yang memperluas cakrawala logika dan riset.</p>
+                <h3 class="text-5xl font-serif font-bold mb-8">Methodology.</h3>
+                <div class="bg-paper p-6 rounded-2xl max-w-2xl mx-auto border border-sand italic text-sm text-ink/60" data-lang-en='"AI in my process is not a replacement for the brain, but an <strong>Enhancer</strong>—expanding research capacity and execution efficiency from the original ideas I have designed."' data-lang-id='"AI dalam proses saya bukanlah pengganti otak, melainkan <strong>Enhancer</strong>—memperluas kapasitas riset dan efisiensi eksekusi dari ide orisinal yang telah saya rancang."'>
+                    "AI in my process is not a replacement for the brain, but an <strong>Enhancer</strong>—expanding research capacity and execution efficiency from the original ideas I have designed."
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                <div class="p-8 border border-sand rounded-3xl text-center bg-paper">
-                    <div class="text-2xl mb-4">🖋️</div>
-                    <h5 class="font-bold text-xs uppercase mb-2">Originality</h5>
-                    <p class="text-[10px] text-ink/50 italic">Source of Soul</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Human Side -->
+                <div class="bg-white p-10 border border-sand rounded-[40px]">
+                    <h4 class="text-2xl font-serif font-bold mb-8 flex items-center gap-3">
+                        <span class="text-3xl">🧠</span> Originality (The Architect)
+                    </h4>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <span class="text-terracotta font-black">01</span>
+                            <div>
+                                <h5 class="font-bold">Problem Definition</h5>
+                                <p class="text-xs text-ink/60 mt-1" data-lang-en="Digging for the root cause from sociological and business perspectives." data-lang-id="Menggali akar masalah dari perspektif sosiologis dan kebutuhan bisnis.">Digging for the root cause from sociological and business perspectives.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-terracotta font-black">02</span>
+                            <div>
+                                <h5 class="font-bold">Narrative Foundation</h5>
+                                <p class="text-xs text-ink/60 mt-1" data-lang-en="Building a story structure that has logical flow and emotional resonance." data-lang-id="Membangun struktur cerita yang memiliki alur logika dan resonansi emosional.">Building a story structure that has logical flow and emotional resonance.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-terracotta font-black">03</span>
+                            <div>
+                                <h5 class="font-bold">Human Intuition</h5>
+                                <p class="text-xs text-ink/60 mt-1" data-lang-en="Final touches only humans can feel: taste, empathy, and local context." data-lang-id="Sentuhan akhir yang hanya bisa dirasakan oleh manusia: rasa, empati, dan konteks lokal.">Final touches only humans can feel: taste, empathy, and local context.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="p-8 border border-sand rounded-3xl text-center bg-paper">
-                    <div class="text-2xl mb-4">🧠</div>
-                    <h5 class="font-bold text-xs uppercase mb-2">Gemini Pro</h5>
-                    <p class="text-[10px] text-ink/50 italic">Synthesis Partner</p>
-                </div>
-                <div class="p-8 border border-sand rounded-3xl text-center bg-paper">
-                    <div class="text-2xl mb-4">🎭</div>
-                    <h5 class="font-bold text-xs uppercase mb-2">Claude Sonnet</h5>
-                    <p class="text-[10px] text-ink/50 italic">Refining Voice</p>
-                </div>
-                <div class="p-8 border border-sand rounded-3xl text-center bg-paper">
-                    <div class="text-2xl mb-4">⚡</div>
-                    <h5 class="font-bold text-xs uppercase mb-2">Grok</h5>
-                    <p class="text-[10px] text-ink/50 italic">Real-time Unfilter</p>
-                </div>
-                <div class="p-8 border border-sand rounded-3xl text-center bg-paper">
-                    <div class="text-2xl mb-4">🎨</div>
-                    <h5 class="font-bold text-xs uppercase mb-2">Imagen 4.0</h5>
-                    <p class="text-[10px] text-ink/50 italic">Visual Logic</p>
+
+                <!-- AI Side -->
+                <div class="bg-ink text-white p-10 rounded-[40px]">
+                    <h4 class="text-2xl font-serif font-bold mb-8 flex items-center gap-3">
+                        <span class="text-3xl">⚡</span> AI Co-Creation (The Enhancer)
+                    </h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:border-terracotta transition">
+                            <div class="text-xl mb-3">🤖</div>
+                            <h5 class="text-[10px] font-black uppercase mb-1">Claude 3.5</h5>
+                            <p class="text-[9px] text-white/50 leading-relaxed italic">Synthesizing complex data & structural refining.</p>
+                        </div>
+                        <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:border-terracotta transition">
+                            <div class="text-xl mb-3">🔥</div>
+                            <h5 class="text-[10px] font-black uppercase mb-1">Grok</h5>
+                            <p class="text-[9px] text-white/50 leading-relaxed italic">Real-time pulse & unfiltered truth research.</p>
+                        </div>
+                        <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:border-terracotta transition">
+                            <div class="text-xl mb-3">👁️</div>
+                            <h5 class="text-[10px] font-black uppercase mb-1">Gemini</h5>
+                            <p class="text-[9px] text-white/50 leading-relaxed italic">Multimodal analysis & brainstorming partner.</p>
+                        </div>
+                        <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:border-terracotta transition">
+                            <div class="text-xl mb-3">🎨</div>
+                            <h5 class="text-[10px] font-black uppercase mb-1">Imagen 4.0</h5>
+                            <p class="text-[9px] text-white/50 leading-relaxed italic">Visual conceptualization for narrative mood.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer class="bg-ink py-32 text-center text-white">
+    <!-- Section 6: Discovery (Ourchetype) -->
+    <section id="discovery" class="py-32 bg-deep text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-6">Discovery Journey</h2>
+                <h3 class="text-5xl font-serif font-bold mb-4">Ourchetype.</h3>
+                <p class="text-white/40 max-w-xl mx-auto" data-lang-en="Simulation of 3 intellectual patterns to give birth to a complete narrative character." data-lang-id="Simulasi journey 3 pola intelektual untuk melahirkan satu karakter narasi yang utuh.">Simulation of 3 intellectual patterns to give birth to a complete narrative character.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div id="step-persona" class="journey-step p-10 bg-white/5 rounded-[40px]" onclick="updateJourney('persona')">
+                    <div class="text-terracotta font-bold text-xs mb-4" data-lang-en="PATTERN 01" data-lang-id="POLA 01">PATTERN 01</div>
+                    <h4 class="text-2xl font-serif mb-4">The Persona</h4>
+                    <p class="text-sm text-white/50 leading-relaxed" data-lang-en="A organized mask. Showing the professional, logical, and communicative side for the outside world's needs." data-lang-id="Topeng yang tertata. Menampilkan sisi profesional, logis, dan komunikatif untuk kebutuhan dunia luar.">A organized mask. Showing the professional, logical, and communicative side for the outside world's needs.</p>
+                </div>
+                <div id="step-shadow" class="journey-step p-10 bg-white/5 rounded-[40px]" onclick="updateJourney('shadow')">
+                    <div class="text-terracotta font-bold text-xs mb-4" data-lang-en="PATTERN 02" data-lang-id="POLA 02">PATTERN 02</div>
+                    <h4 class="text-2xl font-serif mb-4">The Shadow</h4>
+                    <p class="text-sm text-white/50 leading-relaxed" data-lang-en="Warehouse of raw ideas. The wild, emotional, and unlimited part, not bound by rigid rules." data-lang-id="Gudang ide mentah. Bagian yang liar, emosional, dan tidak terbatas oleh aturan yang kaku.">Warehouse of raw ideas. The wild, emotional, and unlimited part, not bound by rigid rules.</p>
+                </div>
+                <div id="step-self" class="journey-step p-10 bg-white/5 rounded-[40px]" onclick="updateJourney('self')">
+                    <div class="text-terracotta font-bold text-xs mb-4" data-lang-en="PATTERN 03" data-lang-id="POLA 03">PATTERN 03</div>
+                    <h4 class="text-2xl font-serif mb-4">The Self</h4>
+                    <h6 class="text-[10px] text-terracotta italic mb-4">The Synthesis</h6>
+                    <p class="text-sm text-white/50 leading-relaxed" data-lang-en="Harmonization. This is where my identity as a writer is formed, balancing logic and intuition." data-lang-id="Harmonisasi. Di sinilah jati diri penulis saya terbentuk, menyeimbangkan logika dan intuisi.">Harmonization. This is where my identity as a writer is formed, balancing logic and intuition.</p>
+                </div>
+            </div>
+
+            <div id="journey-output" class="mt-12 bg-white/10 p-12 rounded-[40px] border border-white/10 min-h-[250px] flex items-center justify-center text-center">
+                <div class="max-w-2xl">
+                    <p class="text-xl font-serif italic text-white/60" data-lang-en='"Pick a pattern to see how I process your narrative."' data-lang-id='"Pilih salah satu pola untuk melihat bagaimana saya mengolah narasi Anda."'>"Pick a pattern to see how I process your narrative."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink py-24 text-center text-white">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl font-serif font-bold mb-12">Mari kita rancang narasi baru.</h2>
+            <h2 class="text-4xl font-serif font-bold mb-12">Let's build a new story.</h2>
             <div class="flex justify-center gap-12 mb-20 text-[10px] font-bold uppercase tracking-[0.3em]">
-                <a href="mailto:ginasucif@gmail.com" class="hover:text-terracotta transition">Email</a>
+                <a href="mailto:ginasucif@gmail.com" class="hover:text-terracotta transition underline decoration-terracotta decoration-2 underline-offset-8">Email</a>
                 <a href="#" class="hover:text-terracotta transition">LinkedIn</a>
                 <a href="#" class="hover:text-terracotta transition">Instagram</a>
             </div>
-            <div class="text-white/10 text-[10px] tracking-[0.5em] uppercase">
+            <div id="init-trigger" class="text-white/10 text-[10px] tracking-[0.5em] uppercase cursor-help hover:text-terracotta transition">
                 © 2026 Gina Suci — Narrative Architecture
             </div>
         </div>
     </footer>
 
-    <!-- Modal -->
-    <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/90 backdrop-blur-sm p-6">
-        <div class="bg-paper w-full max-w-lg rounded-[40px] p-12 text-center relative">
-            <button onclick="toggleModal(false)" class="absolute top-8 right-8 text-ink/40">✕</button>
-            <h2 class="text-3xl font-serif font-bold mb-6">Hello.</h2>
-            <p class="text-ink/60 mb-8">Siap berkolaborasi dalam proyek arsitektur narasi selanjutnya?</p>
-            <a href="mailto:ginasucif@gmail.com" class="block w-full py-4 bg-ink text-white rounded-full font-bold">Kirim Email</a>
+    <!-- Contact Modal -->
+    <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/95 backdrop-blur-md p-6">
+        <div class="bg-paper w-full max-w-lg rounded-[50px] p-12 text-center relative shadow-2xl">
+            <button onclick="toggleModal(false)" class="absolute top-8 right-8 text-ink/40 text-2xl hover:text-terracotta transition">✕</button>
+            <h2 class="text-4xl font-serif font-bold mb-4">Let's Talk.</h2>
+            <p class="text-ink/60 mb-10 leading-relaxed" data-lang-en="Working with me means exploring the depths of narrative with architectural precision." data-lang-id="Bekerja dengan saya berarti mengeksplorasi kedalaman narasi dengan presisi arsitektural.">Working with me means exploring the depths of narrative with architectural precision.</p>
+            <div class="space-y-4">
+                <a href="mailto:ginasucif@gmail.com" class="block w-full py-4 bg-ink text-white rounded-full font-bold hover:bg-terracotta transition shadow-lg" data-lang-en="Send Message via Email" data-lang-id="Kirim Pesan Melalui Email">Send Message via Email</a>
+                <a href="https://wa.me/your-number" class="block w-full py-4 border border-sand rounded-full font-bold hover:border-terracotta transition">WhatsApp Inquiry</a>
+            </div>
         </div>
     </div>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, onSnapshot, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
+        // Global State & Config
         const firebaseConfig = JSON.parse(__firebase_config);
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'gina-portfolio-final';
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'gina-portfolio-final-v2';
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // UI Helpers
+        let currentLang = 'en';
+
+        // --- LANGUAGE SWITCHER ---
+        window.changeLanguage = (lang) => {
+            currentLang = lang;
+            const elements = document.querySelectorAll('[data-lang-' + lang + ']');
+            elements.forEach(el => {
+                el.innerHTML = el.getAttribute('data-lang-' + lang);
+            });
+
+            // Update Buttons
+            const btnEn = document.getElementById('btn-en');
+            const btnId = document.getElementById('btn-id');
+            if(lang === 'en') {
+                btnEn.className = 'px-2 py-0.5 rounded-full bg-ink text-white transition';
+                btnId.className = 'px-2 py-0.5 rounded-full text-ink/40 transition';
+            } else {
+                btnId.className = 'px-2 py-0.5 rounded-full bg-ink text-white transition';
+                btnEn.className = 'px-2 py-0.5 rounded-full text-ink/40 transition';
+            }
+            
+            // Refresh content that is dynamic
+            filterKatalog('all');
+        };
+
+        // --- NAVIGATION & MODAL FIX ---
         window.toggleModal = (show) => {
             const m = document.getElementById('modal');
-            m.style.display = show ? 'flex' : 'none';
+            if(show) {
+                m.classList.remove('hidden');
+                m.classList.add('flex');
+            } else {
+                m.classList.remove('flex');
+                m.classList.add('hidden');
+            }
         }
 
-        // Ourchetype Simulation
-        const journeyData = {
-            persona: {
-                title: "Analisis Output Persona",
-                content: "Di permukaan, tulisan saya bersifat strategis, bersih, dan fungsional. Saya menggunakan metode ini untuk proposal bisnis, copywriting korporat, dan strategi kampanye yang membutuhkan kejelasan tinggi."
+        // --- KATALOG LOGIC ---
+        const dummyKatalog = [
+            { id: 1, title: 'Disperkim Strategy', desc: 'Narrative framework for public sanitation awareness.', category: 'social' },
+            { id: 2, title: 'Mandiri Culture', desc: 'Internal branding and employee engagement story.', category: 'strategy' },
+            { id: 3, title: 'Art Exhibition Concept', desc: 'Curating the story of modern heritage.', category: 'culture' },
+            { id: 4, title: 'City Branding Report', desc: 'Qualitative analysis for urban narrative.', category: 'strategy' },
+            { id: 5, title: 'Mental Health Advocacy', desc: 'Storytelling for community healing.', category: 'social' },
+            { id: 6, title: 'Digital Identity Framework', desc: 'Concept design for virtual personas.', category: 'culture' }
+        ];
+
+        window.filterKatalog = (cat) => {
+            const grid = document.getElementById('portfolio-grid');
+            const filtered = cat === 'all' ? dummyKatalog : dummyKatalog.filter(i => i.category === cat);
+            
+            // Highlight Button
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-ink', 'text-white');
+                btn.classList.add('border', 'border-sand');
+                if(btn.innerText.toLowerCase() === cat) {
+                    btn.classList.remove('border', 'border-sand');
+                    btn.classList.add('bg-ink', 'text-white');
+                }
+            });
+
+            grid.innerHTML = filtered.map(item => `
+                <div class="fade-in p-8 bg-white border border-sand rounded-[40px] shadow-sm hover:border-terracotta transition group cursor-pointer">
+                    <div class="text-[8px] font-black text-terracotta uppercase mb-4 tracking-widest">${item.category}</div>
+                    <h4 class="text-xl font-serif font-bold mb-4 group-hover:text-terracotta transition">${item.title}</h4>
+                    <p class="text-xs text-ink/50 leading-relaxed">${item.desc}</p>
+                </div>
+            `).join('');
+        };
+
+        // --- DISCOVERY / OURCHETYPE SIMULATION ---
+        const journeyContent = {
+            en: {
+                persona: {
+                    title: "The Persona: Measured Strategy",
+                    body: "Under this pattern, my writing is an instrument. Focus on clarity, conversion, and structure. This is the architect's side ensuring your narrative foundation is solid."
+                },
+                shadow: {
+                    title: "The Shadow: Intuitive & Raw",
+                    body: "This is the exploration space. I let emotions and symbolism flow without censorship. Shadow gives 'life' and uniqueness to stories often hidden behind data."
+                },
+                self: {
+                    title: "The Self: My Writing Identity",
+                    body: "This is the meeting point I call 'Narrative Architecture'. My writing finally has strategic authority while remaining poetic. The result is content that is not just read, but felt."
+                }
             },
-            shadow: {
-                title: "Eksplorasi Kedalaman Shadow",
-                content: "Shadow membiarkan sisi abstrak saya bekerja. Ini adalah proses mentah di mana ide-ide radikal dikumpulkan sebelum disaring. Di sinilah inovasi narasi paling liar tercipta tanpa rasa takut akan penilaian."
-            },
-            self: {
-                title: "Hasil Integrasi: Karakter Self",
-                content: "Hasil akhirnya adalah 'Self'—sebuah suara yang memiliki otoritas strategis namun tetap memiliki jiwa puitis. Tulisan saya menjadi tajam karena data (Persona) dan mendalam karena rasa (Shadow)."
+            id: {
+                persona: {
+                    title: "The Persona: Strategi Terukur",
+                    body: "Di bawah pola ini, tulisan saya adalah instrumen. Fokus pada kejelasan, konversi, dan struktur. Ini adalah sisi arsitek yang memastikan fondasi narasi Anda kokoh dan mudah dipahami publik."
+                },
+                shadow: {
+                    title: "The Shadow: Intuitif & Mentah",
+                    body: "Ini adalah ruang eksplorasi. Saya membiarkan emosi dan simbolisme mengalir tanpa sensor. Shadow memberikan 'nyawa' dan keunikan pada cerita yang seringkali tersembunyi di balik data."
+                },
+                self: {
+                    title: "The Self: Karakter Penulis Saya",
+                    body: "Inilah titik temu yang saya sebut 'Narrative Architecture'. Tulisan saya akhirnya memiliki otoritas strategis namun tetap bernapas puitis. Hasilnya adalah konten yang bukan sekadar dibaca, tapi dirasakan."
+                }
             }
         };
 
         window.updateJourney = (key) => {
-            const display = document.getElementById('journey-display');
-            const data = journeyData[key];
-            
-            // Highlight active step
-            document.querySelectorAll('.journey-step').forEach(s => s.classList.remove('active'));
-            document.getElementById(`step-${key}`).classList.add('active');
+            const output = document.getElementById('journey-output');
+            const data = journeyContent[currentLang][key];
 
-            display.innerHTML = `
-                <div class="fade-in">
+            document.querySelectorAll('.journey-step').forEach(s => s.classList.remove('active', 'bg-white/10'));
+            document.getElementById(`step-${key}`).classList.add('active', 'bg-terracotta/10');
+
+            output.innerHTML = `
+                <div class="fade-in max-w-2xl">
                     <h5 class="text-2xl font-serif mb-4 text-terracotta">${data.title}</h5>
-                    <p class="text-white/80 leading-relaxed text-lg">${data.content}</p>
+                    <p class="text-lg text-white/80 leading-relaxed">${data.body}</p>
+                    <div class="mt-8 flex justify-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-terracotta"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-white/20"></span>
+                    </div>
                 </div>
             `;
-        }
+        };
 
-        // Skills Chart
+        // --- CHARTS & INITIALIZATION ---
         function initChart() {
             const ctx = document.getElementById('skillsChart').getContext('2d');
             new Chart(ctx, {
                 type: 'radar',
                 data: {
-                    labels: ['Logic', 'Narrative', 'Research', 'Visual', 'Empathy', 'Strategy'],
+                    labels: ['Logic', 'Narrative', 'Research', 'Intuition', 'Strategy', 'Cultural Context'],
                     datasets: [{
-                        data: [92, 98, 88, 85, 95, 94],
+                        data: [95, 98, 92, 94, 95, 96], // Updated to reflect higher logic, context, intuition
                         backgroundColor: 'rgba(195, 88, 49, 0.1)',
                         borderColor: '#C35831',
                         borderWidth: 2,
-                        pointBackgroundColor: '#2C3539'
+                        pointBackgroundColor: '#2C3539',
+                        pointBorderColor: '#C35831',
+                        pointRadius: 4
                     }]
                 },
                 options: {
@@ -349,38 +478,20 @@
                         r: {
                             ticks: { display: false },
                             grid: { color: 'rgba(0,0,0,0.05)' },
-                            pointLabels: { font: { weight: 'bold', size: 10 } }
+                            pointLabels: { 
+                                font: { weight: 'bold', size: 10, family: 'Inter' },
+                                color: '#2C3539'
+                            }
                         }
                     }
                 }
             });
         }
 
-        // Portfolio Render
-        const projectsRef = collection(db, 'artifacts', appId, 'public', 'data', 'projects');
-        onSnapshot(projectsRef, (snapshot) => {
-            const grid = document.getElementById('portfolio-grid');
-            if(!grid) return;
-            grid.innerHTML = '';
-            
-            snapshot.docs.forEach(doc => {
-                const item = doc.data();
-                const card = document.createElement('div');
-                card.className = 'p-8 bg-white border border-sand rounded-[30px] shadow-sm hover:border-terracotta transition';
-                card.innerHTML = `
-                    <div class="text-[8px] font-black text-terracotta uppercase mb-4">${item.category || 'Portfolio'}</div>
-                    <h4 class="text-xl font-serif font-bold mb-2">${item.title}</h4>
-                    <p class="text-xs text-ink/50">${item.desc}</p>
-                `;
-                grid.appendChild(card);
-            });
-        }, (err) => {
-            // Fallback content if firestore empty
-            const grid = document.getElementById('portfolio-grid');
-            grid.innerHTML = `<p class="col-span-3 text-center text-ink/30 italic">Katalog sedang disinkronkan...</p>`;
-        });
-
-        window.onload = initChart;
+        window.onload = () => {
+            initChart();
+            filterKatalog('all');
+        };
     </script>
 </body>
 </html>
