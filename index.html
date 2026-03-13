@@ -59,14 +59,14 @@
                 <a href="#featured" data-en="Works" data-id="Karya" class="lang-text hover:text-terracotta transition">Works</a>
                 <a href="#catalogue" data-en="Catalogue" data-id="Katalog" class="lang-text hover:text-terracotta transition">Catalogue</a>
                 <a href="#method" data-en="Method" data-id="Metode" class="lang-text hover:text-terracotta transition">Method</a>
-                <a href="#discovery" data-en="Interactive" data-id="Interaktif" class="lang-text hover:text-terracotta transition">Interactive</a>
+                <a href="#discovery" data-en="Discovery" data-id="Eksplorasi" class="lang-text hover:text-terracotta transition">Discovery</a>
                 
                 <div class="flex items-center border border-sand rounded-full px-1 py-1 gap-1 bg-white/50">
                     <button onclick="changeLanguage('en')" id="btn-en" class="px-3 py-1 rounded-full bg-ink text-white text-[9px] transition">EN</button>
                     <button onclick="changeLanguage('id')" id="btn-id" class="px-3 py-1 rounded-full text-ink/40 text-[9px] transition">ID</button>
                 </div>
 
-                <button onclick="toggleModal(true)" class="text-terracotta font-black border-b-2 border-terracotta pb-1 hover:text-ink hover:border-ink transition">CONTACT</button>
+                <button onclick="toggleModal(true)" class="text-terracotta font-black border-b-2 border-terracotta pb-1 hover:text-ink hover:border-ink transition lang-text" data-en="CONTACT" data-id="KONTAK">CONTACT</button>
             </div>
         </div>
     </nav>
@@ -76,9 +76,10 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="fade-in">
                 <h1 class="text-6xl md:text-8xl font-serif font-bold leading-tight mb-8 text-ink">
-                    Storyteller & <br><span class="text-terracotta italic lang-text" data-en="Sensical Writer." data-id="Penulis Sensikal.">Sensical Writer.</span>
+                    <span class="lang-text" data-en="Sensical" data-id="Bernalar &">Sensical</span><br>
+                    <span class="text-terracotta italic lang-text" data-en="Storyteller." data-id="Pencerita.">Storyteller.</span>
                 </h1>
-                <p class="text-lg text-ink/70 max-w-lg mb-10 lang-text" data-en="Transforming abstract ideas into solid narrative structures with high impact." data-id="Mentransformasi ide abstrak menjadi struktur narasi yang solid dan berdampak tinggi.">
+                <p class="text-lg text-ink/70 max-w-lg mb-10 lang-text" data-en="Transforming abstract ideas into solid narrative structures with high impact." data-id="Mentransformasi ide abstrak menjadi struktur narasi yang solid dengan dampak tinggi.">
                     Transforming abstract ideas into solid narrative structures with high impact.
                 </p>
                 <div class="flex gap-4">
@@ -86,7 +87,7 @@
                 </div>
             </div>
             <div class="relative">
-                <img src="1000015003.jpg" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800'" class="w-full aspect-[4/5] object-cover rounded-[40px] shadow-2xl grayscale hover:grayscale-0 transition duration-1000">
+                <img src="1000015003.jpg" onerror="this.src='https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=800'" class="w-full aspect-[4/5] object-cover rounded-[40px] shadow-2xl grayscale hover:grayscale-0 transition duration-1000">
             </div>
         </div>
     </section>
@@ -100,17 +101,17 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="p-10 border border-sand rounded-[40px] hover:shadow-xl transition group">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition">🖋️</div>
-                    <h3 class="text-2xl font-serif font-bold mb-4">The Studio</h3>
+                    <h3 class="text-2xl font-serif font-bold mb-4 lang-text" data-en="The Studio" data-id="Studio">The Studio</h3>
                     <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Copywriting strategy and key message development for commercial and social campaigns." data-id="Strategi copywriting dan pengembangan pesan kunci untuk kampanye komersial dan sosial.">Copywriting strategy and key message development for commercial and social campaigns.</p>
                 </div>
                 <div class="p-10 border border-sand rounded-[40px] hover:shadow-xl transition group">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition">🏛️</div>
-                    <h3 class="text-2xl font-serif font-bold mb-4">The Gallery</h3>
+                    <h3 class="text-2xl font-serif font-bold mb-4 lang-text" data-en="The Gallery" data-id="Galeri">The Gallery</h3>
                     <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Aligning narrative concepts with cultural and historical elements for brand DNA." data-id="Penyelarasan konsep naratif dengan elemen budaya dan sejarah untuk brand DNA.">Aligning narrative concepts with cultural and historical elements for brand DNA.</p>
                 </div>
                 <div class="p-10 border border-sand rounded-[40px] hover:shadow-xl transition group">
                     <div class="text-4xl mb-6 group-hover:scale-110 transition">🔬</div>
-                    <h3 class="text-2xl font-serif font-bold mb-4">The Lab</h3>
+                    <h3 class="text-2xl font-serif font-bold mb-4 lang-text" data-en="The Lab" data-id="Laboratorium">The Lab</h3>
                     <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Qualitative analysis and deep research to validate narratives based on data." data-id="Analisis kualitatif dan riset mendalam untuk memvalidasi narasi agar tetap berpijak pada data.">Qualitative analysis and deep research to validate narratives based on data.</p>
                 </div>
             </div>
@@ -125,25 +126,24 @@
                     <canvas id="skillsChart"></canvas>
                 </div>
                 <div>
-                    <!-- Core Competency (Now Terracotta) -->
                     <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.3em] mb-4 block lang-text" data-en="Core Competency" data-id="Kompetensi Inti">Core Competency</span>
                     <h2 class="text-4xl font-serif font-bold mb-8 lang-text" data-en="Expertise & Synthesis." data-id="Keahlian & Sintesis.">Expertise & Synthesis.</h2>
                     <div class="space-y-6">
                         <div class="flex justify-between border-b border-sand pb-4">
-                            <span class="font-bold">Narrative Strategy</span>
-                            <span class="text-terracotta italic">Mastery</span>
+                            <span class="font-bold lang-text" data-en="Narrative Strategy" data-id="Strategi Narasi">Narrative Strategy</span>
+                            <span class="text-terracotta italic lang-text" data-en="Mastery" data-id="Sangat Mahir">Mastery</span>
                         </div>
                         <div class="flex justify-between border-b border-sand pb-4">
-                            <span class="font-bold">Conceptual Design</span>
-                            <span class="text-terracotta italic">Advanced</span>
+                            <span class="font-bold lang-text" data-en="Conceptual Design" data-id="Desain Konseptual">Conceptual Design</span>
+                            <span class="text-terracotta italic lang-text" data-en="Advanced" data-id="Lanjutan">Advanced</span>
                         </div>
                         <div class="flex justify-between border-b border-sand pb-4">
-                            <span class="font-bold">Socio-Analytical Research</span>
-                            <span class="text-terracotta italic">Expert</span>
+                            <span class="font-bold lang-text" data-en="Socio-Analytical Research" data-id="Riset Sosio-Analitis">Socio-Analytical Research</span>
+                            <span class="text-terracotta italic lang-text" data-en="Expert" data-id="Ahli">Expert</span>
                         </div>
                         <div class="flex justify-between border-b border-sand pb-4">
-                            <span class="font-bold">Creative Directing</span>
-                            <span class="text-terracotta italic">Specialist</span>
+                            <span class="font-bold lang-text" data-en="Creative Directing" data-id="Pengarahan Kreatif">Creative Directing</span>
+                            <span class="text-terracotta italic lang-text" data-en="Specialist" data-id="Spesialis">Specialist</span>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@
     <!-- Featured Works -->
     <section id="featured" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-2">Featured Works</h2>
+            <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-2 lang-text" data-en="FEATURED WORKS" data-id="KARYA UNGGULAN">FEATURED WORKS</h2>
             <h3 class="text-4xl md:text-6xl font-serif font-bold text-ink mb-16 lang-text" data-en="Selected Projects." data-id="Proyek Pilihan.">Selected Projects.</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
@@ -163,8 +163,8 @@
                         <img src="https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                     </div>
                     <div>
-                        <h4 class="text-2xl font-serif font-bold">Narrative Framework</h4>
-                        <p class="text-ink/50 text-sm mt-2">Strategi konten komprehensif untuk kampanye kesadaran publik.</p>
+                        <h4 class="text-2xl font-serif font-bold lang-text" data-en="Narrative Framework" data-id="Kerangka Narasi">Narrative Framework</h4>
+                        <p class="text-ink/50 text-sm mt-2 lang-text" data-en="Comprehensive content strategy for public awareness campaigns." data-id="Strategi konten komprehensif untuk kampanye kesadaran publik.">Comprehensive content strategy for public awareness campaigns.</p>
                     </div>
                 </div>
                 <div class="md:col-span-5 md:mt-24 space-y-6">
@@ -172,8 +172,8 @@
                         <img src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
                     </div>
                     <div>
-                        <h4 class="text-2xl font-serif font-bold">Social Awareness</h4>
-                        <p class="text-ink/50 text-sm mt-2">Membangun koneksi emosional melalui cerita autentik.</p>
+                        <h4 class="text-2xl font-serif font-bold lang-text" data-en="Social Awareness" data-id="Kesadaran Sosial">Social Awareness</h4>
+                        <p class="text-ink/50 text-sm mt-2 lang-text" data-en="Building emotional connections through authentic storytelling." data-id="Membangun koneksi emosional melalui penceritaan yang autentik.">Building emotional connections through authentic storytelling.</p>
                     </div>
                 </div>
             </div>
@@ -185,14 +185,14 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                 <div>
-                    <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-4">Portfolio</h2>
+                    <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-4 lang-text" data-en="PORTFOLIO" data-id="PORTOFOLIO">PORTFOLIO</h2>
                     <h3 class="text-4xl font-serif font-bold lang-text" data-en="Full Catalogue." data-id="Katalog Lengkap.">Full Catalogue.</h3>
                 </div>
                 <div class="flex gap-4 overflow-x-auto pb-2 w-full md:w-auto" id="filter-container">
-                    <button onclick="renderKatalog('all')" class="cat-btn px-6 py-2 bg-ink text-white rounded-full text-[10px] font-bold uppercase whitespace-nowrap">All</button>
-                    <button onclick="renderKatalog('strategy')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap">Strategy</button>
-                    <button onclick="renderKatalog('culture')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap">Culture</button>
-                    <button onclick="renderKatalog('social')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap">Social</button>
+                    <button onclick="renderKatalog('all')" class="cat-btn px-6 py-2 bg-ink text-white rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="ALL" data-id="SEMUA">ALL</button>
+                    <button onclick="renderKatalog('strategy')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="STRATEGY" data-id="STRATEGI">STRATEGY</button>
+                    <button onclick="renderKatalog('culture')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="CULTURE" data-id="BUDAYA">CULTURE</button>
+                    <button onclick="renderKatalog('social')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="SOCIAL" data-id="SOSIAL">SOCIAL</button>
                 </div>
             </div>
             <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]"></div>
@@ -203,9 +203,11 @@
     <section id="method" class="py-32 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-[10px] uppercase tracking-[0.5em] text-terracotta font-black mb-4">WORKFLOW</h2>
-                <h3 class="text-5xl font-serif font-bold mb-6">Methodology.</h3>
-                <div class="bg-paper p-6 rounded-2xl max-w-2xl mx-auto border border-sand italic text-sm text-ink/60">
+                <h2 class="text-[10px] uppercase tracking-[0.5em] text-terracotta font-black mb-4 lang-text" data-en="WORKFLOW" data-id="ALUR KERJA">WORKFLOW</h2>
+                <h3 class="text-5xl font-serif font-bold mb-6 lang-text" data-en="Methodology." data-id="Metodologi.">Methodology.</h3>
+                <div class="bg-paper p-6 rounded-2xl max-w-2xl mx-auto border border-sand italic text-sm text-ink/60 lang-text" 
+                     data-en="&ldquo;AI in my process is not a replacement for the brain, but an <strong>Enhancer</strong>—expanding research capacity and efficiency.&rdquo;" 
+                     data-id="&ldquo;AI dalam proses saya bukanlah pengganti otak, melainkan <strong>Enhancer</strong>—memperluas kapasitas riset dan efisiensi.&rdquo;">
                     "AI in my process is not a replacement for the brain, but an <strong>Enhancer</strong>—expanding research capacity and efficiency."
                 </div>
             </div>
@@ -215,28 +217,28 @@
                 <div class="bg-white p-12 border border-sand rounded-[40px] shadow-sm">
                     <h4 class="text-2xl font-serif font-bold mb-10 flex items-center gap-4">
                         <span class="text-3xl">🧠</span> 
-                        <span>Originality (The Architect)</span>
+                        <span class="lang-text" data-en="Originality (The Architect)" data-id="Originalitas (Sang Arsitek)">Originality (The Architect)</span>
                     </h4>
                     <div class="space-y-10">
                         <div class="flex gap-6">
                             <span class="text-terracotta font-bold text-lg">01</span>
                             <div>
-                                <h5 class="text-xl font-bold mb-2">Problem Definition</h5>
-                                <p class="text-sm text-ink/60 leading-relaxed">Digging for the root cause from sociological and business perspectives.</p>
+                                <h5 class="text-xl font-bold mb-2 lang-text" data-en="Problem Definition" data-id="Definisi Masalah">Problem Definition</h5>
+                                <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Digging for the root cause from sociological and business perspectives." data-id="Menggali akar masalah dari perspektif sosiologis dan bisnis.">Digging for the root cause from sociological and business perspectives.</p>
                             </div>
                         </div>
                         <div class="flex gap-6">
                             <span class="text-terracotta font-bold text-lg">02</span>
                             <div>
-                                <h5 class="text-xl font-bold mb-2">Narrative Foundation</h5>
-                                <p class="text-sm text-ink/60 leading-relaxed">Building a story structure that has logical flow and emotional resonance.</p>
+                                <h5 class="text-xl font-bold mb-2 lang-text" data-en="Narrative Foundation" data-id="Fondasi Narasi">Narrative Foundation</h5>
+                                <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Building a story structure that has logical flow and emotional resonance." data-id="Membangun struktur cerita yang memiliki alur logis dan resonansi emosional.">Building a story structure that has logical flow and emotional resonance.</p>
                             </div>
                         </div>
                         <div class="flex gap-6">
                             <span class="text-terracotta font-bold text-lg">03</span>
                             <div>
-                                <h5 class="text-xl font-bold mb-2">Human Intuition</h5>
-                                <p class="text-sm text-ink/60 leading-relaxed">Final touches only humans can feel: taste, empathy, and local context.</p>
+                                <h5 class="text-xl font-bold mb-2 lang-text" data-en="Human Intuition" data-id="Intuisi Manusia">Human Intuition</h5>
+                                <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Final touches only humans can feel: taste, empathy, and local context." data-id="Sentuhan akhir yang hanya bisa dirasakan manusia: selera, empati, dan konteks lokal.">Final touches only humans can feel: taste, empathy, and local context.</p>
                             </div>
                         </div>
                     </div>
@@ -246,7 +248,7 @@
                 <div class="bg-ink text-white p-12 rounded-[40px] shadow-xl">
                     <h4 class="text-2xl font-serif font-bold mb-10 flex items-center gap-4">
                         <span class="text-3xl">⚡</span> 
-                        <span>AI Co-Creation (The Enhancer)</span>
+                        <span class="lang-text" data-en="AI Co-Creation (The Enhancer)" data-id="AI Co-Creation (Sang Penguat)">AI Co-Creation (The Enhancer)</span>
                     </h4>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition">
@@ -254,28 +256,28 @@
                                 <span class="text-xl">🤖</span>
                                 <h5 class="text-xs font-black uppercase tracking-widest">CLAUDE 3.5</h5>
                             </div>
-                            <p class="text-[11px] text-white/50 italic leading-relaxed">Synthesizing complex data & structural refining.</p>
+                            <p class="text-[11px] text-white/50 italic leading-relaxed lang-text" data-en="Synthesizing complex data & structural refining." data-id="Mensintesis data kompleks & pemurnian struktural.">Synthesizing complex data & structural refining.</p>
                         </div>
                         <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="text-xl">🔥</span>
                                 <h5 class="text-xs font-black uppercase tracking-widest">GROK</h5>
                             </div>
-                            <p class="text-[11px] text-white/50 italic leading-relaxed">Real-time pulse & unfiltered truth research.</p>
+                            <p class="text-[11px] text-white/50 italic leading-relaxed lang-text" data-en="Real-time pulse & unfiltered truth research." data-id="Denyut real-time & riset kebenaran tanpa filter.">Real-time pulse & unfiltered truth research.</p>
                         </div>
                         <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="text-xl">👁️</span>
                                 <h5 class="text-xs font-black uppercase tracking-widest">GEMINI</h5>
                             </div>
-                            <p class="text-[11px] text-white/50 italic leading-relaxed">Multimodal analysis & brainstorming partner.</p>
+                            <p class="text-[11px] text-white/50 italic leading-relaxed lang-text" data-en="Multimodal analysis & brainstorming partner." data-id="Analisis multimodal & mitra brainstorming.">Multimodal analysis & brainstorming partner.</p>
                         </div>
                         <div class="p-6 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="text-xl">🎨</span>
                                 <h5 class="text-xs font-black uppercase tracking-widest">IMAGEN 4.0</h5>
                             </div>
-                            <p class="text-[11px] text-white/50 italic leading-relaxed">Visual conceptualization for narrative mood.</p>
+                            <p class="text-[11px] text-white/50 italic leading-relaxed lang-text" data-en="Visual conceptualization for narrative mood." data-id="Konseptualisasi visual untuk nuansa naratif.">Visual conceptualization for narrative mood.</p>
                         </div>
                     </div>
                 </div>
@@ -287,9 +289,9 @@
     <section id="discovery" class="py-32 bg-deep text-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-[10px] uppercase tracking-[0.5em] text-terracotta font-black mb-4">INTERACTIVE EXHIBITION</h2>
-                <h3 class="text-6xl font-serif font-bold mb-6">Ourchetype.</h3>
-                <p class="text-white/40 max-w-2xl mx-auto text-sm">
+                <h2 class="text-[10px] uppercase tracking-[0.5em] text-terracotta font-black mb-4 lang-text" data-en="DISCOVERY JOURNEY" data-id="PERJALANAN PENEMUAN">DISCOVERY JOURNEY</h2>
+                <h3 class="text-6xl font-serif font-bold mb-6 lang-text" data-en="Interactive Exhibition." data-id="Eksibisi Interaktif.">Interactive Exhibition.</h3>
+                <p class="text-white/40 max-w-2xl mx-auto text-sm lang-text" data-en="Simulation of 3 intellectual patterns to give birth to a complete narrative character." data-id="Simulasi 3 pola intelektual untuk melahirkan karakter narasi yang utuh.">
                     Simulation of 3 intellectual patterns to give birth to a complete narrative character.
                 </p>
             </div>
@@ -297,35 +299,35 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <!-- Card 01 -->
                 <div id="step-persona" class="journey-step p-12 bg-card-dark rounded-[40px] group hover:bg-ink transition duration-500" onclick="updateJourney('persona')">
-                    <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.2em] mb-8 block">PATTERN 01</span>
-                    <h4 class="text-3xl font-serif font-bold group-hover:text-terracotta transition">The Persona</h4>
+                    <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.2em] mb-8 block lang-text" data-en="PATTERN 01" data-id="POLA 01">PATTERN 01</span>
+                    <h4 class="text-3xl font-serif font-bold group-hover:text-terracotta transition lang-text" data-en="The Persona" data-id="Persona">The Persona</h4>
                     <p class="text-[11px] italic text-terracotta mb-6 lang-text" data-en="Social Alignment & Interface" data-id="Penyelarasan Sosial & Antarmuka">Social Alignment & Interface</p>
-                    <p class="text-sm text-white/50 leading-relaxed">
+                    <p class="text-sm text-white/50 leading-relaxed lang-text" data-en="A organized mask. Showing the professional, logical, and communicative side for the outside world's needs." data-id="Topeng yang terorganisir. Menunjukkan sisi profesional, logis, dan komunikatif untuk kebutuhan dunia luar.">
                         A organized mask. Showing the professional, logical, and communicative side for the outside world's needs.
                     </p>
                 </div>
                 <!-- Card 02 -->
                 <div id="step-shadow" class="journey-step p-12 bg-card-dark rounded-[40px] group hover:bg-ink transition duration-500" onclick="updateJourney('shadow')">
-                    <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.2em] mb-8 block">PATTERN 02</span>
-                    <h4 class="text-3xl font-serif font-bold group-hover:text-terracotta transition">The Shadow</h4>
+                    <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.2em] mb-8 block lang-text" data-en="PATTERN 02" data-id="POLA 02">PATTERN 02</span>
+                    <h4 class="text-3xl font-serif font-bold group-hover:text-terracotta transition lang-text" data-en="The Shadow" data-id="Bayangan">The Shadow</h4>
                     <p class="text-[11px] italic text-terracotta mb-6 lang-text" data-en="Unconscious Drive & Raw Idea" data-id="Dorongan Bawah Sadar & Ide Mentah">Unconscious Drive & Raw Idea</p>
-                    <p class="text-sm text-white/50 leading-relaxed">
+                    <p class="text-sm text-white/50 leading-relaxed lang-text" data-en="Warehouse of raw ideas. The wild, emotional, and unlimited part, not bound by rigid rules." data-id="Gudang ide mentah. Bagian yang liar, emosional, dan tidak terbatas, tidak terikat oleh aturan kaku.">
                         Warehouse of raw ideas. The wild, emotional, and unlimited part, not bound by rigid rules.
                     </p>
                 </div>
                 <!-- Card 03 -->
                 <div id="step-self" class="journey-step p-12 bg-card-dark rounded-[40px] group hover:bg-ink transition duration-500" onclick="updateJourney('self')">
-                    <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.2em] mb-8 block">PATTERN 03</span>
-                    <h4 class="text-3xl font-serif font-bold group-hover:text-terracotta transition">The Self</h4>
+                    <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.2em] mb-8 block lang-text" data-en="PATTERN 03" data-id="POLA 03">PATTERN 03</span>
+                    <h4 class="text-3xl font-serif font-bold group-hover:text-terracotta transition lang-text" data-en="The Self" data-id="Diri">The Self</h4>
                     <p class="text-[11px] italic text-terracotta mb-6 lang-text" data-en="Wholeness & Ultimate Synthesis" data-id="Keutuhan & Sintesis Akhir">Wholeness & Ultimate Synthesis</p>
-                    <p class="text-sm text-white/50 leading-relaxed">
+                    <p class="text-sm text-white/50 leading-relaxed lang-text" data-en="Harmonization. This is where my identity as a writer is formed, balancing logic and intuition." data-id="Harmonisasi. Di sinilah identitas saya sebagai penulis terbentuk, menyeimbangkan logika dan intuisi.">
                         Harmonization. This is where my identity as a writer is formed, balancing logic and intuition.
                     </p>
                 </div>
             </div>
 
             <div id="journey-output" class="mt-8 bg-card-dark/30 p-12 rounded-[40px] border border-white/5 min-h-[120px] flex items-center justify-center text-center italic text-white/40">
-                <p>"Pick a pattern to see how I process your narrative."</p>
+                <p class="lang-text" data-en="&ldquo;Pick a pattern to see how I process your narrative.&rdquo;" data-id="&ldquo;Pilih pola untuk melihat bagaimana saya memproses narasi Anda.&rdquo;">"Pick a pattern to see how I process your narrative."</p>
             </div>
         </div>
     </section>
@@ -333,12 +335,13 @@
     <!-- Footer -->
     <footer class="bg-ink py-24 text-center text-white">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl font-serif font-bold mb-12">Let's build a new story.</h2>
+            <h2 class="text-4xl font-serif font-bold mb-12 lang-text" data-en="Let's build a new story." data-id="Mari bangun cerita baru.">Let's build a new story.</h2>
             <div class="flex justify-center gap-12 mb-20 text-[10px] font-bold uppercase tracking-[0.3em]">
                 <a href="mailto:ginasucif@gmail.com" class="hover:text-terracotta transition underline decoration-terracotta decoration-2 underline-offset-8">Email</a>
                 <a href="#" class="hover:text-terracotta transition">LinkedIn</a>
                 <a href="#" class="hover:text-terracotta transition">Instagram</a>
             </div>
+            <p class="text-[10px] text-white/20 tracking-widest uppercase">© 2024 Gina Suci. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -346,9 +349,9 @@
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/90 backdrop-blur-md p-6">
         <div class="bg-paper w-full max-w-lg rounded-[50px] p-12 text-center relative">
             <button onclick="toggleModal(false)" class="absolute top-8 right-8 text-ink/40 text-2xl">✕</button>
-            <h2 class="text-4xl font-serif font-bold mb-4 text-ink">Let's Talk.</h2>
+            <h2 class="text-4xl font-serif font-bold mb-4 text-ink lang-text" data-en="Let's Talk." data-id="Mari Bicara.">Let's Talk.</h2>
             <div class="space-y-4 mt-8">
-                <a href="mailto:ginasucif@gmail.com" class="block w-full py-4 bg-ink text-white rounded-full font-bold">Email Me</a>
+                <a href="mailto:ginasucif@gmail.com" class="block w-full py-4 bg-ink text-white rounded-full font-bold lang-text" data-en="Email Me" data-id="Kirim Email">Email Me</a>
             </div>
         </div>
     </div>
@@ -375,20 +378,40 @@
                 const val = el.getAttribute(`data-${lang}`);
                 if(val) el.innerHTML = val;
             });
+
+            // Update button styles
             const btnEn = document.getElementById('btn-en');
             const btnId = document.getElementById('btn-id');
             btnEn.className = lang === 'en' ? 'px-3 py-1 rounded-full bg-ink text-white text-[9px]' : 'px-3 py-1 rounded-full text-ink/40 text-[9px]';
             btnId.className = lang === 'id' ? 'px-3 py-1 rounded-full bg-ink text-white text-[9px]' : 'px-3 py-1 rounded-full text-ink/40 text-[9px]';
+            
+            // Re-render components that depend on data objects
             window.renderKatalog('all');
+            
+            // Clear or update interactive exhibition if active
+            const out = document.getElementById('journey-output');
+            const placeholder = lang === 'en' ? '"Pick a pattern to see how I process your narrative."' : '"Pilih pola untuk melihat bagaimana saya memproses narasi Anda."';
+            out.innerHTML = `<p>${placeholder}</p>`;
+            document.querySelectorAll('.journey-step').forEach(s => s.classList.remove('active'));
         };
 
         window.renderKatalog = (filter) => {
             const grid = document.getElementById('portfolio-grid');
             const filtered = filter === 'all' ? katalogData : katalogData.filter(i => i.cat === filter);
+            
+            // Update active state of filter buttons
             document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.className = 'cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap';
-                if(btn.innerText.toLowerCase() === filter) btn.className = 'cat-btn px-6 py-2 bg-ink text-white rounded-full text-[10px] font-bold uppercase whitespace-nowrap';
+                const isAll = btn.getAttribute(`data-en`) === 'ALL' && filter === 'all';
+                const isMatch = btn.getAttribute(`data-en`).toLowerCase() === filter;
+                if(isAll || isMatch) {
+                    btn.classList.add('bg-ink', 'text-white');
+                    btn.classList.remove('border-sand');
+                } else {
+                    btn.classList.remove('bg-ink', 'text-white');
+                    btn.classList.add('border-sand');
+                }
             });
+
             grid.innerHTML = filtered.map(item => `
                 <div class="fade-in p-8 bg-white border border-sand rounded-[40px] shadow-sm hover:border-terracotta transition cursor-pointer">
                     <div class="text-[8px] font-black text-terracotta uppercase mb-4 tracking-widest">${item.cat}</div>
@@ -405,7 +428,7 @@
                 self: { t: "The Self Output", b: "Merging logic and raw creativity into a balanced, authentic brand story." } 
             },
             id: { 
-                persona: { t: "Hasil Persona", b: "Menganalisis permintaan pasar dan menyusun narasi profesional yang beresonansi dengan audiens." }, 
+                persona: { t: "Hasil Persona", b: "Menganalisis permintaan pasar dan menyusun narasi profesional yang beresanansi dengan audiens." }, 
                 shadow: { t: "Hasil Shadow", b: "Menyelami emosi mendalam yang tidak terucapkan untuk menemukan sisi unik cerita." }, 
                 self: { t: "Hasil Self", b: "Menggabungkan logika dan kreativitas mentah menjadi cerita brand yang seimbang dan autentik." } 
             }
@@ -421,10 +444,13 @@
 
         function initChart() {
             const ctx = document.getElementById('skillsChart').getContext('2d');
-            new Chart(ctx, {
+            const labelsEn = ['Logic', 'Narrative', 'Research', 'Intuition', 'Strategy', 'Context'];
+            const labelsId = ['Logika', 'Narasi', 'Riset', 'Intuisi', 'Strategi', 'Konteks'];
+
+            window.chartInstance = new Chart(ctx, {
                 type: 'radar',
                 data: {
-                    labels: ['Logic', 'Narrative', 'Research', 'Intuition', 'Strategy', 'Context'],
+                    labels: currentLang === 'en' ? labelsEn : labelsId,
                     datasets: [{
                         data: [4, 5, 4, 3, 3, 4],
                         backgroundColor: 'rgba(195, 88, 49, 0.1)',
@@ -456,7 +482,18 @@
             initChart();
             window.renderKatalog('all');
         });
+
+        // Watch for language change to update chart labels
+        const originalChangeLang = window.changeLanguage;
+        window.changeLanguage = (lang) => {
+            originalChangeLang(lang);
+            if (window.chartInstance) {
+                const labelsEn = ['Logic', 'Narrative', 'Research', 'Intuition', 'Strategy', 'Context'];
+                const labelsId = ['Logika', 'Narasi', 'Riset', 'Intuisi', 'Strategi', 'Konteks'];
+                window.chartInstance.data.labels = lang === 'en' ? labelsEn : labelsId;
+                window.chartInstance.update();
+            }
+        };
     </script>
 </body>
 </html>
-
