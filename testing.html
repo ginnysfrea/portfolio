@@ -712,25 +712,39 @@
         };
 
         function initChart() {
-            const ctx = document.getElementById('skillsChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: ['Logic', 'Narrative', 'Research', 'Intuition', 'Strategy', 'Context'],
-                    datasets: [{
-                        data: [4, 5, 5, 3, 4, 5],
-                        backgroundColor: 'rgba(195, 88, 49, 0.1)',
-                        borderColor: '#C35831',
-                        borderWidth: 2,
-                    }]
-                },
-                options: { 
-                    responsive: true, maintainAspectRatio: false, 
-                    plugins: { legend: { display: false } },
-                    scales: { r: { ticks: { display: false }, grid: { color: 'rgba(0,0,0,0.05)' } } } 
-                }
-            });
+    const ctx = document.getElementById('skillsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Logic', 'Narrative', 'Research', 'Intuition', 'Strategy', 'Context'],
+            datasets: [{
+                // Data terbaru sesuai permintaan
+                data: [8, 9, 8, 8, 7, 9],
+                backgroundColor: 'rgba(195, 88, 49, 0.1)',
+                borderColor: '#C35831',
+                borderWidth: 2,
+            }]
+        },
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false, 
+            plugins: { legend: { display: false } },
+            scales: { 
+                r: { 
+                    // Mengatur skala menjadi 1-10 (menggunakan 0 sebagai titik tengah agar grafik tetap proporsional)
+                    min: 0, 
+                    max: 10,
+                    ticks: { 
+                        display: false 
+                    }, 
+                    grid: { 
+                        color: 'rgba(0,0,0,0.05)' 
+                    } 
+                } 
+            } 
         }
+    });
+}
 
         window.addEventListener('DOMContentLoaded', () => {
             initChart();
