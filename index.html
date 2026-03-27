@@ -46,9 +46,7 @@
         letter-spacing: 0.25em;
     	}
 
-        /* Page Transitions */
-        #main-content, #project-page { transition: opacity 0.5s ease, transform 0.5s ease; }
-        .hidden-page { display: none; opacity: 0; transform: translateY(20px); }
+       
 
        /* --- START: INTERACTIVE JOURNEY STYLES --- */
 .journey-step { transition: all 0.3s ease; cursor: pointer; border: 1px solid transparent; }
@@ -61,8 +59,231 @@
         .method-card-light { background: #FFFFFF; border: 1px solid #E8E3D9; border-radius: 40px; padding: 48px; }
         .method-card-dark { background: #1A1A1A; border-radius: 40px; padding: 48px; color: #FFFFFF; }
         .method-pill { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; font-size: 10px; font-weight: bold; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.6); }
-    </style>
+    
+	/* ===== MASONRY FEATURED ===== */
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+.masonry-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #ddd;
+}
+
+.masonry-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease, filter 0.6s ease;
+}
+
+.masonry-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0)
+    );
+}
+
+.masonry-text {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    color: white;
+}
+
+.masonry-item:hover .masonry-img {
+    transform: scale(1.07);
+}
+    
+/* ===== PERSONAL COSMIC ===== */
+
+#personal {
+
+background:
+
+radial-gradient(
+circle at 20% 30%,
+rgba(180,140,255,0.35),
+transparent 40%
+),
+
+radial-gradient(
+circle at 80% 70%,
+rgba(255,170,220,0.25),
+transparent 40%
+),
+
+radial-gradient(
+circle at 50% 90%,
+rgba(120,160,255,0.25),
+transparent 45%
+),
+
+linear-gradient(
+180deg,
+#141423,
+#1a1830,
+#10101c
+);
+
+color:white;
+position:relative;
+overflow:hidden;
+
+}
+
+
+
+
+.personal-grid{
+
+display:grid;
+grid-template-columns:repeat(12,1fr);
+gap:30px;
+
+}
+
+
+.personal-card{
+
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+
+border-radius:24px;
+padding:26px;
+
+transition:0.5s ease;
+
+position:relative;
+overflow:hidden;
+
+}
+
+
+.personal-card::after{
+
+content:"";
+position:absolute;
+inset:-40%;
+
+background:radial-gradient(
+circle,
+rgba(255,255,255,0.2),
+transparent 60%
+);
+
+opacity:0;
+transition:0.6s;
+
+}
+
+.personal-card:hover::after{
+
+opacity:1;
+transform:scale(1.2);
+
+}
+
+.personal-card:hover{
+
+transform:translateY(-6px) scale(1.03);
+
+box-shadow:
+0 0 40px rgba(180,140,255,0.4),
+0 0 80px rgba(255,160,220,0.2);
+
+}
+
+.personal-card:nth-child(1):hover{
+box-shadow:0 0 60px rgba(255,120,200,0.5);
+}
+
+.personal-card:nth-child(2):hover{
+box-shadow:0 0 60px rgba(120,160,255,0.5);
+}
+
+.personal-card:nth-child(3):hover{
+box-shadow:0 0 60px rgba(255,200,120,0.5);
+}
+
+.personal-card:nth-child(4):hover{
+box-shadow:0 0 60px rgba(180,140,255,0.5);
+}
+
+.personal-card:nth-child(5):hover{
+box-shadow:0 0 60px rgba(120,255,200,0.5);
+}
+
+
+.float-slow{
+
+animation:floatSlow 8s ease-in-out infinite;
+
+}
+
+
+.float-slow2{
+
+animation:floatSlow 11s ease-in-out infinite;
+
+}
+
+
+@keyframes floatSlow{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+
+}
+
+.personal-card:hover .see-more{
+
+color:white;
+letter-spacing:0.15em;
+
+}
+
+
+.personal-card{
+position:relative;
+z-index:1;
+}
+
+.personal-card a{
+position:relative;
+z-index:5;
+pointer-events:auto;
+}
+
+.personal-card::after{
+pointer-events:none;
+}
+
+.see{
+
+font-size:12px;
+opacity:0.7;
+font-style:italic;
+margin-top:8px;
+font-family: serif;
+letter-spacing:0.03em;
+
+}
+
+</style>
 </head>
+
 <body class="antialiased">
 
     <!-- Navigation -->
@@ -74,8 +295,8 @@
             <div class="hidden md:flex items-center space-x-6 text-[10px] uppercase tracking-widest font-bold text-ink/60">
                 <a href="#experience" data-en="Experience" data-id="Pengalaman" class="lang-text hover:text-terracotta transition">Experience</a>
                 <a href="#skills" data-en="Skills" data-id="Keahlian" class="lang-text hover:text-terracotta transition">Skills</a>
-                <a href="#featured" data-en="Works" data-id="Karya" class="lang-text hover:text-terracotta transition">Works</a>
                 <a href="#catalogue" data-en="Catalogue" data-id="Katalog" class="lang-text hover:text-terracotta transition">Catalogue</a>
+		<a href="#featured" data-en="Featured" data-id="Sorotan" class="lang-text hover:text-terracotta transition">Featured</a>
                 <a href="#method" data-en="Method" data-id="Metode" class="lang-text hover:text-terracotta transition">Method</a>
                 <a href="#discovery" data-en="Discovery" data-id="Discovery" class="lang-text hover:text-terracotta transition">Discovery</a>
                 
@@ -171,34 +392,6 @@
             </div>
         </section>
 
-        <!-- 3. Works (Featured) -->
-        <section id="featured" class="py-32 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-2 lang-text" data-en="FEATURED WORKS" data-id="KARYA UNGGULAN">FEATURED WORKS</h2>
-                <h3 class="text-4xl md:text-6xl font-serif font-bold text-ink mb-16 lang-text" data-en="Selected Projects." data-id="Proyek Pilihan.">Selected Projects.</h3>
-                
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                    <div class="md:col-span-7 space-y-6">
-                        <div class="work-card aspect-[4/3] bg-sand cursor-pointer" onclick="openProject(4)">
-                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
-                        </div>
-                        <div>
-                            <h4 class="text-2xl font-serif font-bold lang-text" data-en="Matra Cita: Bandung Design Biennale" data-id="Matra Cita: Bandung Design Biennale">Matra Cita: Bandung Design Biennale</h4>
-                            <p class="text-ink/50 text-sm mt-2 lang-text" data-en="A multidimensional exhibition experience bridging design heritage with collective inspiration." data-id="Pengalaman pameran multidimensi yang menjembatani warisan desain dengan inspirasi kolektif.">A multidimensional exhibition experience bridging design heritage with collective inspiration.</p>
-                        </div>
-                    </div>
-                    <div class="md:col-span-5 md:mt-24 space-y-6">
-                        <div class="work-card aspect-square bg-sand cursor-pointer" onclick="openProject(5)">
-                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
-                        </div>
-                        <div>
-                            <h4 class="text-2xl font-serif font-bold lang-text" data-en="The Wanderplant" data-id="The Wanderplant">The Wanderplant</h4>
-                            <p class="text-ink/50 text-sm mt-2 lang-text" data-en="Personifying rare Indonesian flora into a reflective journey of self-discovery." data-id="Personifikasi flora langka Indonesia menjadi perjalanan reflektif penemuan diri.">Personifying rare Indonesian flora into a reflective journey of self-discovery.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- 4. Catalogue -->
         <section id="catalogue" class="py-32 bg-paper">
@@ -206,20 +399,228 @@
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
                         <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-4 lang-text" data-en="PORTFOLIO" data-id="PORTOFOLIO">PORTFOLIO</h2>
-                        <h3 class="text-4xl font-serif font-bold lang-text" data-en="Full Catalogue." data-id="Katalog Lengkap.">Full Catalogue.</h3>
+                        <h3 class="text-4xl font-serif font-bold lang-text" data-en="Projects Catalogue." data-id="Katalog Proyek.">Projects Catalogue.</h3>
                     </div>
                     <div class="flex gap-4 overflow-x-auto pb-2 w-full md:w-auto" id="filter-container">
                         <button onclick="renderKatalog('all')" class="cat-btn px-6 py-2 bg-ink text-white rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="ALL" data-id="SEMUA">ALL</button>
-                        <button onclick="renderKatalog('strategy')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="STRATEGY" data-id="STRATEGI">STRATEGY</button>
-                        <button onclick="renderKatalog('culture')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="CULTURE" data-id="BUDAYA">CULTURE</button>
-                        <button onclick="renderKatalog('social')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="SOCIAL" data-id="SOSIAL">SOCIAL</button>
+                        <button onclick="renderKatalog('research')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Research & Strategy"
+data-id="Riset & Strategi"
+>Research & Strategy</button>
+                        <button onclick="renderKatalog('branding')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Branding & Rebranding"
+data-id="Branding & Rebranding"
+>Branding & Rebranding</button>
+                        <button onclick="renderKatalog('voice')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Brand Voice & Tone"
+data-id="Brand Voice & Tone"
+>Brand Voice & Tone</button>
+
+			<button onclick="renderKatalog('all')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Copywriting"
+data-id="Copywriting"
+>Copywriting</button>
+                        <button onclick="renderKatalog('research')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Campaign Concept"
+data-id="Konsep Kampanye"
+>Campaign Concept</button>
+                        <button onclick="renderKatalog('branding')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Content for Social Media & Museum"
+data-id="Konten Sosial & Museum"
+>Content for Social Media & Museum</button>
+                        <button onclick="renderKatalog('voice')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Collaboration Projects"
+data-id="Proyek Kolaborasi"
+>Collaboration Projects</button>
                     </div>
                 </div>
                 <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]"></div>
             </div>
         </section>
 
-        <!-- 5. Method Section -->
+        <!-- 4. Works (Featured) -->
+        <section id="featured" class="py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+
+
+
+                <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-2 lang-text" data-en="HIGHLIGHTED WORKS" data-id="KARYA SOROTAN">HIGHLIGHTED WORKS</h2>
+                <h3 class="text-4xl md:text-6xl font-serif font-bold text-ink mb-16 lang-text" data-en="Featured Projects." data-id="Proyek Pilihan.">Featured Projects.</h3>
+                
+          
+<div class="masonry-grid">
+
+
+<a href="project/fs01.html"
+class="masonry-item col-span-12 md:col-span-6 h-[260px] block">
+
+<img src="assets/thumb_the_identity.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+<span class="text-[10px] text-terracotta uppercase">
+Self Discovery
+</span>
+
+<h3 class="text-xl font-serif">
+The Identity — Ourchetype 3.0
+</h3>
+
+</div>
+
+</a>
+
+
+
+<a href="project/fs02.html"
+class="masonry-item col-span-12 md:col-span-6 h-[260px] block">
+
+<img src="assets/thumb_brand.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+<span class="text-[10px] text-terracotta uppercase">
+Collaborative
+</span>
+
+<h3 class="text-xl font-serif">
+Brand Experience — Ourchetype 5.0
+</h3>
+
+</div>
+
+</a>
+
+
+
+<a href="project/fs03.html"
+class="masonry-item col-span-12 md:col-span-4 h-[200px] block">
+
+<img src="assets/thumb_wanderplant.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+The Wanderplant
+
+</div>
+
+</a>
+
+
+
+<a href="project/fs04.html"
+class="masonry-item col-span-12 md:col-span-4 h-[200px] block">
+
+<img src="assets/thumb_pustaka.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+Pustaka Cita
+
+</div>
+
+</a>
+
+
+
+<div class="masonry-item col-span-12 md:col-span-4 h-[200px]"
+onclick="openProject(6)">
+
+<img src="assets/thumb_jakarta.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+Mempertemukan Jakarta
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+            </div>
+        </section>
+
+	<section id="personal" class="py-40">
+
+<div class="max-w-6xl mx-auto px-6 text-center">
+
+<h2
+class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-4 lang-text"
+data-en="PERSONAL COLLECTION"
+data-id="KOLEKSI PERSONAL"
+>
+PERSONAL COLLECTION
+</h2>
+
+<h3
+class="text-5xl font-serif italic mb-6 lang-text"
+data-en="Notes Across Inner Universe"
+data-id="Catatan di Dalam Semesta Diri"
+>
+Notes Across Inner Universe
+</h3>
+
+<p
+class="max-w-2xl mx-auto text-white/60 leading-relaxed lang-text"
+data-en="Writing has always been a space where I reflect on the values of life that often come quietly, yet overwhelm in the noise of living as an individual."
+data-id="Tulisan selalu menjadi ruang untuk saya merefleksikan nilai-nilai kehidupan yang kerap datang diam-diam, namun menenggelamkan di antara riuh perjalanan sebagai individu."
+>
+
+Writing has always been a space where I reflect on the values of life.
+
+</p>
+
+</div>
+
+
+<!-- GRID HARUS ADA -->
+<div class="personal-grid max-w-6xl mx-auto px-6 mt-20">
+
+<a href="collection/poet.html"
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+
+<div class="type">POET</div>
+<h4>Bayang yang Menggebu</h4>
+<div class="see">See more</div>
+</a>
+
+<a href="collection/postcard.html"
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+<div class="type">POSTCARD</div>
+<h4>Letters Never Sent</h4>
+<div class="see">See more</div>
+</a>
+
+<a href="collection/zine.html" 
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+<div class="type">ZINE</div>
+<h4>Inner Universe Notes</h4>
+<div class="see">See more</div>
+</a>
+
+<a href="collection/memoir.html" 
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+<div class="type">MEMOAR</div>
+<h4>Fragments of Becoming</h4>
+<div class="see">See more</div>
+</a>
+
+<a href="collection/unquote.html" 
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+<div class="type">UNQUOTE</div>
+<h4>Things I Never Said</h4>
+<div class="see">See more</div>
+</a>
+
+</div>
+</section>
+
+<!-- 5. Method Section -->
         <section id="method" class="py-32 bg-white">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16">
@@ -412,12 +813,12 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                EMAIL
             </a>
 
-            <a href="https://www.linkedin.com/in/ginasucif/"
+            <a href=""
                class="hover:text-terracotta transition">
                LINKEDIN
             </a>
 
-            <a href="instagram.com/ginasucif"
+            <a href="#"
                class="hover:text-terracotta transition">
                INSTAGRAM
             </a>
@@ -431,51 +832,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
     </div>
 </footer>  
 
-    <!-- DYNAMIC PROJECT DETAIL PAGE -->
-    <div id="project-page" class="hidden-page min-h-screen bg-white z-[60] relative">
-        <header class="pt-32 pb-16 px-6 bg-paper">
-            <div class="max-w-5xl mx-auto">
-                <button onclick="goHome()" class="mb-12 flex items-center gap-2 text-[10px] font-black tracking-widest uppercase text-terracotta hover:text-ink transition">
-                    ← <span class="lang-text" data-en="BACK TO CATALOGUE" data-id="KEMBALI KE KATALOG">BACK TO CATALOGUE</span>
-                </button>
-                <div id="project-header-content"></div>
-            </div>
-        </header>
-
-        <main class="py-20 px-6">
-            <div class="max-w-5xl mx-auto">
-                <div id="project-visual" class="w-full aspect-video bg-sand rounded-[50px] overflow-hidden mb-20 shadow-2xl"></div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-20">
-                    <div class="lg:col-span-2 space-y-12">
-                        <section>
-                            <h5 class="text-xs font-black uppercase tracking-[0.3em] text-terracotta mb-6 lang-text" data-en="THE CHALLENGE" data-id="TANTANGANNYA">THE CHALLENGE</h5>
-                            <p id="project-challenge" class="text-xl font-serif leading-relaxed text-ink/80"></p>
-                        </section>
-                        <section>
-                            <h5 class="text-xs font-black uppercase tracking-[0.3em] text-terracotta mb-6 lang-text" data-en="NARRATIVE SOLUTION" data-id="SOLUSI NARASI">NARRATIVE SOLUTION</h5>
-                            <p id="project-solution" class="text-lg leading-relaxed text-ink/60"></p>
-                        </section>
-                    </div>
-                    <div class="space-y-8 p-10 bg-paper rounded-[40px] border border-sand h-fit">
-                        <div>
-                            <h6 class="text-[10px] font-black uppercase tracking-widest text-ink/40 mb-2 lang-text" data-en="CLIENT" data-id="KLIEN">CLIENT</h6>
-                            <p id="project-client" class="font-bold text-ink"></p>
-                        </div>
-                        <div>
-                            <h6 class="text-[10px] font-black uppercase tracking-widest text-ink/40 mb-2 lang-text" data-en="SERVICES" data-id="LAYANAN">SERVICES</h6>
-                            <p id="project-services" class="text-sm text-ink/70 leading-relaxed"></p>
-                        </div>
-                        <hr class="border-sand">
-                        <button onclick="toggleModal(true)" class="w-full py-4 bg-terracotta text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-ink transition lang-text" data-en="Inquire Project" data-id="Tanya Tentang Proyek">Inquire Project</button>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <footer class="bg-paper py-20 text-center border-t border-sand">
-            <button onclick="goHome()" class="text-ink font-serif italic text-2xl hover:text-terracotta transition lang-text" data-en="Next Project →" data-id="Proyek Selanjutnya →">Next Project →</button>
-        </footer>
-    </div>
+    
 
     <!-- Contact Modal -->
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/90 backdrop-blur-md p-6">
@@ -495,7 +852,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
         // Project Data (Integrated from uploaded documents)
         const projectsData = {
             1: {
-                cat: 'strategy',
+                cat: 'copy',
                 client: 'Tujusemesta Creative Space',
                 en: { 
                     t: 'Cosmic Web Narrative', 
@@ -514,7 +871,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                 img: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=1200'
             },
             2: {
-                cat: 'culture',
+                cat: 'collab',
                 client: 'Bandung Heritage (Braga)',
                 en: { 
                     t: 'Pustaka Cita', 
@@ -533,7 +890,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                 img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=1200'
             },
             3: {
-                cat: 'social',
+                cat: 'collab',
                 client: 'MYCL (Mycotech)',
                 en: { 
                     t: 'Circular Journey', 
@@ -552,7 +909,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                 img: 'https://images.unsplash.com/photo-1550985543-f47f38aee65e?auto=format&fit=crop&q=80&w=1200'
             },
             4: {
-                cat: 'strategy',
+                cat: 'research',
                 client: 'Bandung Design Biennale',
                 en: { 
                     t: 'Mātṛā Cita', 
@@ -571,7 +928,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                 img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1200'
             },
             5: {
-                cat: 'social',
+                cat: 'collab',
                 client: 'Environmental Psychology Project',
                 en: { 
                     t: 'The Wanderplant', 
@@ -590,7 +947,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                 img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1200'
             },
             6: {
-                cat: 'social',
+                cat: 'collab',
                 client: 'TransJakarta & Ourchetype',
                 en: { 
                     t: 'Mempertemukan Jakarta', 
@@ -609,7 +966,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                 img: 'https://images.unsplash.com/photo-1532939163844-547f958e91b4?auto=format&fit=crop&q=80&w=1200'
             },
             7: {
-                cat: 'culture',
+                cat: 'campaign',
                 client: 'Belantara Raya Exhibition',
                 en: { 
                     t: 'The Great Wilds', 
@@ -628,7 +985,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                 img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1200'
             },
             8: {
-                cat: 'strategy',
+                cat: 'copy',
                 client: 'Rebel Craft Identity',
                 en: { 
                     t: 'Maverick Identity', 
@@ -647,7 +1004,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                 img: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200'
             },
             9: {
-                cat: 'culture',
+                cat: 'copy',
                 client: 'Personal Postcard Series',
                 en: { 
                     t: 'Echoes of the Past', 
@@ -666,7 +1023,7 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                 img: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=1200'
             },
             10: {
-                cat: 'strategy',
+                cat: 'research',
                 client: 'Ourchetype Experience Design',
                 en: { 
                     t: 'Bubble of Consciousness', 
@@ -683,21 +1040,80 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
                     services: 'Metodologi Archetype, Strategi Pengalaman, Narrative Layering'
                 },
                 img: 'https://images.unsplash.com/photo-1518005020480-cf957ff49669?auto=format&fit=crop&q=80&w=1200'
-            }
+            },
+	    11: {
+cat: 'branding',
+client: 'Aesence',
+en:{
+t:'Aesence',
+sub:'Branding',
+challenge:'...',
+solution:'...',
+services:'Branding'
+},
+id:{
+t:'Aesence',
+sub:'Branding',
+challenge:'...',
+solution:'...',
+services:'Branding'
+},
+img:'img/aesence.jpg'
+},
+
+12:{
+cat:'copy',
+client:'Econovation',
+en:{
+t:'Econovation',
+sub:'Script Copy',
+challenge:'...',
+solution:'...',
+services:'Copywriting'
+},
+id:{
+t:'Econovation',
+sub:'Script Copy',
+challenge:'...',
+solution:'...',
+services:'Copywriting'
+},
+img:'img/econovation.jpg'
+},
+
+13:{
+cat:'campaign',
+client:'DPMD',
+en:{
+t:'DPMD',
+sub:'Campaign and Content',
+challenge:'...',
+solution:'...',
+services:'Campaign'
+},
+id:{
+t:'DPMD',
+sub:'Campaign dan Konten',
+challenge:'...',
+solution:'...',
+services:'Campaign'
+},
+img:'img/dpmd.jpg'
+},
         };
 
         const catalogueList = [
-            { id: 4, cat: 'strategy' },
-            { id: 5, cat: 'social' },
-            { id: 2, cat: 'culture' },
-            { id: 3, cat: 'social' },
-            { id: 1, cat: 'strategy' },
-            { id: 6, cat: 'social' },
-            { id: 7, cat: 'culture' },
-            { id: 8, cat: 'strategy' },
-            { id: 9, cat: 'culture' },
-            { id: 10, cat: 'strategy' }
-        ];
+
+{ id:1, cat:'copy' },        // cosmic web narrative
+{ id:3, cat:'collab' },      // mycl
+{ id:4, cat:'research' },    // matra cita
+{ id:7, cat:'campaign' },    // belantara raya
+{ id:8, cat:'branding' },    // rebel craft
+{ id:11, cat:'branding' },   // aesence
+{ id:12, cat:'copy' },       // econovation
+{ id:13, cat:'campaign' }    // dpmd
+
+];
 
         // --- START: JOURNEY DATA & LOGIC ---
 const journeyData = {
@@ -745,46 +1161,7 @@ window.updateJourney = function(key) {
 
         
 
-        // Navigation & General
-        window.openProject = (id) => {
-            const project = projectsData[id];
-            const main = document.getElementById('main-content');
-            const page = document.getElementById('project-page');
-            const nav = document.getElementById('navbar');
-
-            document.getElementById('project-header-content').innerHTML = `
-                <h1 class="text-5xl md:text-7xl font-serif font-bold text-ink mb-6">${project[currentLang].t}</h1>
-                <p class="text-xl text-ink/50 max-w-3xl leading-relaxed">${project[currentLang].sub}</p>
-            `;
-            document.getElementById('project-visual').innerHTML = `<img src="${project.img}" class="w-full h-full object-cover">`;
-            document.getElementById('project-challenge').innerText = project[currentLang].challenge;
-            document.getElementById('project-solution').innerText = project[currentLang].solution;
-            document.getElementById('project-client').innerText = project.client;
-            document.getElementById('project-services').innerText = project[currentLang].services;
-
-            window.scrollTo(0,0);
-            main.classList.add('hidden-page');
-            nav.classList.add('hidden-page');
-            setTimeout(() => {
-                main.style.display = 'none';
-                page.classList.remove('hidden-page');
-                page.classList.add('fade-in');
-            }, 500);
-        };
-
-        window.goHome = () => {
-            const main = document.getElementById('main-content');
-            const page = document.getElementById('project-page');
-            const nav = document.getElementById('navbar');
-
-            page.classList.add('hidden-page');
-            setTimeout(() => {
-                main.style.display = 'block';
-                main.classList.remove('hidden-page');
-                nav.classList.remove('hidden-page');
-                window.scrollTo(0, document.getElementById('catalogue').offsetTop - 100);
-            }, 500);
-        };
+        
 
         window.toggleModal = (show) => {
             const m = document.getElementById('modal');
@@ -842,33 +1219,69 @@ window.updateJourney = function(key) {
           
 
         window.renderKatalog = (filter) => {
-            const grid = document.getElementById('portfolio-grid');
-            const filtered = filter === 'all' ? catalogueList : catalogueList.filter(i => i.cat === filter);
-            
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                const btnEn = btn.getAttribute(`data-en`).toLowerCase();
-                const isMatch = btnEn === filter || (btnEn === 'all' && filter === 'all');
-                if(isMatch) {
-                    btn.classList.add('bg-ink', 'text-white');
-                    btn.classList.remove('border-sand');
-                } else {
-                    btn.classList.remove('bg-ink', 'text-white');
-                    btn.classList.add('border-sand');
-                }
-            });
 
-            grid.innerHTML = filtered.map(item => {
-                const data = projectsData[item.id];
-                return `
-                    <div class="fade-in p-8 bg-white border border-sand rounded-[40px] shadow-sm hover:border-terracotta transition cursor-pointer group" onclick="openProject(${item.id})">
-                        <div class="text-[8px] font-black text-terracotta uppercase mb-4 tracking-widest">${item.cat}</div>
-                        <h4 class="text-xl font-serif font-bold mb-4 text-ink group-hover:text-terracotta transition">${data[currentLang].t}</h4>
-                        <p class="text-xs text-ink/50 leading-relaxed line-clamp-2">${data[currentLang].sub}</p>
-                        <div class="mt-8 text-[10px] font-black uppercase text-ink/20 group-hover:text-terracotta transition">View Case Study →</div>
-                    </div>
-                `;
-            }).join('');
-        };
+const grid = document.getElementById('portfolio-grid');
+
+const filtered =
+filter === 'all'
+? catalogueList
+: catalogueList.filter(i => i.cat === filter);
+
+grid.innerHTML = filtered.map(item => {
+
+const data = projectsData[item.id];
+
+if (!data) return "";
+
+const categoryLabel = {
+
+research:{ en:"Research & Strategy", id:"Riset & Strategi" },
+
+branding:{ en:"Branding & Rebranding", id:"Branding & Rebranding" },
+
+voice:{ en:"Brand Voice & Tone", id:"Brand Voice & Tone" },
+
+copy:{ en:"Copywriting", id:"Copywriting" },
+
+campaign:{ en:"Campaign Concept", id:"Konsep Kampanye" },
+
+content:{ en:"Content for Social Media & Museum", id:"Konten Sosial & Museum" },
+
+collab:{ en:"Collaboration Projects", id:"Proyek Kolaborasi" }
+
+};
+
+return `
+
+<div
+onclick="openProject(${item.id})"
+class="fade-in p-8 bg-white border border-sand rounded-[40px] cursor-pointer">
+
+<div class="text-[8px] font-black text-terracotta uppercase mb-4">
+
+${categoryLabel[item.cat]?.[currentLang] || item.cat}
+
+</div>
+
+<h4 class="text-xl font-serif font-bold">
+
+${data[currentLang].t}
+
+</h4>
+
+<p class="text-xs text-ink/50">
+
+${data[currentLang].sub}
+
+</p>
+
+</div>
+
+`;
+
+}).join("");
+
+};
 
         function initChart() {
     const ctx = document.getElementById('skillsChart').getContext('2d');
@@ -909,6 +1322,21 @@ window.updateJourney = function(key) {
             initChart();
             window.renderKatalog('all');
         });
+
+	window.addEventListener("scroll", () => {
+
+document.querySelectorAll(".parallax-img").forEach(img => {
+
+const speed = 0.05;
+
+const y = window.scrollY * speed;
+
+img.style.transform = `scale(1.05) translateY(${y}px)`;
+
+});
+
+});
+
     </script>
 </body>
 </html>
