@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<style>
+
+body{
+
+margin:0;
+background:#111;
+color:white;
+
+font-family:serif;
+
+}
+
+.viewer{
+
+max-width:700px;
+margin:auto;
+padding:40px 20px;
+
+}
+
+.page{
+
+width:100%;
+margin-bottom:40px;
+
+box-shadow:
+0 0 40px rgba(0,0,0,0.5);
+
+}
+
+.page img{
+
+width:100%;
+display:block;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="viewer">
+
+<div class="page">
+<img src="zine/img/z1.jpg">
+</div>
+
+<div class="page">
+<img src="zine/img/z2.jpg">
+</div>
+
+<div class="page">
+<img src="zine/img/z3.jpg">
+</div>
+
+<div class="page">
+<img src="zine/img/z4.jpg">
+</div>
+
+</div>
+
+
+
+<script>
+
+document.addEventListener("contextmenu", e => e.preventDefault())
+
+document.addEventListener("copy", e => e.preventDefault())
+
+document.addEventListener("keydown", e => {
+
+if(e.ctrlKey) e.preventDefault()
+
+})
+
+</script>
+
+
+</body>
+</html>

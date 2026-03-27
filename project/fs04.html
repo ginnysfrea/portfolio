@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                paper:'#FFFFFF',
+                ink:'#2C3539',
+                terracotta:'#C35831',
+                sand:'#E8E3D9',
+                deep:'#121212',
+                'card-dark':'#242424',
+                'accent-pink':'#FF69B4'
+            },
+            fontFamily:{
+                sans:['Inter','sans-serif'],
+                serif:['DM Serif Display','serif']
+            }
+        }
+    }
+}
+</script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700&display=swap');
+
+body{
+background: white;
+color:#2C3539;
+overflow-x:hidden;
+}
+
+.glass-nav{
+background:rgba(249,248,246,0.8);
+backdrop-filter:blur(10px);
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="fixed w-full z-[999] border-b border-sand glass-nav">
+
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between">
+
+<div class="text-xl font-serif font-bold text-ink">
+Gina <span class="text-terracotta">Suci.</span>
+</div>
+
+<a href="../pilot-portfolio.html"
+class="text-[10px] uppercase tracking-widest font-black text-terracotta">
+
+← BACK TO CATALOGUE
+
+</a>
+
+</div>
+
+</nav>
+
+
+
+<section class="bg-paper">
+
+<div class="max-w-7xl mx-auto px-6 pt-40 pb-32">
+
+
+<h1 class="text-7xl font-serif font-bold mb-4">
+
+Pustaka Cita
+
+</h1>
+
+
+<p class="text-ink/50 mb-10">
+
+Connecting history with psychology.
+
+</p>
+
+
+
+<img
+src="../assets/fs04/p1.jpg"
+class="w-full rounded-[40px] mt-12 shadow-sm">
+
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mt-16">
+
+
+<div class="lg:col-span-2">
+
+<h5 class="text-xs font-black uppercase tracking-[0.3em] text-terracotta mb-6 lang-text" data-en="THE CHALLENGE" data-id="TANTANGANNYA">THE CHALLENGE</h5>
+
+<p class="text-lg font-serif text-ink leading-relaxed text-ink/80">
+
+
+How to make historical sites in Braga relevant again to visitors beyond just being an "old building"?
+
+</p>
+
+
+
+<h5 class="text-xs font-black uppercase tracking-[0.3em] text-terracotta mt-12 mb-4">
+NARRATIVE SOLUTION
+</h4>
+
+<p class="text-lg text-ink/60 leading-relaxed">
+
+Through the "Ourchetype" method, we personified heritage sites (like Toko Buku Nusa Cendana) to reveal their "Self" and "Shadow" values.
+
+
+</p>
+
+</div>
+
+
+
+<div class="bg-paper border border-sand rounded-[40px] p-8 shadow-sm">
+
+<div>
+                            <h6 class="text-[10px] font-black uppercase tracking-widest text-ink/40 mb-2 lang-text" data-en="CLIENT" data-id="KLIEN">CLIENT</h6>
+                            <p class="font-bold text-ink"></p>
+                        </div>
+
+<p class="font-bold mb-8">
+Grey Art Gallery
+</p>
+
+
+<div>
+                            <h6 class="text-[10px] font-black uppercase tracking-widest text-ink/40 mb-2 lang-text" data-en="SERVICES" data-id="LAYANAN">SERVICES</h6>
+                            <p class="text-sm text-ink/70 leading-relaxed"></p>
+                        </div
+
+<p class="text-ink/70 leading-relaxed mb-8">
+Cultural Narrative<br>
+Interactive Experience<br>
+Heritage Personification
+</p>
+
+<hr class="mb-8 border-sand">
+
+<button
+onclick="openInquiry()"
+class="w-full py-4 bg-terracotta text-white rounded-full font-bold">
+
+INQUIRE PROJECT
+
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+</div>
+</section>
+
+<hr class="mb-8 border-sand">
+<div class="text-center py-20 bg-white">
+
+<a href="fs05.html"
+class="font-serif italic text-lg hover:text-terracotta transition">
+
+Next Project →
+
+</a>
+
+</div>
+
+<!-- Footer -->
+<footer class="bg-ink py-24 text-center text-white">
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2
+        class="text-4xl font-serif font-bold mb-12 lang-text"
+        data-en="Let's build a new story."
+        data-id="Mari bangun cerita baru."
+        >
+        Let's build a new story.
+        </h2>
+
+        <div class="flex justify-center gap-20 mb-20 text-[10px] font-bold uppercase tracking-[0.3em]">
+
+            <a href="mailto:ginasucif@gmail.com"
+               class="hover:text-terracotta transition underline decoration-terracotta decoration-2 underline-offset-8">
+               EMAIL
+            </a>
+
+            <a href=""
+               class="hover:text-terracotta transition">
+               LINKEDIN
+            </a>
+
+            <a href="#"
+               class="hover:text-terracotta transition">
+               INSTAGRAM
+            </a>
+
+        </div>
+
+        <p class="text-[10px] text-white/20 tracking-widest uppercase">
+            © 2026 Gina Suci. All Rights Reserved.
+        </p>
+
+    </div>
+</footer>
+
+<script>
+
+function openInquiry(){
+
+const email = prompt("Enter your business email:");
+
+if(email && email.includes("@")){
+
+window.location.href =
+"mailto:ginasucif@gmail.com?subject=Project Inquiry";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

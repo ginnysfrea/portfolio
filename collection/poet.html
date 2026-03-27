@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Poet — Bayang yang Menggebu</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/protect.js">
+
+function shareLink(){
+
+navigator.share({
+title: document.title,
+url: window.location.href
+})
+
+}
+
+document.addEventListener("contextmenu", e => e.preventDefault())
+
+document.addEventListener("copy", e => {
+e.preventDefault()
+})
+
+document.addEventListener("keydown", e => {
+
+if(e.ctrlKey && e.key === "c") e.preventDefault()
+if(e.ctrlKey && e.key === "u") e.preventDefault()
+if(e.ctrlKey && e.key === "s") e.preventDefault()
+
+})
+
+</script>
+
+<style>
+
+body{
+
+user-select:none;
+-webkit-user-select:none;
+
+}
+
+.content{
+
+filter: contrast(1.02);
+
+}
+
+body::after{
+
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+
+background:rgba(0,0,0,0.001);
+
+}
+
+.poet-page{
+
+background:
+
+radial-gradient(
+circle at 30% 40%,
+rgba(200,150,255,0.3),
+transparent
+),
+
+radial-gradient(
+circle at 70% 60%,
+rgba(255,150,200,0.3),
+transparent
+),
+
+#0f0f1a;
+
+color:white;
+
+font-family:serif;
+
+}
+
+</style>
+
+</head>
+
+<body class="poet-page">
+
+<div class="reading">
+
+<h1>Bayang yang Menggebu</h1>
+
+<div class="meta">
+POET · 2024
+</div>
+
+<div class="content">
+
+<p>
+Sebagian yang bertumbuh,
+tidak lahir begitu saja
+di antara tiap kekosongan…
+</p>
+
+</div>
+
+
+<div class="share">
+
+<button onclick="shareLink()">
+Share
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+</body>
+</html>
