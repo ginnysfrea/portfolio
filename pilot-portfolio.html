@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gina Suci - Storyteller & Sensical Writer</title> 
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper': '#F9F8F6',
+                        'ink': '#2C3539',
+                        'terracotta': '#C35831',
+                        'sand': '#E8E3D9',
+                        'deep': '#121212',
+                        'card-dark': '#242424',
+                        'accent-pink': '#FF69B4'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['DM Serif Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;600;700&display=swap'); 
+        body { background-color: #F9F8F6; color: #2C3539; scroll-behavior: smooth; overflow-x: hidden; }
+        .glass-nav { background: rgba(249, 248, 246, 0.8); backdrop-filter: blur(10px); }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .work-card { position: relative; overflow: hidden; border-radius: 40px; }
+        .work-card img { transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .work-card:hover img { transform: scale(1.05); }
+	
+	footer a {
+        letter-spacing: 0.25em;
+    	}
+
+       
+
+       /* --- START: INTERACTIVE JOURNEY STYLES --- */
+.journey-step { transition: all 0.3s ease; cursor: pointer; border: 1px solid transparent; }
+.journey-step.active { border-color: #C35831; background: rgba(195, 88, 49, 0.1); }
+.fade-in { animation: fadeIn 0.8s ease-out forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+/* --- END: INTERACTIVE JOURNEY STYLES --- */
+        
+        /* Custom Method Card Styles */
+        .method-card-light { background: #FFFFFF; border: 1px solid #E8E3D9; border-radius: 40px; padding: 48px; }
+        .method-card-dark { background: #1A1A1A; border-radius: 40px; padding: 48px; color: #FFFFFF; }
+        .method-pill { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 16px; font-size: 10px; font-weight: bold; letter-spacing: 0.1em; color: rgba(255, 255, 255, 0.6); }
+    
+	/* ===== MASONRY FEATURED ===== */
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+.masonry-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 40px;
+    cursor: pointer;
+    background: #ddd;
+}
+
+.masonry-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease, filter 0.6s ease;
+}
+
+.masonry-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0)
+    );
+}
+
+.masonry-text {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    color: white;
+}
+
+.masonry-item:hover .masonry-img {
+    transform: scale(1.07);
+}
+    
+/* ===== PERSONAL COSMIC ===== */
+
+#personal {
+
+background:
+
+radial-gradient(
+circle at 20% 30%,
+rgba(180,140,255,0.35),
+transparent 40%
+),
+
+radial-gradient(
+circle at 80% 70%,
+rgba(255,170,220,0.25),
+transparent 40%
+),
+
+radial-gradient(
+circle at 50% 90%,
+rgba(120,160,255,0.25),
+transparent 45%
+),
+
+linear-gradient(
+180deg,
+#141423,
+#1a1830,
+#10101c
+);
+
+color:white;
+position:relative;
+overflow:hidden;
+
+}
+
+
+
+
+.personal-grid{
+
+display:grid;
+grid-template-columns:repeat(12,1fr);
+gap:30px;
+
+}
+
+
+.personal-card{
+
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+
+border-radius:24px;
+padding:26px;
+
+transition:0.5s ease;
+
+position:relative;
+overflow:hidden;
+
+}
+
+
+.personal-card::after{
+
+content:"";
+position:absolute;
+inset:-40%;
+
+background:radial-gradient(
+circle,
+rgba(255,255,255,0.2),
+transparent 60%
+);
+
+opacity:0;
+transition:0.6s;
+
+}
+
+.personal-card:hover::after{
+
+opacity:1;
+transform:scale(1.2);
+
+}
+
+.personal-card:hover{
+
+transform:translateY(-6px) scale(1.03);
+
+box-shadow:
+0 0 40px rgba(180,140,255,0.4),
+0 0 80px rgba(255,160,220,0.2);
+
+}
+
+.personal-card:nth-child(1):hover{
+box-shadow:0 0 60px rgba(255,120,200,0.5);
+}
+
+.personal-card:nth-child(2):hover{
+box-shadow:0 0 60px rgba(120,160,255,0.5);
+}
+
+.personal-card:nth-child(3):hover{
+box-shadow:0 0 60px rgba(255,200,120,0.5);
+}
+
+.personal-card:nth-child(4):hover{
+box-shadow:0 0 60px rgba(180,140,255,0.5);
+}
+
+.personal-card:nth-child(5):hover{
+box-shadow:0 0 60px rgba(120,255,200,0.5);
+}
+
+
+.float-slow{
+
+animation:floatSlow 8s ease-in-out infinite;
+
+}
+
+
+.float-slow2{
+
+animation:floatSlow 11s ease-in-out infinite;
+
+}
+
+
+@keyframes floatSlow{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+
+}
+
+.personal-card:hover .see-more{
+
+color:white;
+letter-spacing:0.15em;
+
+}
+
+
+.personal-card{
+position:relative;
+z-index:1;
+}
+
+.personal-card a{
+position:relative;
+z-index:5;
+pointer-events:auto;
+}
+
+.personal-card::after{
+pointer-events:none;
+}
+
+.see{
+
+font-size:12px;
+opacity:0.7;
+font-style:italic;
+margin-top:8px;
+font-family: serif;
+letter-spacing:0.03em;
+
+}
+
+</style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-[999] border-b border-sand glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold font-serif text-ink cursor-pointer" onclick="goHome()">
+                Gina <span class="text-terracotta">Suci.</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6 text-[10px] uppercase tracking-widest font-bold text-ink/60">
+                <a href="#experience" data-en="Experience" data-id="Pengalaman" class="lang-text hover:text-terracotta transition">Experience</a>
+                <a href="#skills" data-en="Skills" data-id="Keahlian" class="lang-text hover:text-terracotta transition">Skills</a>
+                <a href="#catalogue" data-en="Catalogue" data-id="Katalog" class="lang-text hover:text-terracotta transition">Catalogue</a>
+		<a href="#featured" data-en="Featured" data-id="Sorotan" class="lang-text hover:text-terracotta transition">Featured</a>
+                <a href="#method" data-en="Method" data-id="Metode" class="lang-text hover:text-terracotta transition">Method</a>
+                <a href="#discovery" data-en="Discovery" data-id="Discovery" class="lang-text hover:text-terracotta transition">Discovery</a>
+                
+                <div class="flex items-center border border-sand rounded-full px-1 py-1 gap-1 bg-white/50">
+                    <button onclick="changeLanguage('en')" id="btn-en" class="px-3 py-1 rounded-full bg-ink text-white text-[9px] transition">EN</button>
+                    <button onclick="changeLanguage('id')" id="btn-id" class="px-3 py-1 rounded-full text-ink/40 text-[9px] transition">ID</button>
+                </div>
+
+                <button onclick="toggleModal(true)" class="text-terracotta font-black border-b-2 border-terracotta pb-1 hover:text-ink hover:border-ink transition lang-text" data-en="CONTACT" data-id="KONTAK">CONTACT</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN HOME PAGE -->
+    <div id="main-content">
+        <!-- Hero -->
+        <section class="min-h-screen flex items-center px-6 pt-20">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-6xl md:text-8xl font-serif font-bold leading-tight mb-8 text-ink">
+                        <span class="lang-text" data-en="Sensical" data-id="Nalar">Sensical</span><br>
+                        <span class="text-terracotta italic lang-text" data-en="Storyteller." data-id="Bercerita.">Storyteller.</span>
+                    </h1>
+                    <p class="text-lg text-ink/70 max-w-lg mb-10 lang-text" data-en="I craft narratives that don't just tell stories, but also build a universe of reflection. Focusing on the intersection of brand strategy, human intuition, and logical structure." data-id="Merancang narasi yang bukan sekadar bercerita, melainkan untuk membangun semesta reflektif. Berfokus pada titik temu antara strategi merek, intuisi manusia, dan struktur logis.">
+                        I craft narratives that don't just tell stories, but also build a universe of reflection. Focusing on the intersection of brand strategy, human intuition, and logical structure.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#featured" class="px-8 py-4 bg-ink text-white rounded-full font-bold hover:bg-terracotta transition lang-text" data-en="Explore Works" data-id="Jelajahi Karya">Explore Works</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=800" class="w-full aspect-[4/5] object-cover rounded-[40px] shadow-2xl grayscale hover:grayscale-0 transition duration-1000">
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Experience -->
+        <section id="experience" class="py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-2 lang-text" data-en="WORKING EXPERIENCE" data-id="PENGALAMAN KERJA">WORKING EXPERIENCE</h2>
+                <h3 class="text-4xl md:text-6xl font-serif font-bold text-ink mb-16 lang-text" data-en="Professional Journey." data-id="Perjalanan Profesional.">Professional Journey.</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="p-10 border border-sand rounded-[40px] hover:shadow-xl transition group">
+                        <div class="text-4xl mb-6 group-hover:scale-110 transition">🖋️</div>
+                        <h3 class="text-2xl font-serif font-bold mb-4 lang-text" data-en="The Studio" data-id="Studio">The Studio</h3>
+                        <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Copywriting strategy and key message development for commercial and social campaigns." data-id="Strategi copywriting dan pengembangan pesan kunci untuk kampanye komersial dan sosial.">Copywriting strategy and key message development for commercial and social campaigns.</p>
+                    </div>
+                    <div class="p-10 border border-sand rounded-[40px] hover:shadow-xl transition group">
+                        <div class="text-4xl mb-6 group-hover:scale-110 transition">🏛️</div>
+                        <h3 class="text-2xl font-serif font-bold mb-4 lang-text" data-en="The Gallery" data-id="Galeri">The Gallery</h3>
+                        <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Aligning narrative concepts with cultural and historical elements for brand DNA." data-id="Penyelarasan konsep naratif dengan elemen budaya dan sejarah untuk brand DNA.">Aligning narrative concepts with cultural and historical elements for brand DNA.</p>
+                    </div>
+                    <div class="p-10 border border-sand rounded-[40px] hover:shadow-xl transition group">
+                        <div class="text-4xl mb-6 group-hover:scale-110 transition">🔬</div>
+                        <h3 class="text-2xl font-serif font-bold mb-4 lang-text" data-en="The Lab" data-id="Laboratorium">The Lab</h3>
+                        <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Qualitative analysis and deep research to validate narratives based on data." data-id="Analisis kualitatif dan riset mendalam untuk memvalidasi narasi agar tetap berpijak pada data.">Qualitative analysis and deep research to validate narratives based on data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Skills Radar -->
+         <section id="skills" class="py-32 bg-paper border-y border-sand">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                    <div class="h-[450px] bg-white rounded-[40px] p-8 shadow-sm relative border border-sand">
+                        <canvas id="skillsChart"></canvas>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.3em] mb-4 block lang-text" data-en="Core Competency" data-id="Kompetensi Inti">Core Competency</span>
+                        <h2 class="text-4xl font-serif font-bold mb-8 lang-text" data-en="Expertise & Synthesis." data-id="Keahlian & Sintesis.">Expertise & Synthesis.</h2>
+                        <div class="space-y-6">
+                            <div class="flex justify-between border-b border-sand pb-4">
+                                <span class="font-bold lang-text" data-en="Narrative Strategy" data-id="Strategi Narasi">Narrative Strategy</span>
+                                <span class="text-terracotta italic lang-text" data-en="Mastery" data-id="Sangat Mahir">Mastery</span>
+                            </div>
+                            <div class="flex justify-between border-b border-sand pb-4">
+                                <span class="font-bold lang-text" data-en="Conceptual Design" data-id="Desain Konseptual">Conceptual Design</span>
+                                <span class="text-terracotta italic lang-text" data-en="Advanced" data-id="Lanjutan">Advanced</span>
+                            </div>
+                            <div class="flex justify-between border-b border-sand pb-4">
+                                <span class="font-bold lang-text" data-en="Socio-Analytical Research" data-id="Riset Sosio-Analitis">Socio-Analytical Research</span>
+                                <span class="text-terracotta italic lang-text" data-en="Expert" data-id="Ahli">Expert</span>
+                            </div>
+                            <div class="flex justify-between border-b border-sand pb-4">
+                                <span class="font-bold lang-text" data-en="Creative Directing" data-id="Pengarahan Kreatif">Creative Directing</span>
+                                <span class="text-terracotta italic lang-text" data-en="Specialist" data-id="Spesialis">Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. Catalogue -->
+        <section id="catalogue" class="py-32 bg-paper">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                    <div>
+                        <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-4 lang-text" data-en="PORTFOLIO" data-id="PORTOFOLIO">PORTFOLIO</h2>
+                        <h3 class="text-4xl font-serif font-bold lang-text" data-en="Projects Catalogue." data-id="Katalog Proyek.">Projects Catalogue.</h3>
+                    </div>
+                    <div class="flex gap-4 overflow-x-auto pb-2 w-full md:w-auto" id="filter-container">
+                        <button onclick="renderKatalog('all')" class="cat-btn px-6 py-2 bg-ink text-white rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="ALL" data-id="SEMUA">ALL</button>
+                        <button onclick="renderKatalog('research')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Research & Strategy"
+data-id="Riset & Strategi"
+>Research & Strategy</button>
+                        <button onclick="renderKatalog('branding')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Branding & Rebranding"
+data-id="Branding & Rebranding"
+>Branding & Rebranding</button>
+                        <button onclick="renderKatalog('voice')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Brand Voice & Tone"
+data-id="Brand Voice & Tone"
+>Brand Voice & Tone</button>
+
+			<button onclick="renderKatalog('all')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Copywriting"
+data-id="Copywriting"
+>Copywriting</button>
+                        <button onclick="renderKatalog('research')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Campaign Concept"
+data-id="Konsep Kampanye"
+>Campaign Concept</button>
+                        <button onclick="renderKatalog('branding')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Content for Social Media & Museum"
+data-id="Konten Sosial & Museum"
+>Content for Social Media & Museum</button>
+                        <button onclick="renderKatalog('voice')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Collaboration Projects"
+data-id="Proyek Kolaborasi"
+>Collaboration Projects</button>
+                    </div>
+                </div>
+                <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 min-h-[400px]"></div>
+            </div>
+        </section>
+
+        <!-- 4. Works (Featured) -->
+        <section id="featured" class="py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+
+
+
+                <h2 class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-2 lang-text" data-en="HIGHLIGHTED WORKS" data-id="KARYA SOROTAN">HIGHLIGHTED WORKS</h2>
+                <h3 class="text-4xl md:text-6xl font-serif font-bold text-ink mb-16 lang-text" data-en="Featured Projects." data-id="Proyek Pilihan.">Featured Projects.</h3>
+                
+          
+<div class="masonry-grid">
+
+
+<a href="project/fs01.html"
+class="masonry-item col-span-12 md:col-span-6 h-[260px] block">
+
+<img src="assets/thumb_the_identity.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+<span class="text-[10px] text-terracotta uppercase">
+Self Discovery
+</span>
+
+<h3 class="text-xl font-serif">
+The Identity — Ourchetype 3.0
+</h3>
+
+</div>
+
+</a>
+
+
+
+<a href="project/fs02.html"
+class="masonry-item col-span-12 md:col-span-6 h-[260px] block">
+
+<img src="assets/thumb_brand.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+<span class="text-[10px] text-terracotta uppercase">
+Collaborative
+</span>
+
+<h3 class="text-xl font-serif">
+Brand Experience — Ourchetype 5.0
+</h3>
+
+</div>
+
+</a>
+
+
+
+<a href="project/fs03.html"
+class="masonry-item col-span-12 md:col-span-4 h-[200px] block">
+
+<img src="assets/thumb_wanderplant.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+The Wanderplant
+
+</div>
+
+</a>
+
+
+
+<a href="project/fs04.html"
+class="masonry-item col-span-12 md:col-span-4 h-[200px] block">
+
+<img src="assets/thumb_pustaka.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+Pustaka Cita
+
+</div>
+
+</a>
+
+
+
+<div class="masonry-item col-span-12 md:col-span-4 h-[200px]"
+onclick="openProject(6)">
+
+<img src="assets/thumb_jakarta.jpg" class="masonry-img">
+
+<div class="masonry-overlay"></div>
+
+<div class="masonry-text">
+
+Mempertemukan Jakarta
+
+</div>
+
+</div>
+
+
+</div>
+</div>
+            </div>
+        </section>
+
+	<section id="personal" class="py-40">
+
+<div class="max-w-6xl mx-auto px-6 text-center">
+
+<h2
+class="text-xs uppercase tracking-[0.5em] text-terracotta font-black mb-4 lang-text"
+data-en="PERSONAL COLLECTION"
+data-id="KOLEKSI PERSONAL"
+>
+PERSONAL COLLECTION
+</h2>
+
+<h3
+class="text-5xl font-serif italic mb-6 lang-text"
+data-en="Notes Across Inner Universe"
+data-id="Catatan di Dalam Semesta Diri"
+>
+Notes Across Inner Universe
+</h3>
+
+<p
+class="max-w-2xl mx-auto text-white/60 leading-relaxed lang-text"
+data-en="Writing has always been a space where I reflect on the values of life that often come quietly, yet overwhelm in the noise of living as an individual."
+data-id="Tulisan selalu menjadi ruang untuk saya merefleksikan nilai-nilai kehidupan yang kerap datang diam-diam, namun menenggelamkan di antara riuh perjalanan sebagai individu."
+>
+
+Writing has always been a space where I reflect on the values of life.
+
+</p>
+
+</div>
+
+
+<!-- GRID HARUS ADA -->
+<div class="personal-grid max-w-6xl mx-auto px-6 mt-20">
+
+<a href="collection/poet.html"
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+
+<div class="type">POET</div>
+<h4>Bayang yang Menggebu</h4>
+<div class="see">See more</div>
+</a>
+
+<a href="collection/postcard.html"
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+<div class="type">POSTCARD</div>
+<h4>Letters Never Sent</h4>
+<div class="see">See more</div>
+</a>
+
+<a href="collection/zine.html" 
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+<div class="type">ZINE</div>
+<h4>Inner Universe Notes</h4>
+<div class="see">See more</div>
+</a>
+
+<a href="collection/memoir.html" 
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+<div class="type">MEMOAR</div>
+<h4>Fragments of Becoming</h4>
+<div class="see">See more</div>
+</a>
+
+<a href="collection/unquote.html" 
+class="personal-card col-span-12 md:col-span-4 float-slow block">
+<div class="type">UNQUOTE</div>
+<h4>Things I Never Said</h4>
+<div class="see">See more</div>
+</a>
+
+</div>
+</section>
+
+<!-- 5. Method Section -->
+        <section id="method" class="py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-[10px] uppercase tracking-[0.5em] text-terracotta font-black mb-4 lang-text" data-en="WORKFLOW" data-id="ALUR KERJA">WORKFLOW</h2>
+                    <h3 class="text-5xl font-serif font-bold mb-6 lang-text" data-en="Methodology." data-id="Metodologi.">Methodology.</h3>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Left Column: Originality -->
+                    <div class="method-card-light">
+                        <h4 class="text-2xl font-serif font-bold mb-10 flex items-center gap-4">
+                            <span class="text-3xl">🧠</span> 
+                            <span class="lang-text" data-en="Originality (The Architect)" data-id="Originalitas (Sang Arsitek)">Originality (The Architect)</span>
+                        </h4>
+                        
+                        <div class="space-y-12">
+                            <!-- Step 1 -->
+                            <div class="flex gap-8 group">
+                                <span class="text-terracotta font-bold text-lg mt-1 group-hover:scale-110 transition">01</span>
+                                <div>
+                                    <h5 class="text-xl font-bold mb-2 text-ink lang-text" data-en="Problem Definition" data-id="Definisi Masalah">Problem Definition</h5>
+                                    <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Digging for the root cause from sociological and business perspectives." data-id="Menggali akar masalah dari perspektif sosiologis dan bisnis.">Digging for the root cause from sociological and business perspectives.</p>
+                                </div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="flex gap-8 group">
+                                <span class="text-terracotta font-bold text-lg mt-1 group-hover:scale-110 transition">02</span>
+                                <div>
+                                    <h5 class="text-xl font-bold mb-2 text-ink lang-text" data-en="Narrative Blueprint" data-id="Cetak Biru Narasi">Narrative Blueprint</h5>
+                                    <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Mapping the emotional journey and message architecture." data-id="Memetakan perjalanan emosional dan arsitektur pesan.">Mapping the emotional journey and message architecture.</p>
+                                </div>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="flex gap-8 group">
+                                <span class="text-terracotta font-bold text-lg mt-1 group-hover:scale-110 transition">03</span>
+                                <div>
+                                    <h5 class="text-xl font-bold mb-2 text-ink lang-text" data-en="Authentic Voice" data-id="Suara Autentik">Authentic Voice</h5>
+                                    <p class="text-sm text-ink/60 leading-relaxed lang-text" data-en="Developing a unique tone that resonates with the core human experience." data-id="Mengembangkan nada unik yang beresonansi dengan pengalaman inti manusia.">Developing a unique tone that resonates with the core human experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: AI Co-Creation -->
+                    <div class="method-card-dark">
+                        <h4 class="text-2xl font-serif font-bold mb-10 flex items-center gap-4">
+                            <span class="text-3xl">⚡</span> 
+                            <span class="lang-text" data-en="AI Co-Creation (The Enhancer)" data-id="AI Co-Creation (Sang Penguat)">AI Co-Creation (The Enhancer)</span>
+                        </h4>
+                        
+                        <p class="text-white/60 text-sm leading-relaxed mb-10 lang-text" data-en="Leveraging high-end AI to expand narrative depth, validate research, and accelerate technical production." data-id="Memanfaatkan AI tingkat tinggi untuk memperluas kedalaman narasi, memvalidasi riset, dan mempercepat produksi teknis.">Leveraging high-end AI to expand narrative depth, validate research, and accelerate technical production.</p>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="method-pill flex items-center justify-center">CLAUDE 3.5 — Structural Synthesis</div>
+                            <div class="method-pill flex items-center justify-center">GPT-4O — Narrative Expansion</div>
+                            <div class="method-pill flex items-center justify-center">MIDJOURNEY — Visual Metaphor</div>
+                            <div class="method-pill flex items-center justify-center">GROK — Pulse Research</div>
+                        </div>
+
+                        <div class="mt-12 pt-12 border-t border-white/10 italic text-white/40 text-xs lang-text" data-en="&ldquo;I don't let AI write the story. I use AI to help me see the story from angles I haven't considered.&rdquo;" data-id="&ldquo;Saya tidak membiarkan AI menulis cerita. Saya menggunakan AI untuk membantu saya melihat cerita dari sudut yang belum pernah saya pertimbangkan.&rdquo;">
+                            "I don't let AI write the story. I use AI to help me see the story from angles I haven't considered."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <!-- START: INTERACTIVE EXHIBITION SECTION -->
+<section id="discovery" class="py-32 bg-deep text-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2
+class="text-[10px] uppercase tracking-[0.5em] text-terracotta font-black mb-4 lang-text"
+data-en="DISCOVERY JOURNEY"
+data-id="PERJALANAN EKSPLORASI"
+>
+DISCOVERY JOURNEY
+</h2>
+            <h3
+class="text-5xl md:text-6xl font-serif font-bold mb-6 lang-text"
+data-en="Reflective Approach."
+data-id="Pendekatan Reflektif."
+>
+Reflective Approach.
+</h3>
+            <p
+class="text-white/40 max-w-2xl mx-auto text-sm lang-text"
+data-en="Simulation of 3 intellectual patterns to give birth to a complete narrative character."
+data-id="Simulasi 3 pola intelektual untuk menciptakan karakter narasi yang utuh."
+>
+Simulation of 3 intellectual patterns to create a complete narrative character.
+</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Card 01: Persona -->
+            <div id="step-persona" class="journey-step p-12 bg-card-dark rounded-[40px] group hover:bg-ink transition duration-500" onclick="updateJourney('persona')">
+                <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.2em] mb-8 block" id="p1-tag">PATTERN 01</span>
+                <h4
+class="text-3xl font-serif font-bold lang-text"
+data-en="The Persona"
+data-id="Persona"
+>
+The Persona
+</h4>
+                <p
+class="text-[11px] italic text-terracotta mb-6 lang-text"
+data-en="Social Alignment & Interface"
+data-id="Penyesuaian Sosial & Antarmuka"
+>
+Social Alignment & Interface
+</p>
+                <p
+class="text-sm text-white/50 leading-relaxed lang-text"
+data-en="An organized mask. Showing the professional, logical, and communicative side for the outside world's needs."
+data-id="Topeng terorganisir. Menunjukkan sisi profesional, logis, dan komunikatif untuk kebutuhan dunia luar."
+>
+                    An organized mask. Showing the professional, logical, and communicative side for the outside world's needs.
+                </p>
+            </div>
+          
+  <!-- Card 02: Shadow -->
+            <div id="step-shadow" class="journey-step p-12 bg-card-dark rounded-[40px] group hover:bg-ink transition duration-500" onclick="updateJourney('shadow')">
+                <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.2em] mb-8 block" id="p2-tag">PATTERN 02</span>
+                <h4
+class="text-3xl font-serif font-bold lang-text"
+data-en="The Shadow"
+data-id="Shadow"
+>
+The Shadow</h4>
+                <p class="text-[11px] italic text-terracotta mb-6 lang-text"
+data-en="Subconscious Drive & Raw Ideas"
+data-id="Dorongan Bawah Sadar & Ide Mentah"
+>
+Unconscious Drive & Raw Idea</p>
+                <p
+class="text-sm text-white/50 leading-relaxed lang-text"
+data-en="Warehouse of raw ideas. The wild, emotional, and unlimited part, not bound by rigid rules."
+data-id="Gudang ide mentah. Bagian yang liar, emosional, dan tak terbatas."
+>
+                    Warehouse of raw ideas. The wild, emotional, and unlimited part, not bound by rigid rules.
+                </p>
+            </div>
+            <!-- Card 03: Self -->
+            <div id="step-self" class="journey-step p-12 bg-card-dark rounded-[40px] group hover:bg-ink transition duration-500" onclick="updateJourney('self')">
+                <span class="text-[10px] font-black text-terracotta uppercase tracking-[0.2em] mb-8 block" id="p3-tag">PATTERN 03</span>
+                <h4
+class="text-3xl font-serif font-bold lang-text"
+data-en="The Self"
+data-id="Self"
+>
+The Self</h4>
+                <p class="text-[11px] italic text-terracotta mb-6 lang-text"
+data-en="Wholeness & Final Synthesis"
+data-id="Keutuhan & Sintesis Akhir"
+>
+Wholeness & Final Synthesis</p>
+                <p class="text-sm text-white/50 leading-relaxed lang-text"
+data-en="Harmonization. This is where my identity as a writer is formed, balancing logic and intuition."
+data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimbangkan logika dan intuisi.">
+                    Harmonization. This is where my identity as a writer is formed, balancing logic and intuition.
+                </p>
+            </div>
+        </div>
+
+        <!-- Output Box: Tempat teks hasil muncul -->
+        <div id="journey-output" class="mt-8 bg-card-dark/30 p-12 rounded-[40px] border border-white/5 min-h-[140px] flex items-center justify-center text-center italic text-white/40">
+            <p id="output-text">"Pick a pattern to see how I process your narrative."</p>
+        </div>
+    </div>
+</section>
+<!-- END: INTERACTIVE EXHIBITION SECTION -->
+
+      <!-- Footer -->
+<footer class="bg-ink py-24 text-center text-white">
+    <div class="max-w-4xl mx-auto px-6">
+
+        <h2
+        class="text-4xl font-serif font-bold mb-12 lang-text"
+        data-en="Let's build a new story."
+        data-id="Mari bangun cerita baru."
+        >
+        Let's build a new story.
+        </h2>
+
+        <div class="flex justify-center gap-12 mb-20 text-[10px] font-bold uppercase tracking-[0.3em]">
+
+            <a href="mailto:ginasucif@gmail.com"
+               class="hover:text-terracotta transition underline decoration-terracotta decoration-2 underline-offset-8">
+               EMAIL
+            </a>
+
+            <a href=""
+               class="hover:text-terracotta transition">
+               LINKEDIN
+            </a>
+
+            <a href="#"
+               class="hover:text-terracotta transition">
+               INSTAGRAM
+            </a>
+
+        </div>
+
+        <p class="text-[10px] text-white/20 tracking-widest uppercase">
+            © 2026 Gina Suci. All Rights Reserved.
+        </p>
+
+    </div>
+</footer>  
+
+    
+
+    <!-- Contact Modal -->
+    <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/90 backdrop-blur-md p-6">
+        <div class="bg-paper w-full max-w-lg rounded-[50px] p-12 text-center relative">
+            <button onclick="toggleModal(false)" class="absolute top-8 right-8 text-ink/40 text-2xl">✕</button>
+            <h2 class="text-4xl font-serif font-bold mb-4 text-ink lang-text" data-en="Let's Talk." data-id="Mari Bicara.">Let's Talk.</h2>
+            <div class="space-y-4 mt-8">
+                <a href="mailto:ginasucif@gmail.com" class="block w-full py-4 bg-ink text-white rounded-full font-bold">Email Me</a>
+                <p class="text-[10px] text-ink/40 uppercase tracking-widest mt-6">ginasucif@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'en';
+
+        // Project Data (Integrated from uploaded documents)
+        const projectsData = {
+            1: {
+                cat: 'copy',
+                client: 'Tujusemesta Creative Space',
+                en: { 
+                    t: 'Cosmic Web Narrative', 
+                    sub: 'Translating creative consultancy into a "Microcosm" universe.',
+                    challenge: 'A creative space needs a landing page that doesn\'t just sell services, but invites clients into a philosophical journey of discovery.',
+                    solution: 'We used the "Cosmic" metaphor, framing every client project as a hidden galaxy that needs to be lit up through collaborative design.',
+                    services: 'Website Copywriting, Brand Storytelling, UX Writing'
+                },
+                id: { 
+                    t: 'Narasi Web Kosmik', 
+                    sub: 'Menerjemahkan konsultan kreatif menjadi semesta "Mikrokosmos".',
+                    challenge: 'Ruang kreatif membutuhkan landing page yang tidak hanya menjual jasa, tapi mengajak klien masuk ke dalam perjalanan filosofis penemuan.',
+                    solution: 'Kami menggunakan metafora "Kosmik", membingkai setiap proyek klien sebagai galaksi tersembunyi yang perlu diterangi melalui desain kolaboratif.',
+                    services: 'Copywriting Website, Storytelling Brand, UX Writing'
+                },
+                img: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=1200'
+            },
+            2: {
+                cat: 'collab',
+                client: 'Bandung Heritage (Braga)',
+                en: { 
+                    t: 'Pustaka Cita', 
+                    sub: 'Uncovering the collective "Angan" of historical Braga.',
+                    challenge: 'How to make historical sites in Braga relevant again to visitors beyond just being an "old building"?',
+                    solution: 'Through the "Ourchetype" method, we personified heritage sites (like Toko Buku Nusa Cendana) to reveal their "Self" and "Shadow" values.',
+                    services: 'Cultural Narrative, Interactive Experience, Heritage Personification'
+                },
+                id: { 
+                    t: 'Pustaka Cita', 
+                    sub: 'Mengungkap "Angan" kolektif dari sejarah kawasan Braga.',
+                    challenge: 'Bagaimana membuat situs bersejarah di Braga relevan kembali bagi pengunjung selain hanya sekadar "bangunan tua"?',
+                    solution: 'Melalui metode "Ourchetype", kami mempersonifikasi situs warisan (seperti Toko Buku Nusa Cendana) untuk mengungkap nilai "Self" dan "Shadow" mereka.',
+                    services: 'Narasi Budaya, Pengalaman Interaktif, Personifikasi Warisan'
+                },
+                img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=1200'
+            },
+            3: {
+                cat: 'collab',
+                client: 'MYCL (Mycotech)',
+                en: { 
+                    t: 'Circular Journey', 
+                    sub: 'The regenerative narrative of Mycelium-based materials.',
+                    challenge: 'Sustainability often sounds like a buzzword. We needed to make the organic waste cycle feel personal and impactful.',
+                    solution: 'An interactive journey mapping the cycle of Mycelium (Growth, Decomposition, Recovery) to human decision-making patterns.',
+                    services: 'Sustainability Storytelling, Narrative Design, Circular Economy Strategy'
+                },
+                id: { 
+                    t: 'Circular Journey', 
+                    sub: 'Narasi regeneratif dari material berbasis Miselium.',
+                    challenge: 'Keberlanjutan seringkali terdengar seperti kata klise. Kami perlu membuat siklus limbah organik terasa personal dan berdampak.',
+                    solution: 'Perjalanan interaktif yang memetakan siklus Miselium (Tumbuh, Terurai, Pulih) ke pola pengambilan keputusan manusia.',
+                    services: 'Storytelling Keberlanjutan, Desain Narasi, Strategi Ekonomi Sirkular'
+                },
+                img: 'https://images.unsplash.com/photo-1550985543-f47f38aee65e?auto=format&fit=crop&q=80&w=1200'
+            },
+            4: {
+                cat: 'research',
+                client: 'Bandung Design Biennale',
+                en: { 
+                    t: 'Mātṛā Cita', 
+                    sub: 'Human-Authored vs AI Collaboration in Design civilation.',
+                    challenge: 'Curating a design exhibition that explores the tension between human intention and AI-assisted innovation.',
+                    solution: 'We framed the exhibition as a multidimensional experience, where visitors encounter "Shadow" (crisis in process) and "Self" (transformation).',
+                    services: 'Curatorial Writing, Experience Design, Narrative Strategy'
+                },
+                id: { 
+                    t: 'Mātṛā Cita', 
+                    sub: 'Penulisan Manusia vs Kolaborasi AI dalam peradaban Desain.',
+                    challenge: 'Mengkurasi pameran desain yang mengeksplorasi ketegangan antara intensi manusia dan inovasi bantuan AI.',
+                    solution: 'Kami membingkai pameran sebagai pengalaman multidimensi, di mana pengunjung menjumpai "Shadow" (krisis proses) dan "Self" (transformasi).',
+                    services: 'Penulisan Kuratorial, Desain Pengalaman, Strategi Narasi'
+                },
+                img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1200'
+            },
+            5: {
+                cat: 'collab',
+                client: 'Environmental Psychology Project',
+                en: { 
+                    t: 'The Wanderplant', 
+                    sub: 'A reflective journey through rare Indonesian flora.',
+                    challenge: 'Raising awareness for rare plants through a purely technical approach often fails to build empathy.',
+                    solution: 'Personified rare plants like "Si Petualang" (Adventurer) to create an imaginative wonderland journey of self-reflection.',
+                    services: 'Object Personification, Narrative Journey, Creative Concept'
+                },
+                id: { 
+                    t: 'The Wanderplant', 
+                    sub: 'Perjalanan reflektif melalui flora langka Indonesia.',
+                    challenge: 'Meningkatkan kesadaran akan tanaman langka melalui pendekatan teknis murni seringkali gagal membangun empati.',
+                    solution: 'Mempersonifikasi tanaman langka seperti "Si Petualang" untuk menciptakan perjalanan wonderland imajinatif guna refleksi diri.',
+                    services: 'Personifikasi Objek, Narasi Perjalanan, Konsep Kreatif'
+                },
+                img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1200'
+            },
+            6: {
+                cat: 'collab',
+                client: 'TransJakarta & Ourchetype',
+                en: { 
+                    t: 'Mempertemukan Jakarta', 
+                    sub: 'Public transport as a space for self-encounter.',
+                    challenge: 'TransJakarta is often seen merely as a tool for commuting. How do we turn it into a meaningful urban experience?',
+                    solution: 'A narrative campaign: "Encountering the Self, Becoming the Others," viewing the bus as a symbol of human interconnectedness.',
+                    services: 'Social Behavioral Design, Narrative Campaign, UX Writing'
+                },
+                id: { 
+                    t: 'Mempertemukan Jakarta', 
+                    sub: 'Transportasi publik sebagai ruang perjumpaan diri.',
+                    challenge: 'TransJakarta seringkali hanya dilihat sebagai alat komuter. Bagaimana kita mengubahnya menjadi pengalaman urban yang bermakna?',
+                    solution: 'Kampanye naratif: "Menjumpai diri, Menjadi sesama," memandang bus sebagai simbol keterhubungan antarmanusia.',
+                    services: 'Desain Perilaku Sosial, Kampanye Narasi, UX Writing'
+                },
+                img: 'https://images.unsplash.com/photo-1532939163844-547f958e91b4?auto=format&fit=crop&q=80&w=1200'
+            },
+            7: {
+                cat: 'campaign',
+                client: 'Belantara Raya Exhibition',
+                en: { 
+                    t: 'The Great Wilds', 
+                    sub: 'Finding strength within the labyrinth of flora.',
+                    challenge: 'Engaging exhibition visitors in a deep philosophical exploration of their own inner "wilderness".',
+                    solution: 'Interactive stations like "Cave of Hope" and "Shimmering Lake" where visitors answer questions to discover their inner strength.',
+                    services: 'Exhibition Narrative, Interactive Storytelling, World-building'
+                },
+                id: { 
+                    t: 'Belantara Raya', 
+                    sub: 'Menemukan kekuatan di dalam labirin flora.',
+                    challenge: 'Melibatkan pengunjung pameran dalam eksplorasi filosofis mendalam tentang "belantara" dalam diri mereka sendiri.',
+                    solution: 'Stasiun interaktif seperti "Gua Harapan" dan "Danau Kemilau" di mana pengunjung menjawab pertanyaan untuk menemukan kekuatan diri.',
+                    services: 'Narasi Pameran, Storytelling Interaktif, World-building'
+                },
+                img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1200'
+            },
+            8: {
+                cat: 'copy',
+                client: 'Rebel Craft Identity',
+                en: { 
+                    t: 'Maverick Identity', 
+                    sub: 'Breaking status quo through metal poster creation.',
+                    challenge: 'A brand for "Rebels" needs more than just a cool logo; it needs a manifest that resonates with the Maverick spirit.',
+                    solution: 'Crafted a persona story focusing on "Challenging Change" and the "Black Hole" metaphor to invite engagement.',
+                    services: 'Brand Identity Narrative, Archetype Persona, Copywriting'
+                },
+                id: { 
+                    t: 'Identitas Maverick', 
+                    sub: 'Mendobrak status quo melalui kreasi poster besi.',
+                    challenge: 'Brand untuk para "Rebel" butuh lebih dari sekadar logo keren; ia butuh manifes yang beresonansi dengan jiwa Maverick.',
+                    solution: 'Menyusun cerita persona yang berfokus pada "Perubahan yang Menantang" dan metafora "Lubang Hitam" untuk mengundang interaksi.',
+                    services: 'Narasi Identitas Brand, Persona Archetype, Copywriting'
+                },
+                img: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200'
+            },
+            9: {
+                cat: 'copy',
+                client: 'Personal Postcard Series',
+                en: { 
+                    t: 'Echoes of the Past', 
+                    sub: 'Conversations with the memories we left behind.',
+                    challenge: 'Memory is often seen as a burden. How do we transform nostalgia into a healing experience?',
+                    solution: 'A postcard content series that treats "The Past" as a person writing to you, encouraging acceptance and growth.',
+                    services: 'Creative Writing, Emotional Narrative, Micro-Storytelling'
+                },
+                id: { 
+                    t: 'Gema Masa Lalu', 
+                    sub: 'Percakapan dengan memori yang kita tinggalkan.',
+                    challenge: 'Memori seringkali dianggap beban. Bagaimana kita mentransformasi nostalgia menjadi pengalaman penyembuhan?',
+                    solution: 'Seri konten kartu pos yang memperlakukan "Masa Lalu" sebagai sosok yang menyurati Anda, mendorong penerimaan dan pertumbuhan.',
+                    services: 'Penulisan Kreatif, Narasi Emosional, Micro-Storytelling'
+                },
+                img: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=1200'
+            },
+            10: {
+                cat: 'research',
+                client: 'Ourchetype Experience Design',
+                en: { 
+                    t: 'Bubble of Consciousness', 
+                    sub: 'Mapping the layers of Persona, Shadow, and Self.',
+                    challenge: 'Simplifying complex Jungian psychology into an intuitive spatial experience.',
+                    solution: 'Divided space into "Ruang Baur" (Persona), "Ruang Singgung" (Shadow), and "Ruang Imajiner" (Self) for reflective exploration.',
+                    services: 'Archetype Methodology, Experience Strategy, Narrative Layering'
+                },
+                id: { 
+                    t: 'Gelembung Kesadaran', 
+                    sub: 'Memetakan lapisan Persona, Shadow, dan Self.',
+                    challenge: 'Menyederhanakan psikologi Jungian yang kompleks menjadi pengalaman spasial yang intuitif.',
+                    solution: 'Membagi ruang menjadi "Ruang Baur" (Persona), "Ruang Singgung" (Shadow), dan "Ruang Imajiner" (Self) untuk eksplorasi reflektif.',
+                    services: 'Metodologi Archetype, Strategi Pengalaman, Narrative Layering'
+                },
+                img: 'https://images.unsplash.com/photo-1518005020480-cf957ff49669?auto=format&fit=crop&q=80&w=1200'
+            },
+	    11: {
+cat: 'branding',
+client: 'Aesence',
+en:{
+t:'Aesence',
+sub:'Branding',
+challenge:'...',
+solution:'...',
+services:'Branding'
+},
+id:{
+t:'Aesence',
+sub:'Branding',
+challenge:'...',
+solution:'...',
+services:'Branding'
+},
+img:'img/aesence.jpg'
+},
+
+12:{
+cat:'copy',
+client:'Econovation',
+en:{
+t:'Econovation',
+sub:'Script Copy',
+challenge:'...',
+solution:'...',
+services:'Copywriting'
+},
+id:{
+t:'Econovation',
+sub:'Script Copy',
+challenge:'...',
+solution:'...',
+services:'Copywriting'
+},
+img:'img/econovation.jpg'
+},
+
+13:{
+cat:'campaign',
+client:'DPMD',
+en:{
+t:'DPMD',
+sub:'Campaign and Content',
+challenge:'...',
+solution:'...',
+services:'Campaign'
+},
+id:{
+t:'DPMD',
+sub:'Campaign dan Konten',
+challenge:'...',
+solution:'...',
+services:'Campaign'
+},
+img:'img/dpmd.jpg'
+},
+        };
+
+        const catalogueList = [
+
+{ id:1, cat:'copy' },        // cosmic web narrative
+{ id:3, cat:'collab' },      // mycl
+{ id:4, cat:'research' },    // matra cita
+{ id:7, cat:'campaign' },    // belantara raya
+{ id:8, cat:'branding' },    // rebel craft
+{ id:11, cat:'branding' },   // aesence
+{ id:12, cat:'copy' },       // econovation
+{ id:13, cat:'campaign' }    // dpmd
+
+];
+
+        // --- START: JOURNEY DATA & LOGIC ---
+const journeyData = {
+    en: { 
+        title: "Interactive Exhibition.",
+        tag: "DISCOVERY JOURNEY",
+        desc: "Simulation of 3 intellectual patterns to give birth to a complete narrative character.",
+        persona: { t: "The Persona Output", b: "Analyzing market demands and crafting a professional narrative that resonates with the audience." }, 
+        shadow: { t: "The Shadow Output", b: "Diving into deep, unspoken emotions to find the unique edge of the story." }, 
+        self: { t: "The Self Output", b: "Merging logic and raw creativity into a balanced, authentic brand story." },
+        default: "Pick a pattern to see how I process your narrative."
+    },
+    id: { 
+        title: "Eksibisi Interaktif.",
+        tag: "PERJALANAN PENEMUAN",
+        desc: "Simulasi 3 pola intelektual untuk melahirkan karakter narasi yang utuh.",
+        persona: { t: "Hasil Persona", b: "Menganalisis permintaan pasar dan menyusun narasi profesional yang beresonansi dengan audiens." }, 
+        shadow: { t: "Hasil Shadow", b: "Menyelami emosi mendalam yang tidak terucapkan untuk menemukan sisi unik cerita." }, 
+        self: { t: "Hasil Self", b: "Menggabungkan logika dan kreativitas mentah menjadi cerita brand yang seimbang dan autentik." },
+        default: "Pilih pola untuk melihat bagaimana saya memproses narasi Anda."
+    }
+};
+
+let lastOpenedPattern = null;
+
+window.updateJourney = function(key) {
+    const out = document.getElementById('journey-output');
+    if (!out) return;
+    
+    document.querySelectorAll('.journey-step').forEach(s => s.classList.remove('active'));
+    const activeStep = document.getElementById('step-' + key);
+    if (activeStep) activeStep.classList.add('active');
+    
+    lastOpenedPattern = key;
+    const content = journeyData[currentLang][key];
+    
+    out.innerHTML = `
+        <div class="fade-in">
+            <h5 class="text-2xl font-serif mb-2 text-terracotta">${content.t}</h5>
+            <p class="text-sm text-white/80">${content.b}</p>
+        </div>
+    `;
+};
+// --- END: JOURNEY DATA & LOGIC ---
+
+        
+
+        
+
+        window.toggleModal = (show) => {
+            const m = document.getElementById('modal');
+            m.classList.toggle('hidden', !show);
+            m.classList.toggle('flex', show);
+        };
+
+        window.changeLanguage = (lang) => {
+
+    currentLang = lang;
+
+    document.querySelectorAll('.lang-text').forEach(el => {
+        const val = el.getAttribute(`data-${lang}`);
+        if (val) el.innerHTML = val;
+    });
+
+    const btnEn = document.getElementById('btn-en');
+    const btnId = document.getElementById('btn-id');
+
+    btnEn.className =
+        lang === 'en'
+            ? 'px-3 py-1 rounded-full bg-ink text-white text-[9px]'
+            : 'px-3 py-1 rounded-full text-ink/40 text-[9px]';
+
+    btnId.className =
+        lang === 'id'
+            ? 'px-3 py-1 rounded-full bg-ink text-white text-[9px]'
+            : 'px-3 py-1 rounded-full text-ink/40 text-[9px]';
+
+    renderKatalog('all');
+
+    const out = document.getElementById('journey-output');
+
+    if (lastOpenedPattern) {
+
+        const c = journeyData[currentLang][lastOpenedPattern];
+
+        out.innerHTML = `
+            <div class="fade-in">
+                <h5 class="text-2xl font-serif mb-2 text-terracotta">${c.t}</h5>
+                <p class="text-sm text-white/80">${c.b}</p>
+            </div>
+        `;
+
+    } else {
+
+        out.innerHTML = `
+            <p class="italic text-white/40">
+                ${journeyData[currentLang].default}
+            </p>
+        `;
+    }
+};
+
+          
+
+        window.renderKatalog = (filter) => {
+
+const grid = document.getElementById('portfolio-grid');
+
+const filtered =
+filter === 'all'
+? catalogueList
+: catalogueList.filter(i => i.cat === filter);
+
+grid.innerHTML = filtered.map(item => {
+
+const data = projectsData[item.id];
+
+if (!data) return "";
+
+const categoryLabel = {
+
+research:{ en:"Research & Strategy", id:"Riset & Strategi" },
+
+branding:{ en:"Branding & Rebranding", id:"Branding & Rebranding" },
+
+voice:{ en:"Brand Voice & Tone", id:"Brand Voice & Tone" },
+
+copy:{ en:"Copywriting", id:"Copywriting" },
+
+campaign:{ en:"Campaign Concept", id:"Konsep Kampanye" },
+
+content:{ en:"Content for Social Media & Museum", id:"Konten Sosial & Museum" },
+
+collab:{ en:"Collaboration Projects", id:"Proyek Kolaborasi" }
+
+};
+
+return `
+
+<div
+onclick="openProject(${item.id})"
+class="fade-in p-8 bg-white border border-sand rounded-[40px] cursor-pointer">
+
+<div class="text-[8px] font-black text-terracotta uppercase mb-4">
+
+${categoryLabel[item.cat]?.[currentLang] || item.cat}
+
+</div>
+
+<h4 class="text-xl font-serif font-bold">
+
+${data[currentLang].t}
+
+</h4>
+
+<p class="text-xs text-ink/50">
+
+${data[currentLang].sub}
+
+</p>
+
+</div>
+
+`;
+
+}).join("");
+
+};
+
+        function initChart() {
+    const ctx = document.getElementById('skillsChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: ['Logic', 'Narrative', 'Research', 'Intuition', 'Strategy', 'Context'],
+            datasets: [{
+                // Data terbaru sesuai permintaan
+                data: [8, 9, 8, 8, 7, 9],
+                backgroundColor: 'rgba(195, 88, 49, 0.1)',
+                borderColor: '#C35831',
+                borderWidth: 2,
+            }]
+        },
+        options: { 
+            responsive: true, 
+            maintainAspectRatio: false, 
+            plugins: { legend: { display: false } },
+            scales: { 
+                r: { 
+                    // Mengatur skala menjadi 1-10 (menggunakan 0 sebagai titik tengah agar grafik tetap proporsional)
+                    min: 0, 
+                    max: 10,
+                    ticks: { 
+                        display: false 
+                    }, 
+                    grid: { 
+                        color: 'rgba(0,0,0,0.05)' 
+                    } 
+                } 
+            } 
+        }
+    });
+}
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initChart();
+            window.renderKatalog('all');
+        });
+
+	window.addEventListener("scroll", () => {
+
+document.querySelectorAll(".parallax-img").forEach(img => {
+
+const speed = 0.05;
+
+const y = window.scrollY * speed;
+
+img.style.transform = `scale(1.05) translateY(${y}px)`;
+
+});
+
+});
+
+    </script>
+</body>
+</html>
