@@ -286,6 +286,8 @@ letter-spacing:0.03em;
 
 <body class="antialiased">
 
+
+
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-[999] border-b border-sand glass-nav">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -298,7 +300,7 @@ letter-spacing:0.03em;
                 <a href="#catalogue" data-en="Catalogue" data-id="Katalog" class="lang-text hover:text-terracotta transition">Catalogue</a>
 		<a href="#featured" data-en="Featured" data-id="Sorotan" class="lang-text hover:text-terracotta transition">Featured</a>
                 <a href="#method" data-en="Method" data-id="Metode" class="lang-text hover:text-terracotta transition">Method</a>
-                <a href="#discovery" data-en="Discovery" data-id="Discovery" class="lang-text hover:text-terracotta transition">Discovery</a>
+                <a href="#discovery" data-en="Discovery" data-id="Eksplorasi" class="lang-text hover:text-terracotta transition">Discovery</a>
                 
                 <div class="flex items-center border border-sand rounded-full px-1 py-1 gap-1 bg-white/50">
                     <button onclick="changeLanguage('en')" id="btn-en" class="px-3 py-1 rounded-full bg-ink text-white text-[9px] transition">EN</button>
@@ -413,16 +415,16 @@ data-id="Branding & Rebranding"
 data-id="Brand Voice & Tone"
 >Brand Voice & Tone</button>
 
-			<button onclick="renderKatalog('all')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Copywriting"
-data-id="Copywriting"
+			<button onclick="renderKatalog('copy')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Script & Copywriting"
+data-id="Skrip & Copywriting"
 >Copywriting</button>
-                        <button onclick="renderKatalog('research')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Campaign Concept"
+                        <button onclick="renderKatalog('campaign')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Campaign Concept"
 data-id="Konsep Kampanye"
 >Campaign Concept</button>
-                        <button onclick="renderKatalog('branding')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Content for Social Media & Museum"
-data-id="Konten Sosial & Museum"
->Content for Social Media & Museum</button>
-                        <button onclick="renderKatalog('voice')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Collaboration Projects"
+                        <button onclick="renderKatalog('content')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Content & Communication"
+data-id="Konten & Komunikasi"
+>Content & Communication</button>
+                        <button onclick="renderKatalog('collab')" class="cat-btn px-6 py-2 border border-sand rounded-full text-[10px] font-bold uppercase whitespace-nowrap lang-text" data-en="Collaboration Projects"
 data-id="Proyek Kolaborasi"
 >Collaboration Projects</button>
                     </div>
@@ -542,7 +544,7 @@ Mempertemukan Jakarta
 
 </div>
 </div>
-            </div>
+         
         </section>
 
 	<section id="personal" class="py-40">
@@ -674,12 +676,12 @@ class="personal-card col-span-12 md:col-span-4 float-slow block">
                         <p class="text-white/60 text-sm leading-relaxed mb-10 lang-text" data-en="Leveraging high-end AI to expand narrative depth, validate research, and accelerate technical production." data-id="Memanfaatkan AI tingkat tinggi untuk memperluas kedalaman narasi, memvalidasi riset, dan mempercepat produksi teknis.">Leveraging high-end AI to expand narrative depth, validate research, and accelerate technical production.</p>
 
                         <div class="grid grid-cols-2 gap-6">
-                            <div class="method-pill flex items-center justify-center">CLAUDE 3.5 — Structural Synthesis</div>
-                            <div class="method-pill flex items-center justify-center">GPT-4O — Narrative Expansion</div>
-                            <div class="method-pill flex items-center justify-center">Gemini — Multimodal Fusion</div>
-                            <div class="method-pill flex items-center justify-center">Perplexity — Conversational Search</div>
-																		<div class="method-pill flex items-center justify-center">NotebookLM — Contextual Analysis</div>
-                            <div class="method-pill flex items-center justify-center">Perplexity — Conversational Search</div>
+                            <div class="method-pill flex items-center align-left">CLAUDE 3.5 — Structural Synthesis</div>
+                            <div class="method-pill flex items-center align-left">GPT-4O — Narrative Expansion</div>
+                            <div class="method-pill flex items-center align-left">Gemini — Multimodal Fusion</div>
+                            <div class="method-pill flex items-center align-left">Perplexity — Conversational Search</div>
+																		<div class="method-pill flex items-center align-left">NotebookLM — Contextual Analysis</div>
+                            <div class="method-pill flex items-center align-left">Grammarly — Writing Assistant</div>
                         </div>
 
                         <div class="mt-12 pt-12 border-t border-white/10 italic text-white/40 text-xs lang-text" data-en="&ldquo;I don't let AI write the story. I use AI to help me see the story from angles I haven't considered.&rdquo;" data-id="&ldquo;Saya tidak membiarkan AI menulis cerita. Saya menggunakan AI untuk membantu saya melihat cerita dari sudut yang belum pernah saya pertimbangkan.&rdquo;">
@@ -833,8 +835,25 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
 
     </div>
 </footer>  
+   </div>
+</div>
 
-    
+    <!-- PROJECT PAGE -->
+<div id="project-page" class="min-h-screen bg-paper px-6 py-20" style="display:none">
+
+<button onclick="goHome()" class="mb-8 text-terracotta">
+← Back
+</button>
+
+<h1 id="project-title" class="text-4xl font-serif mb-4"></h1>
+
+<p id="project-subtitle" class="text-lg text-ink/60 mb-8"></p>
+
+<img id="project-image" class="w-full rounded-[30px] mb-8">
+
+<p id="project-services" class="text-sm text-ink/60"></p>
+
+</div>
 
     <!-- Contact Modal -->
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-ink/90 backdrop-blur-md p-6">
@@ -852,268 +871,181 @@ data-id="Harmonisasi. Di mana identitas saya sebagai penulis terbentuk, menyeimb
         let currentLang = 'en';
 
         // Project Data (Integrated from uploaded documents)
-        const projectsData = {
-            1: {
-                cat: 'copy',
-                client: 'Tujusemesta Creative Space',
-                en: { 
-                    t: 'Cosmic Web Narrative', 
-                    sub: 'Translating creative consultancy into a "Microcosm" universe.',
-                    challenge: 'A creative space needs a landing page that doesn\'t just sell services, but invites clients into a philosophical journey of discovery.',
-                    solution: 'We used the "Cosmic" metaphor, framing every client project as a hidden galaxy that needs to be lit up through collaborative design.',
-                    services: 'Website Copywriting, Brand Storytelling, UX Writing'
-                },
-                id: { 
-                    t: 'Narasi Web Kosmik', 
-                    sub: 'Menerjemahkan konsultan kreatif menjadi semesta "Mikrokosmos".',
-                    challenge: 'Ruang kreatif membutuhkan landing page yang tidak hanya menjual jasa, tapi mengajak klien masuk ke dalam perjalanan filosofis penemuan.',
-                    solution: 'Kami menggunakan metafora "Kosmik", membingkai setiap proyek klien sebagai galaksi tersembunyi yang perlu diterangi melalui desain kolaboratif.',
-                    services: 'Copywriting Website, Storytelling Brand, UX Writing'
-                },
-                img: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=1200'
-            },
-            2: {
-                cat: 'collab',
-                client: 'Bandung Heritage (Braga)',
-                en: { 
-                    t: 'Pustaka Cita', 
-                    sub: 'Uncovering the collective "Angan" of historical Braga.',
-                    challenge: 'How to make historical sites in Braga relevant again to visitors beyond just being an "old building"?',
-                    solution: 'Through the "Ourchetype" method, we personified heritage sites (like Toko Buku Nusa Cendana) to reveal their "Self" and "Shadow" values.',
-                    services: 'Cultural Narrative, Interactive Experience, Heritage Personification'
-                },
-                id: { 
-                    t: 'Pustaka Cita', 
-                    sub: 'Mengungkap "Angan" kolektif dari sejarah kawasan Braga.',
-                    challenge: 'Bagaimana membuat situs bersejarah di Braga relevan kembali bagi pengunjung selain hanya sekadar "bangunan tua"?',
-                    solution: 'Melalui metode "Ourchetype", kami mempersonifikasi situs warisan (seperti Toko Buku Nusa Cendana) untuk mengungkap nilai "Self" dan "Shadow" mereka.',
-                    services: 'Narasi Budaya, Pengalaman Interaktif, Personifikasi Warisan'
-                },
-                img: 'https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=1200'
-            },
-            3: {
-                cat: 'collab',
-                client: 'MYCL (Mycotech)',
-                en: { 
-                    t: 'Circular Journey', 
-                    sub: 'The regenerative narrative of Mycelium-based materials.',
-                    challenge: 'Sustainability often sounds like a buzzword. We needed to make the organic waste cycle feel personal and impactful.',
-                    solution: 'An interactive journey mapping the cycle of Mycelium (Growth, Decomposition, Recovery) to human decision-making patterns.',
-                    services: 'Sustainability Storytelling, Narrative Design, Circular Economy Strategy'
-                },
-                id: { 
-                    t: 'Circular Journey', 
-                    sub: 'Narasi regeneratif dari material berbasis Miselium.',
-                    challenge: 'Keberlanjutan seringkali terdengar seperti kata klise. Kami perlu membuat siklus limbah organik terasa personal dan berdampak.',
-                    solution: 'Perjalanan interaktif yang memetakan siklus Miselium (Tumbuh, Terurai, Pulih) ke pola pengambilan keputusan manusia.',
-                    services: 'Storytelling Keberlanjutan, Desain Narasi, Strategi Ekonomi Sirkular'
-                },
-                img: 'https://images.unsplash.com/photo-1550985543-f47f38aee65e?auto=format&fit=crop&q=80&w=1200'
-            },
-            4: {
-                cat: 'research',
-                client: 'Bandung Design Biennale',
-                en: { 
-                    t: 'Mātṛā Cita', 
-                    sub: 'Human-Authored vs AI Collaboration in Design civilation.',
-                    challenge: 'Curating a design exhibition that explores the tension between human intention and AI-assisted innovation.',
-                    solution: 'We framed the exhibition as a multidimensional experience, where visitors encounter "Shadow" (crisis in process) and "Self" (transformation).',
-                    services: 'Curatorial Writing, Experience Design, Narrative Strategy'
-                },
-                id: { 
-                    t: 'Mātṛā Cita', 
-                    sub: 'Penulisan Manusia vs Kolaborasi AI dalam peradaban Desain.',
-                    challenge: 'Mengkurasi pameran desain yang mengeksplorasi ketegangan antara intensi manusia dan inovasi bantuan AI.',
-                    solution: 'Kami membingkai pameran sebagai pengalaman multidimensi, di mana pengunjung menjumpai "Shadow" (krisis proses) dan "Self" (transformasi).',
-                    services: 'Penulisan Kuratorial, Desain Pengalaman, Strategi Narasi'
-                },
-                img: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=1200'
-            },
-            5: {
-                cat: 'collab',
-                client: 'Environmental Psychology Project',
-                en: { 
-                    t: 'The Wanderplant', 
-                    sub: 'A reflective journey through rare Indonesian flora.',
-                    challenge: 'Raising awareness for rare plants through a purely technical approach often fails to build empathy.',
-                    solution: 'Personified rare plants like "Si Petualang" (Adventurer) to create an imaginative wonderland journey of self-reflection.',
-                    services: 'Object Personification, Narrative Journey, Creative Concept'
-                },
-                id: { 
-                    t: 'The Wanderplant', 
-                    sub: 'Perjalanan reflektif melalui flora langka Indonesia.',
-                    challenge: 'Meningkatkan kesadaran akan tanaman langka melalui pendekatan teknis murni seringkali gagal membangun empati.',
-                    solution: 'Mempersonifikasi tanaman langka seperti "Si Petualang" untuk menciptakan perjalanan wonderland imajinatif guna refleksi diri.',
-                    services: 'Personifikasi Objek, Narasi Perjalanan, Konsep Kreatif'
-                },
-                img: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=1200'
-            },
-            6: {
-                cat: 'collab',
-                client: 'TransJakarta & Ourchetype',
-                en: { 
-                    t: 'Mempertemukan Jakarta', 
-                    sub: 'Public transport as a space for self-encounter.',
-                    challenge: 'TransJakarta is often seen merely as a tool for commuting. How do we turn it into a meaningful urban experience?',
-                    solution: 'A narrative campaign: "Encountering the Self, Becoming the Others," viewing the bus as a symbol of human interconnectedness.',
-                    services: 'Social Behavioral Design, Narrative Campaign, UX Writing'
-                },
-                id: { 
-                    t: 'Mempertemukan Jakarta', 
-                    sub: 'Transportasi publik sebagai ruang perjumpaan diri.',
-                    challenge: 'TransJakarta seringkali hanya dilihat sebagai alat komuter. Bagaimana kita mengubahnya menjadi pengalaman urban yang bermakna?',
-                    solution: 'Kampanye naratif: "Menjumpai diri, Menjadi sesama," memandang bus sebagai simbol keterhubungan antarmanusia.',
-                    services: 'Desain Perilaku Sosial, Kampanye Narasi, UX Writing'
-                },
-                img: 'https://images.unsplash.com/photo-1532939163844-547f958e91b4?auto=format&fit=crop&q=80&w=1200'
-            },
-            7: {
-                cat: 'campaign',
-                client: 'Belantara Raya Exhibition',
-                en: { 
-                    t: 'The Great Wilds', 
-                    sub: 'Finding strength within the labyrinth of flora.',
-                    challenge: 'Engaging exhibition visitors in a deep philosophical exploration of their own inner "wilderness".',
-                    solution: 'Interactive stations like "Cave of Hope" and "Shimmering Lake" where visitors answer questions to discover their inner strength.',
-                    services: 'Exhibition Narrative, Interactive Storytelling, World-building'
-                },
-                id: { 
-                    t: 'Belantara Raya', 
-                    sub: 'Menemukan kekuatan di dalam labirin flora.',
-                    challenge: 'Melibatkan pengunjung pameran dalam eksplorasi filosofis mendalam tentang "belantara" dalam diri mereka sendiri.',
-                    solution: 'Stasiun interaktif seperti "Gua Harapan" dan "Danau Kemilau" di mana pengunjung menjawab pertanyaan untuk menemukan kekuatan diri.',
-                    services: 'Narasi Pameran, Storytelling Interaktif, World-building'
-                },
-                img: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=1200'
-            },
-            8: {
-                cat: 'copy',
-                client: 'Rebel Craft Identity',
-                en: { 
-                    t: 'Maverick Identity', 
-                    sub: 'Breaking status quo through metal poster creation.',
-                    challenge: 'A brand for "Rebels" needs more than just a cool logo; it needs a manifest that resonates with the Maverick spirit.',
-                    solution: 'Crafted a persona story focusing on "Challenging Change" and the "Black Hole" metaphor to invite engagement.',
-                    services: 'Brand Identity Narrative, Archetype Persona, Copywriting'
-                },
-                id: { 
-                    t: 'Identitas Maverick', 
-                    sub: 'Mendobrak status quo melalui kreasi poster besi.',
-                    challenge: 'Brand untuk para "Rebel" butuh lebih dari sekadar logo keren; ia butuh manifes yang beresonansi dengan jiwa Maverick.',
-                    solution: 'Menyusun cerita persona yang berfokus pada "Perubahan yang Menantang" dan metafora "Lubang Hitam" untuk mengundang interaksi.',
-                    services: 'Narasi Identitas Brand, Persona Archetype, Copywriting'
-                },
-                img: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=1200'
-            },
-            9: {
-                cat: 'copy',
-                client: 'Personal Postcard Series',
-                en: { 
-                    t: 'Echoes of the Past', 
-                    sub: 'Conversations with the memories we left behind.',
-                    challenge: 'Memory is often seen as a burden. How do we transform nostalgia into a healing experience?',
-                    solution: 'A postcard content series that treats "The Past" as a person writing to you, encouraging acceptance and growth.',
-                    services: 'Creative Writing, Emotional Narrative, Micro-Storytelling'
-                },
-                id: { 
-                    t: 'Gema Masa Lalu', 
-                    sub: 'Percakapan dengan memori yang kita tinggalkan.',
-                    challenge: 'Memori seringkali dianggap beban. Bagaimana kita mentransformasi nostalgia menjadi pengalaman penyembuhan?',
-                    solution: 'Seri konten kartu pos yang memperlakukan "Masa Lalu" sebagai sosok yang menyurati Anda, mendorong penerimaan dan pertumbuhan.',
-                    services: 'Penulisan Kreatif, Narasi Emosional, Micro-Storytelling'
-                },
-                img: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&q=80&w=1200'
-            },
-            10: {
-                cat: 'research',
-                client: 'Ourchetype Experience Design',
-                en: { 
-                    t: 'Bubble of Consciousness', 
-                    sub: 'Mapping the layers of Persona, Shadow, and Self.',
-                    challenge: 'Simplifying complex Jungian psychology into an intuitive spatial experience.',
-                    solution: 'Divided space into "Ruang Baur" (Persona), "Ruang Singgung" (Shadow), and "Ruang Imajiner" (Self) for reflective exploration.',
-                    services: 'Archetype Methodology, Experience Strategy, Narrative Layering'
-                },
-                id: { 
-                    t: 'Gelembung Kesadaran', 
-                    sub: 'Memetakan lapisan Persona, Shadow, dan Self.',
-                    challenge: 'Menyederhanakan psikologi Jungian yang kompleks menjadi pengalaman spasial yang intuitif.',
-                    solution: 'Membagi ruang menjadi "Ruang Baur" (Persona), "Ruang Singgung" (Shadow), dan "Ruang Imajiner" (Self) untuk eksplorasi reflektif.',
-                    services: 'Metodologi Archetype, Strategi Pengalaman, Narrative Layering'
-                },
-                img: 'https://images.unsplash.com/photo-1518005020480-cf957ff49669?auto=format&fit=crop&q=80&w=1200'
-            },
-	    11: {
-cat: 'branding',
-client: 'Aesence',
-en:{
-t:'Aesence',
-sub:'Branding',
-challenge:'...',
-solution:'...',
-services:'Branding'
-},
-id:{
-t:'Aesence',
-sub:'Branding',
-challenge:'...',
-solution:'...',
-services:'Branding'
-},
-img:'img/aesence.jpg'
+        const projectsData = [
+
+{
+id:1,
+title:"Cosmic Web Narrative",
+subtitle:"Narrative Copywriting for Brand Communication",
+category:"copy",
+challenge:"How to translate abstract brand values into a narrative that feels emotional, structured, and easy to understand.",
+solution:"Developed storytelling-based copy that connects brand philosophy with audience experience, turning complex ideas into engaging narrative communication.",
+client: "Tujusemesta Creative Space",
+services:"Copywriting, Narrative Development",
+image:"img/catalog/cosmic.jpg"
 },
 
-12:{
-cat:'copy',
-client:'Econovation',
-en:{
-t:'Econovation',
-sub:'Script Copy',
-challenge:'...',
-solution:'...',
-services:'Copywriting'
-},
-id:{
-t:'Econovation',
-sub:'Script Copy',
-challenge:'...',
-solution:'...',
-services:'Copywriting'
-},
-img:'img/econovation.jpg'
+{
+id:2,
+title:"Circular Journey",
+subtitle:"Collaborative Brand & Material Narrative",
+category:"collab",
+challenge:"How to communicate sustainable material innovation without losing emotional connection with audience.",
+solution:"Built collaborative narrative bridging material research, design concept, and brand storytelling.",
+client: "MYCL",
+services:"Narrative, Concept, Collaboration",
+image:"img/catalog/mycl.jpg"
 },
 
-13:{
-cat:'campaign',
-client:'DPMD',
-en:{
-t:'DPMD',
-sub:'Campaign and Content',
-challenge:'...',
-solution:'...',
-services:'Campaign'
+{
+id:3,
+title:"Matra Cita",
+subtitle:"Research-Based Narrative Development",
+category:"research",
+challenge:"How to translate cultural and philosophical research into communicative narrative form.",
+solution:"Developed research-driven storytelling framework to connect historical, cultural, and conceptual references.",
+client: "Bandung Design Biennale",
+services:"Research, Narrative, Concept",
+image:"img/catalog/matra.jpg"
 },
-id:{
-t:'DPMD',
-sub:'Campaign dan Konten',
-challenge:'...',
-solution:'...',
-services:'Campaign'
+
+{
+id:4,
+title:"Belantara Raya",
+subtitle:"Collaborative Identity & Experience Concept",
+category:"collab",
+challenge:"How to build identity that connects nature, culture, and contemporary audience.",
+solution:"Created collaborative concept combining storytelling, visual identity, and experiential narrative.",
+client: "Asktarra",
+services:"Concept, Collaboration, Narrative",
+image:"img/catalog/belantara.jpg"
 },
-img:'img/dpmd.jpg'
+
+{
+id:5,
+title:"Rebel Craft Identity",
+subtitle:"Voice & Brand Narrative Development",
+category:"voice",
+challenge:"How to define brand voice that feels authentic, strong, and personal.",
+solution:"Developed narrative tone, copy style, and identity language based on character-driven storytelling.",
+client: "The Hallway Space",
+services:"Brand Voice, Copywriting, Identity",
+image:"img/catalog/rebel.jpg"
 },
-        };
+
+{
+id:6,
+title:"Branding Skin Clinic",
+subtitle:"Clinical Beauty Research & Brand Positioning",
+category:"branding",
+challenge:"How to build a skin clinic brand that feels trustworthy, natural, and medically reliable in a competitive market.",
+solution:"Conducted research, consumer mapping, benchmarking, and narrative positioning to define a clear brand direction.",
+client: "Aesence",
+services:"Research, Brand Strategy, Copywriting",
+image:"img/catalog/aesence.jpg"
+},
+
+{
+id:7,
+title:"Build Back Better",
+subtitle:"Narrative Script for Sustainability Campaign",
+category:"copy",
+challenge:"How to communicate sustainability issues in a way that inspires participation.",
+solution:"Created storyline-based campaign script highlighting innovation, environment, and post-pandemic challenges.",
+client: "Econovation",
+services:"Scriptwriting, Storyline, Campaign Narrative",
+image:"img/catalog/econovation.jpg"
+},
+
+{
+id:8,
+title:"Sosialisasi Perda Tata Ruang",
+subtitle:"Urban Narrative Script for Public Communication",
+category:"copy",
+challenge:"How to explain spatial planning and urban issues to public audience.",
+solution:"Developed storyboard-driven narrative combining history, urban problems, and future vision.",
+client: "PUPR Payakumbuh",
+services:"Scriptwriting, Storyboard, Narrative",
+image:"img/catalog/pupr.jpg"
+},
+
+{
+id:9,
+title:"Raden Saleh",
+subtitle:"Historical Narrative Script for Exhibition Motion",
+category:"copy",
+challenge:"How to present historical figure in an engaging modern format.",
+solution:"Created cinematic narrative script telling biography of Raden Saleh through visual storytelling.",
+client: "Galeri Nasional",
+services:"Scriptwriting, Exhibition Content, Motion Storyline",
+image:"img/catalog/raden.jpg"
+},
+
+{
+id:10,
+title:"Berdesa",
+subtitle:"Digital Campaign & Content System Development",
+category:"campaign",
+challenge:"Existing communication lacked identity, consistency, and engagement.",
+solution:"Designed content system, campaign structure, and storytelling approach to build stronger public awareness.",
+client: "DPMD Jawa Barat",
+services:"Campaign Strategy, Content Planning, Copywriting",
+image:"img/catalog/dpmd.jpg"
+},
+
+{
+id:11,
+title:"Brand Development",
+subtitle:"Brand Concept & Communication Development",
+category:"content",
+challenge:"How to communicate technical product reliability to diverse audience.",
+solution:"Developed narrative communication strategy based on consumer mapping and brand positioning.",
+client: "SCI Paint",
+services:"Brand Concept, Copywriting, Communication",
+image:"img/catalog/sci.jpg"
+},
+
+{
+id:12,
+title:"Flipflops Branding",
+subtitle:"Brand Strategy & Visual Identity Development",
+category:"branding",
+challenge:"The brand needed a clear positioning to stand out in a crowded casual footwear market while still feeling simple, flexible, and close to daily life.",
+solution:"Developed brand concept, positioning, persona, visual system, and guideline to build a versatile sandal brand with lively, flexible, and expressive character.",
+client: "Kluk",
+services:"Brand Strategy, Brand Identity, Guideline, Visual System, Copywriting",
+image:"img/catalog/kluk.jpg"
+},
+
+{
+id:13,
+title:"Communication Guideline",
+subtitle:"Brand Voice, Persona, and Content Communication System",
+category:"voice",
+challenge:"The institution needed a consistent communication style that could connect with village communities while still delivering informative and structured government messages.",
+solution:"Developed brand persona, tone of voice, language system, content pillars, and communication framework to create a friendly, inclusive, and culturally rooted communication style for village audiences.",
+client: "DPMD Jawa Barat",
+services:"Brand Voice, Communication Strategy, Content System, Copywriting, Persona Development",
+image:"img/catalog/dpmd-voice.jpg"
+},
+
+]
 
         const catalogueList = [
 
-{ id:1, cat:'copy' },        // cosmic web narrative
-{ id:3, cat:'collab' },      // mycl
-{ id:4, cat:'research' },    // matra cita
-{ id:7, cat:'campaign' },    // belantara raya
-{ id:8, cat:'branding' },    // rebel craft
-{ id:11, cat:'branding' },   // aesence
-{ id:12, cat:'copy' },       // econovation
-{ id:13, cat:'campaign' }    // dpmd
+{ id:1, cat:'copy' },
+{ id:2, cat:'collab' },
+{ id:3, cat:'research' },
+{ id:4, cat:'collab' },
+{ id:5, cat:'voice' },
+{ id:6, cat:'branding' },
+{ id:7, cat:'copy' },
+{ id:8, cat:'copy' },
+{ id:9, cat:'copy' },
+{ id:10, cat:'campaign' },
+{ id:11, cat:'content' },
+{ id:12, cat:'branding' },
+{ id:13, cat:'voice' }
 
 ];
 
@@ -1220,73 +1152,188 @@ window.updateJourney = function(key) {
 
           
 
-        window.renderKatalog = (filter) => {
+       window.renderKatalog = (filter) => {
 
 const grid = document.getElementById('portfolio-grid');
 
+// 👉 ACTIVE BUTTON FIX
+document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.classList.remove('bg-ink','text-white');
+    btn.classList.add('border','border-sand','text-ink');
+});
+
+// cari button yg diklik
+const activeBtn = [...document.querySelectorAll('.cat-btn')]
+.find(btn => btn.getAttribute('onclick').includes(filter));
+
+if(activeBtn){
+    activeBtn.classList.add('bg-ink','text-white');
+    activeBtn.classList.remove('border','border-sand','text-ink');
+}
+
+// 👉 FILTER DATA
 const filtered =
 filter === 'all'
 ? catalogueList
 : catalogueList.filter(i => i.cat === filter);
 
+// 👉 RENDER
 grid.innerHTML = filtered.map(item => {
 
-const data = projectsData[item.id];
-
+const data = projectsData[item.id-1];
 if (!data) return "";
 
 const categoryLabel = {
-
-research:{ en:"Research & Strategy", id:"Riset & Strategi" },
-
-branding:{ en:"Branding & Rebranding", id:"Branding & Rebranding" },
-
-voice:{ en:"Brand Voice & Tone", id:"Brand Voice & Tone" },
-
-copy:{ en:"Copywriting", id:"Copywriting" },
-
-campaign:{ en:"Campaign Concept", id:"Konsep Kampanye" },
-
-content:{ en:"Content for Social Media & Museum", id:"Konten Sosial & Museum" },
-
-collab:{ en:"Collaboration Projects", id:"Proyek Kolaborasi" }
-
+research:"Research & Strategy",
+branding:"Branding & Rebranding",
+voice:"Brand Voice & Tone",
+copy:"Script & Copywriting",
+campaign:"Campaign Concept",
+content:"Content & Communication",
+collab:"Collaboration"
 };
 
 return `
-
-<div
-onclick="openProject(${item.id})"
+<div onclick="openProject(${item.id})"
 class="fade-in p-8 bg-white border border-sand rounded-[40px] cursor-pointer">
 
 <div class="text-[8px] font-black text-terracotta uppercase mb-4">
-
-${categoryLabel[item.cat]?.[currentLang] || item.cat}
-
+${categoryLabel[item.cat] || item.cat}
 </div>
 
 <h4 class="text-xl font-serif font-bold">
-
-${data[currentLang].t}
-
+${data.title}
 </h4>
 
 <p class="text-xs text-ink/50">
-
-${data[currentLang].sub}
-
+${data.subtitle}
 </p>
 
 </div>
-
 `;
 
 }).join("");
-
 };
+
+function openProject(id){
+
+    const project = projectsData.find(p => p.id === id);
+    if(!project) return;
+
+    const main = document.getElementById("main-content");
+    const page = document.getElementById("project-page");
+
+    // 🔥 FORCE HIDE
+    main.style.display = "none";
+    main.style.visibility = "hidden";
+    main.style.height = "0";
+    main.style.overflow = "hidden";
+
+    page.style.display = "block";
+
+
+    // 🔥 FULL TEMPLATE (FS STYLE)
+    page.innerHTML = `
+    
+    <div class="min-h-screen bg-paper px-6 py-16">
+
+        <div class="max-w-6xl mx-auto">
+
+            <button onclick="goHome()" class="text-terracotta font-black mb-8">
+                ← BACK TO CATALOGUE
+            </button>
+		
+           <h1 class="text-5xl md:text-6xl font-serif font-bold mb-3 leading-tight">
+    ${project.title}
+</h1>
+
+<p class="text-[14px] text-ink/50 mb-12">
+    ${project.subtitle}
+</p>
+
+            <img src="${project.image}" 
+class="w-full rounded-[40px] mb-16 object-cover">
+
+            <div class="grid md:grid-cols-3 gap-12">
+
+                <div class="md:col-span-2">
+
+                    <div class="mb-10">
+                        <h5 class="text-xs font-black uppercase tracking-[0.3em] text-terracotta mb-6 lang-text" data-en="THE CHALLENGE" data-id="TANTANGANNYA">THE CHALLENGE</h5>
+
+                        <p class="text-xl font-serif font-semibold">
+                            ${project.challenge}
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5 class="text-xs font-black uppercase tracking-[0.3em] text-terracotta mt-12 mb-4">
+NARRATIVE SOLUTION
+</h4>
+                        <p class="text-base text-ink/70">
+                            ${project.solution}
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="bg-white border border-sand p-8 rounded-[30px] h-fit">
+
+    <div>
+                            <h6 class="text-[10px] font-black uppercase tracking-widest text-ink/40 mb-2 lang-text" data-en="CLIENT" data-id="KLIEN">CLIENT</h6>
+                            <p class="font-bold text-ink"></p>
+                        </div>
+
+    <p class="font-semibold mb-6 text-ink">
+        ${project.client || "—"}
+    </p>
+
+    <div>
+                            <h6 class="text-[10px] font-black uppercase tracking-widest text-ink/40 mb-2 lang-text" data-en="SERVICES" data-id="LAYANAN">SERVICES</h6>
+                            <p class="text-sm text-ink/70 leading-relaxed"></p>
+                        </div>
+
+    <p class="text-[13px] text-ink/60 mb-8 leading-relaxed">
+        ${project.services}
+    </p>
+
+    <button class="bg-terracotta text-white px-6 py-3 rounded-full w-full text-[11px] tracking-widest">
+        INQUIRE PROJECT
+    </button>
+
+</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    `;
+
+    window.scrollTo(0,0);
+}
+
+function goHome() {
+
+    const main = document.getElementById("main-content");
+    const page = document.getElementById("project-page");
+
+    page.style.display = "none";
+
+    // 🔥 RESTORE
+    main.style.display = "block";
+    main.style.visibility = "visible";
+    main.style.height = "auto";
+    main.style.overflow = "visible";
+
+    window.scrollTo(0,0);
+}
 
         function initChart() {
     const ctx = document.getElementById('skillsChart').getContext('2d');
+
     new Chart(ctx, {
         type: 'radar',
         data: {
