@@ -46,45 +46,43 @@
         letter-spacing: 0.25em;
     	}
 
-       
-
        /* --- START: MAGIC EXPLORE WORKS BUTTON --- */
-       .magic-btn {
-           background: linear-gradient(90deg, #C35831, #E8A87C, #C35831, #FF69B4, #C35831);
-           background-size: 300% auto;
-           animation: magicGradient 4s linear infinite, magicPulse 2.4s ease-in-out infinite;
-           color: #fff;
-           box-shadow: 0 4px 20px rgba(195, 88, 49, 0.35);
-       }
-       .magic-btn:hover {
-           animation-play-state: running;
-           transform: translateY(-2px) scale(1.04);
-           box-shadow: 0 8px 28px rgba(195, 88, 49, 0.55);
-       }
-       .magic-btn { transition: transform 0.35s ease, box-shadow 0.35s ease; }
-       .magic-btn-shine {
-           position: absolute;
-           top: 0;
-           left: -60%;
-           width: 40%;
-           height: 100%;
-           background: linear-gradient(120deg, transparent, rgba(255,255,255,0.65), transparent);
-           transform: skewX(-20deg);
-           animation: magicShine 2.6s ease-in-out infinite;
-       }
-       @keyframes magicGradient {
-           0% { background-position: 0% 50%; }
-           100% { background-position: 300% 50%; }
-       }
-       @keyframes magicPulse {
-           0%, 100% { box-shadow: 0 4px 20px rgba(195, 88, 49, 0.35), 0 0 0 0 rgba(195, 88, 49, 0.4); }
-           50% { box-shadow: 0 4px 24px rgba(195, 88, 49, 0.45), 0 0 0 8px rgba(195, 88, 49, 0); }
-       }
-       @keyframes magicShine {
-           0% { left: -60%; }
-           100% { left: 130%; }
-       }
-       /* --- END: MAGIC EXPLORE WORKS BUTTON --- */
+.magic-btn {
+    background: linear-gradient(90deg, #C35831, #E8A87C, #C35831, #FF69B4, #C35831);
+    background-size: 300% auto;
+    animation: magicGradient 4s linear infinite, magicPulse 2.4s ease-in-out infinite;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(195, 88, 49, 0.35);
+}
+.magic-btn:hover {
+    animation-play-state: running;
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 28px rgba(195, 88, 49, 0.55);
+}
+.magic-btn { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+.magic-btn-shine {
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.65), transparent);
+    transform: skewX(-20deg);
+    animation: magicShine 2.6s ease-in-out infinite;
+}
+@keyframes magicGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+}
+@keyframes magicPulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(195, 88, 49, 0.35), 0 0 0 0 rgba(195, 88, 49, 0.4); }
+    50% { box-shadow: 0 4px 24px rgba(195, 88, 49, 0.45), 0 0 0 8px rgba(195, 88, 49, 0); }
+}
+@keyframes magicShine {
+    0% { left: -60%; }
+    100% { left: 130%; }
+}
+/* --- END: MAGIC EXPLORE WORKS BUTTON --- */
 
        /* --- START: INTERACTIVE JOURNEY STYLES --- */
 .journey-step { transition: all 0.3s ease; cursor: pointer; border: 1px solid transparent; }
@@ -395,36 +393,36 @@ letter-spacing:0.03em;
                         Too lazy to scroll? I won't judge. Explore the works right away.
                     </p>
                     <div class="flex flex-wrap items-center gap-4">
-                        <a href="#about"
-                        class="px-8 py-4 bg-ink text-white rounded-full font-bold hover:bg-terracotta transition lang-text"
-                        data-en="Scroll Through"
-                        data-id="Jelajahi Halaman">
-                        Scroll Through
-                        </a>
+                         <a href="#about"
+                              class="px-8 py-4 bg-ink text-white rounded-full font-bold hover:bg-terracotta transition lang-text"
+                               data-en="Scroll Through"
+                                  data-id="Jelajahi Halaman">
+                                  Scroll Through
+                            </a>
 
-                        <div class="relative inline-block">
-                            <button onclick="document.getElementById('pdf-menu').classList.toggle('hidden')"
-                            class="magic-btn group relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-ink overflow-hidden lang-text"
-                            data-en="Explore Works"
-                            data-id="Jelajahi Karya">
-                                <span class="magic-btn-shine"></span>
-                                <span class="relative z-10 flex items-center gap-2">
-                                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
-                                    <span>Explore Works</span>
-                                </span>
-                            </button>
+                           <div class="relative inline-block">
+    <button onclick="document.getElementById('pdf-menu').classList.toggle('hidden')"
+    class="magic-btn group relative inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-ink overflow-hidden lang-text"
+    data-en="Explore Works"
+    data-id="Jelajahi Karya">
+        <span class="magic-btn-shine"></span>
+        <span class="relative z-10 flex items-center gap-2">
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg>
+            <span>Explore Works</span>
+        </span>
+    </button>
 
-                            <div id="pdf-menu" class="hidden absolute left-0 mt-3 w-64 bg-white border border-sand rounded-2xl shadow-xl overflow-hidden z-20">
-                                <a href="#" onclick="openPdfViewer('assets/pdf/profile-sorted-works-gina-suci.pdf', 'Portfolio Profile'); return false;"
-                                class="block px-5 py-3 text-sm font-semibold text-ink hover:bg-sand transition">
-                                Portfolio Profile
-                                </a>
-                                <a href="#" onclick="openPdfViewer('assets/pdf/writing-projects.pdf', 'Writing Projects'); return false;"
-                                class="block px-5 py-3 text-sm font-semibold text-ink hover:bg-sand transition border-t border-sand">
-                                Writing Projects
-                                </a>
-                            </div>
-                        </div>
+    <div id="pdf-menu" class="hidden absolute left-0 mt-3 w-64 bg-white border border-sand rounded-2xl shadow-xl overflow-hidden z-20">
+        <a href="assets/pdf/profile-sorted-works-gina-suci.pdf" target="_blank" rel="noopener"
+        class="block px-5 py-3 text-sm font-semibold text-ink hover:bg-sand transition">
+        Portfolio Profile
+        </a>
+        <a href="assets/pdf/case-study-2.pdf" target="_blank" rel="noopener"
+        class="block px-5 py-3 text-sm font-semibold text-ink hover:bg-sand transition border-t border-sand">
+        Case Study 02
+        </a>
+    </div>
+</div>
                     </div>
                 </div>
                 <div class="relative">
@@ -1622,96 +1620,6 @@ img.style.transform = `scale(1.05) translateY(${y}px)`;
 
 });
 
-    </script>
-    <script>
-    document.addEventListener('click', function(e) {
-        const menu = document.getElementById('pdf-menu');
-        const btn = e.target.closest('button');
-        if (menu && !menu.contains(e.target) && (!btn || !btn.onclick)) {
-            menu.classList.add('hidden');
-        }
-    });
-    </script>
-
-    <!-- --- START: CUSTOM SECURE PDF VIEWER --- -->
-    <div id="pdf-viewer-modal" class="fixed inset-0 z-[999] hidden">
-        <div class="absolute inset-0 bg-black/85 backdrop-blur-sm" onclick="closePdfViewer()"></div>
-        <div class="relative z-10 flex flex-col h-full">
-            <div class="flex items-center justify-between px-6 py-4 bg-ink/95 text-white shrink-0">
-                <span id="pdf-viewer-title" class="font-bold text-sm md:text-base truncate pr-4">Portfolio</span>
-                <button onclick="closePdfViewer()" class="text-white/80 hover:text-white text-2xl leading-none px-2">&times;</button>
-            </div>
-            <div id="pdf-viewer-body" class="flex-1 overflow-y-auto flex flex-col items-center gap-6 py-8 px-4"
-                 oncontextmenu="return false;"
-                 style="user-select:none; -webkit-user-select:none;">
-                <p id="pdf-viewer-loading" class="text-white/70 text-sm">Loading document…</p>
-            </div>
-        </div>
-    </div>
-    <!-- --- END: CUSTOM SECURE PDF VIEWER --- -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script>
-    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-
-    async function openPdfViewer(url, title) {
-        const modal = document.getElementById('pdf-viewer-modal');
-        const body = document.getElementById('pdf-viewer-body');
-        const titleEl = document.getElementById('pdf-viewer-title');
-
-        titleEl.textContent = title || 'Portfolio';
-        body.innerHTML = '<p id="pdf-viewer-loading" class="text-white/70 text-sm">Loading document…</p>';
-        modal.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-
-        try {
-            const loadingTask = pdfjsLib.getDocument(url);
-            const pdf = await loadingTask.promise;
-            body.innerHTML = '';
-
-            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-                const page = await pdf.getPage(pageNum);
-                const scale = Math.min(2, (window.innerWidth * 0.9) / page.getViewport({ scale: 1 }).width);
-                const viewport = page.getViewport({ scale: scale });
-
-                const canvas = document.createElement('canvas');
-                canvas.className = 'max-w-full rounded-lg shadow-2xl';
-                canvas.style.pointerEvents = 'none';
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                const ctx = canvas.getContext('2d');
-                await page.render({ canvasContext: ctx, viewport: viewport }).promise;
-
-                body.appendChild(canvas);
-            }
-        } catch (err) {
-            body.innerHTML = '<p class="text-white/80 text-sm">Sorry, this document could not be loaded.</p>';
-            console.error('PDF viewer error:', err);
-        }
-    }
-
-    function closePdfViewer() {
-        const modal = document.getElementById('pdf-viewer-modal');
-        modal.classList.add('hidden');
-        document.getElementById('pdf-viewer-body').innerHTML = '';
-        document.body.style.overflow = '';
-    }
-
-    // Block right-click, text selection, and common save/print/devtools shortcuts inside the viewer
-    document.addEventListener('keydown', function(e) {
-        const modal = document.getElementById('pdf-viewer-modal');
-        if (!modal || modal.classList.contains('hidden')) return;
-
-        const key = e.key.toLowerCase();
-        const isSaveOrPrint = (e.ctrlKey || e.metaKey) && (key === 's' || key === 'p' || key === 'u');
-        if (isSaveOrPrint) {
-            e.preventDefault();
-        }
-        if (key === 'escape') {
-            closePdfViewer();
-        }
-    });
     </script>
 </body>
 </html>
